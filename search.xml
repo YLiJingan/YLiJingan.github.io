@@ -69,11 +69,9 @@
     </entry>
     
     <entry>
-      <title></title>
+      <title><![CDATA[Shell]]></title>
       <url>/2018/01/10/shell/</url>
-      <content type="html"><![CDATA[<hr>
-<p>title: Shell<br>comments: true   </p>
-<h2 id="tags-‘shell’-’学习笔记’"><a href="#tags-‘shell’-’学习笔记’" class="headerlink" title="tags: [‘shell’,’学习笔记’]"></a>tags: [‘shell’,’学习笔记’]</h2><h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell?"></a>什么是Shell?</h4><p>shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.</p>
+      <content type="html"><![CDATA[<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell?"></a>什么是Shell?</h4><p>shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.</p>
 <blockquote>
 <p>Shell是你（用户）和Linux（或者更准确的说，是你和Linux内核）之间的接口程序。你输入的每个命令都由shell先解释然后传给Linux内核。</p>
 </blockquote>
@@ -105,6 +103,14 @@
 <p><code>cat /etc/shells</code>     –查看系统有几种shell<br><code>echo $SHELL</code>              -查看当前使用的shell<br><code>chsh</code>               –更换shell,change shell</p>
 ]]></content>
       
+        
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> shell </tag>
+            
+        </tags>
         
     </entry>
     
@@ -882,9 +888,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         
@@ -924,9 +930,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         
@@ -951,9 +957,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         
@@ -998,9 +1004,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         
@@ -1079,9 +1085,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         
