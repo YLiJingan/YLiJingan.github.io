@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+<html  style="display: none;">
+
+  
+<head>
+  <script>
+    window.mduiVersion = "1.4.8"
+    window.oldVersion = [
+     '1.4.7',
+     '1.4.5',
+     '1.4.6'
+     'unknownVersion'
+    ]
+  </script>
+  <!--
+        © HEXO MDUI Theme
+        https://github.com/Halyul/hexo-theme-mdui
+        Version: 1.4.8 -->
+  <meta charset="UTF-8">
+  <title>webpack学习笔记 - Angryyan</title>
+
+  <!-- Favicons -->
+  <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+  <link rel="icon" sizes="192x192" href="/img/favicon.png">
+  <link rel="apple-touch-icon" href="/img/favicon.png">
+
+  <!-- Meta & Info -->
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  
+    <meta name="theme-color" content="
+  
+  #009688
+  
+
+">
+  
+
+  <meta name="author" content="yan">
+  
+      <meta name="description" content="我要一步一步向上爬">
+  
+  <meta name="keywords" content="blog, hexo, mdui,学习笔记,webpack">
+
+  <!--iOS -->
+  <meta name="apple-mobile-web-app-title" content="Angryyan">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="480">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- The Open Graph protocol -->
+  <meta property="og:url" content="http://yoursite.com">
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="webpack学习笔记 - Angryyan | Angryyan">
+  <meta property="og:image" content="/img/favicon.png" />
+  
+        <meta property="og:description" content="我要一步一步向上爬">
+    
+
+    <meta property="og:article:tag" content="学习笔记"> <meta property="og:article:tag" content="webpack"> 
+
+  <!-- Cache -->
+  <meta http-equiv="Cache-Control" content="max-age=7200" />
+  <meta http-equiv="Expires" content="Fri, 29 Dec 2017 23:00:00 GMT" />
+
+  
+
+  <script>
+    (function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.mduiVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf(c)!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();
+  </script>
+
+  <!-- Import CSS -->
+  
+    <link rel="stylesheet" href="/css/fonts.min.css">
+  
+  
+    
+      <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style-now.min.css?Sda7xus4JfXDq4u0U67Ihw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+    
+  
+
+  <!-- Custom Head -->
+  
+
+  
+    <style>
+      body {
+        background-color: #eeeeee;
+      }
+    </style>
+  
+
+  
+</head>
+
+
+
+
+  
+    
+  <body class="mdui-theme-primary-teal mdui-theme-accent-red
+   
+  
+    mdui-appbar-with-toolbar
+  
+  " >
+
+
+  
+
+
+<div id="top"></div>
+
+
+  
+
+  <div class="mdui-appbar mdui-shadow-0 mdui-appbar-fixed animate-appbar" id="blog-appbar">
+    <div class="mdui-toolbar mdui-color-theme">
+      <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
+        <i class="mdui-icon">
+          <span></span>
+        </i>
+      </button>
+      
+        <a href="/" class="mdui-typo-headline">
+          返回首页
+        </a>
+      
+      
+      
+        <div class="flex-spacer"></div>
+      
+      
+      
+  <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}" id="index-more">
+    <i class="mdui-icon material-icons">&#xe417;</i>
+  </button>
+
+  <ul class="mdui-menu" id="menu-index-more">
+    
+    
+      <li class="mdui-menu-item">
+        <a class="mdui-ripple menu-badge">
+          Views: 
+          <span class="badge" id="busuanzi_value_page_pv"></span>
+        </a>
+      </li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+
+
+  <div id="search-cover" searchResult onclick="closeSearch()"></div>
+
+
+
+
+
+
+  
+  <div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close
+  " id="drawer" style="z-index: 2001;">
+  <div class="userview" style="background-image: url(/img/bg.jpg)">
+  <div class="overlay">
+    <img class="mdui-img-circle avatar" src="/img/cat.jpg"/>
+    <div class="bottom">
+      <div class="info">
+        <div class="author mdui-text-color-white-text">
+          yan
+        </div>
+        <div class="slogan mdui-text-color-white-secondary">
+          能吃是福 吃饱了才能跑的动:)
+        </div>
+      </div>
+      <div class="flex-spacer"></div>
+      
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+  <div class="hexo">
+    
+      <div class="mdui-list no-padding-bottom">
+        <a href="/">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
+            <div class="mdui-list-item-content">
+              Index
+            </div>
+          </li>
+        </a>
+      </div>
+    
+    
+      <div class="mdui-list no-padding">
+        <a href="/archives">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
+            <div class="mdui-list-item-content">
+              Archives
+              <span class="badge new mdui-color-theme-accent" data-badge-caption="">10</span>
+            </div>
+          </li>
+        </a>
+      </div>
+    
+    
+      <div class="mdui-list no-padding-top" mdui-collapse="{accordion: true}" mdui-collapse>
+        
+        
+          <div class="mdui-collapse-item ">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+              <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
+              <div class="mdui-list-item-content">Tags</div>
+              <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list">
+              
+                <a href="/tags/hexo/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  hexo
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">2</span>
+                </a>
+              
+                <a href="/tags/default/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  default
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+                </a>
+              
+                <a href="/tags/githubpages/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  githubpages
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+                </a>
+              
+                <a href="/tags/CSS/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  CSS
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+                </a>
+              
+                <a href="/tags/学习笔记/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  学习笔记
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">2</span>
+                </a>
+              
+                <a href="/tags/某人口中的抄书/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  某人口中的抄书
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+                </a>
+              
+                <a href="/tags/webpack/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  webpack
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+                </a>
+              
+                <a href="/tags/面经/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  面经
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">5</span>
+                </a>
+              
+                <a href="/tags/秋招/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  秋招
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">5</span>
+                </a>
+              
+            </div>
+          </div>
+        
+        <div class="mdui-collapse-item ">
+          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
+            <div class="mdui-list-item-content">Years</div>
+            <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+          </div>
+          <div class="mdui-collapse-item-body mdui-list">
+            
+            
+              <a href="/archives/2018/" class="mdui-list-item mdui-ripple">
+                2018
+              </a>
+            
+              <a href="/archives/2017/" class="mdui-list-item mdui-ripple">
+                2017
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+</div>
+
+  <div class="flex-spacer"></div>
+  <div class="drawer-footer">
+  <div class="mdui-typo mdui-typo-caption-opacity">
+    <span>
+      Copyright ©
+      <span year></span>
+      yan
+    </span>
+    
+    
+    <span id="busuanzi_container_site_pv">��վ�ܷ�����<span id="busuanzi_value_site_pv"></span>��</span>
+  </div>
+</div>
+<script type="text/javascript">
+  var copyrightNow = new Date().getFullYear();
+  var textContent = document.querySelector('span[year]')
+  
+    textContent.textContent = copyrightNow
+  
+</script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+
+
+
+
+
+
+
+<main>
+  
+
+
+  <style id="post_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("post_css","/css/src/now/post.min.css?MWI5mYfrtkkaVt0cXypQEA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+<style id="lightgallery_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("lightgallery_css","/css/src/lightgallery.min.css?+c5+nzUi2JvkvxweHDf/nA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+  <style id="prism_theme_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prism_theme_css","/css/src/prism-themes/dark.min.css?0qUPxIYO7HRq6/jdmib3dQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+  <style id="line_number_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("line_number_css","/css/src/prism-themes/line-number.min.css?3vej9ouE8RJMGe/3SzS8aw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+<style>
+  .lg-outer .lg-item {
+    background-image: url("/img/loading.gif");
+  }
+</style>
+<div class="post-warpper animate-post">
+  <div class="post-bg-color
+    
+      
+        mdui-color-theme
+      
+    
+  "></div>
+  <div class="post-header
+    
+      
+        mdui-color-theme
+      
+    
+  ">
+    <div class="post-header-container">
+      <div class="post-title mdui-text-truncate">webpack学习笔记</div>
+      <div class="post-actions mdui-valign">
+        <div>
+          <span>Posted: </span>
+          <span style="float: right">Dec 20, 2017</span>
+          
+        </div>
+        
+
+        
+  <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-post-share'}">
+    <i class="mdui-icon material-icons">&#xe80d;</i>
+  </button>
+
+  <ul class="mdui-menu" id="menu-post-share">
+
+    
+      <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/12/20/webpackStudy/index.html" target="_blank" class="mdui-ripple">
+              Share to Facebook
+          </a>
+      </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=webpack学习笔记&url=http://yoursite.com//2017/12/20/webpackStudy/index.html&via=yan" target="_blank" class="mdui-ripple">
+              Share to Twitter
+          </a>
+      </li>
+    
+
+    
+      <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share.php?appkey=&title=webpack学习笔记&url=http://yoursite.com//2017/12/20/webpackStudy/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+              Share to Weibo
+          </a>
+      </li>
+    
+
+  </ul>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="post-container flex-spacer
+  
+  ">
+    <div class="post-adjust">
+      <div class="mdui-card card-bottom-fix menu-fix mdui-hoverable" id="blog-post">
+        <div class="warning">
+          This article was last modified
+          <span id="content-warning"></span>
+          days ago.
+          The content of this post may be outdated!
+        </div>
+        
+        
+        <div class="post-content mdui-typo no-margin" id="post-content">
+          <p>本次使用开发工具为 VSCode，相对webstrome能轻巧一些。这个小项目主要是webpack的demo</p>
+<h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><h5 id="第一次打包"><a href="#第一次打包" class="headerlink" title="第一次打包"></a>第一次打包</h5><ul>
+<li><code>./node_modules/.bin/webpack src/index.js dist/bundle.js</code>   </li>
+<li><code>./node_modules/.bin/webpack</code> 就可以找到node_modules下的webpack shell脚本脚本。照着官网上的例子输的，执行这句就报错了。尴尬了</li>
+<li><p><code>webpack src/index.js dist/bundle.js</code>执行这句打包成功。<br>  上述命令结束说明:<br>  <code>webpack {entry file} {destination for bundled file}</code><br>  <img src="http://ow4f5k7el.bkt.clouddn.com/firstBundle.png" width="450" height="180" alt="first_bundle" align="center"></p>
+<ul>
+<li>查阅相关资料，发现是全局安装和本地安装的问题。<br><img src="http://ow4f5k7el.bkt.clouddn.com/npmGInstall.png" width="450" height="180" alt="first_bundle" align="center"><br>我已经全局安装过webpack了，直接使用webpack执行就可以。由于官网推荐的是本地安装，使用命令./node_modules/.bin/webpack指定webpack的地址。       </li>
+</ul>
+</li>
+</ul>
+<h5 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h5><ul>
+<li>配置入口 出口文件<br>  从上面的第一次打包过程我们发现，每次打包的时候都需要手动写入口文件和出口文件，使用webpack.config.js配置文件，我们就可以进行配置，之后直接执行webpack.<br>  然而天不遂人愿，又报错了。<br>  <img src="http://ow4f5k7el.bkt.clouddn.com/error_1.png" width="550" height="320" alt="first_bundle" align="center"><br>  <code>path.resolve(_dirname,&#39;dist&#39;)</code>是获取项目的绝对路径，需要将这里的dirname改为’./‘       </li>
+<li>npm脚本<br>  package.json中 script 添加 “build”:”webpack”       </li>
+</ul>
+<h4 id="管理资源"><a href="#管理资源" class="headerlink" title="管理资源"></a>管理资源</h4><blockquote>
+<p>loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。</p>
+</blockquote>
+<h5 id="加载CSS"><a href="#加载CSS" class="headerlink" title="加载CSS"></a>加载CSS</h5><p> <code>npm install --save-dev style-loader css-loader</code><br>  webpack.config.js中module配置中添加style-loader css-loader          </p>
+<blockquote>
+<p>webpack 根据正则表达式，来确定应该查找哪些文件，并将其提供给指定的 loader。在这种情况下，以 .css 结尾的全部文件，都将被提供给 style-loader 和 css-loader。</p>
+<h5 id="加载图片"><a href="#加载图片" class="headerlink" title="加载图片"></a>加载图片</h5><p><code>npm install --save-dev file-loader</code><br>webpack.config.js中module配置中添加file-loader        </p>
+<h5 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h5><p><code>npm install --save-dev csv-loader xml-loader</code><br>webpack.config.js中module配置中添加csv-loader xml-loader    </p>
+</blockquote>
+<h4 id="管理输出"><a href="#管理输出" class="headerlink" title="管理输出"></a>管理输出</h4><ul>
+<li>设定 HtmlWebpackPlugin<br><em>如果我们更改了我们的一个入口起点的名称，甚至添加了一个新的名称，会发生什么？生成的包将被重命名在一个构建中，但是我们的index.html文件仍然会引用旧的名字。我们用 HtmlWebpackPlugin 来解决这个问题</em><br><code>npm install --save-dev html-webpack-plugin</code><br>webpack.config.js中plugins配置中添加HtmlWebpackPlugin，需要先引入html-webpack-plugin<br><img src="http://ow4f5k7el.bkt.clouddn.com/htmlwebpackplugin.png" width="550" height="320" alt="htmlwebpackplugin" align="center">                </li>
+<li>清理/dist文件夹<br>在上面的那张图中，可以看到我的dist文件夹现在是相当的杂乱，这还只是个小demo，clean-webpack-plugin是一个比较普及的管理插件。在每次重新构建之前，删除dist文件夹，构建的时候再重新生成。                         </li>
+<li><code>npm install clean-webpack-plugin --save-dev</code>     </li>
+</ul>
+<h4 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h4><p>开发环境和生产环境的依赖不同。<br><strong>package.json dependencies生产依赖  devDependencies开发依赖</strong><br>安装依赖:npm install xxxx(安装到系统中了,package.json中没有记录)<br>        npm install xxxx –save (保存到本地目录,dependencies生产依赖)<br>        npm install xxxx –save-dev (保存到本地目录,devDependencies开发依赖)<br>模块化开发(开发环境和生产环境并行：)<br>    修改package.json 添加dev npm script，并通过环境变量来进行区分。<br>            “build”: “set type=build&amp;webpack”, 生产<br>            “dev”:”set type=dev&amp;webpack”,       开发<br>    修改webpack.config.js<br>        <code>console.log(encodeURIComponent(process.env.type));     
+        if(process.env.type == &quot;build&quot;){      
+            var website = {     
+                publicePath:&#39;http://192.168.91.1:9001&#39;      
+            }   
+        }else{    
+            var website = {     
+                publicePath:&#39;http://www.angryyan.com:9001&#39;      
+            }     
+        }</code><br>        端口号是在devServer中进行配置的。<br><em>使用source map(便于打包之后进行调试)</em><br>    为了更方便的追踪错误和警告，JS提供了source map功能，将编译后的代码映射回原始源代码。这个在Chrome的控制台中可以找到<br>    <strong>上线之前，需要删除devtool。</strong><br>    webpack.config.js中配置devtool选项,有4中模式：      </p>
+<pre><code>1. source-map:会减慢打包速度，在一个单独文件中产生一个完整其功能完全的文件，会提示第几行的哪里有错误。        打包完成之后，会生成一个.map独立文件      
+2. cheap-module-source-map 也会生成独立的文件，会提示在第几行出现错误，但是不提示具体错误在这一行的哪里       
+3. eval-source-map 不生成独立的文件，打包速度比较快，有安全问题,会提示第几行的哪里有错误(开发阶段)          
+4. cheap-module-eval-source-map  不生成独立的文件，会提示在第几行出现错误，但是不提示具体错误在这一行的哪里(开发阶段)        
+</code></pre><ul>
+<li><p>开发工具</p>
+<ul>
+<li>每次要编译代码的时候，都需要手动运行npm run build 就会变的很麻烦。我们可以使用中工具在代码发生变化之后进行自动编译<br><strong>webpack’s Watch Mode</strong><br><strong>webpack-dev-server</strong><br><strong>webpack-dev-middleware</strong>  </li>
+<li>使用观察模式   <ul>
+<li>package.json中添加用于启动webpack的观察模式的npm script脚本</li>
+<li>npm run watch执行之后，wenpack会一直观察文件，当发生变化时，自动重新编译。   </li>
+<li>缺点：代码是重新编译过的，但是我们要在浏览器中看到最新的代码的话，需要手动进行刷新   </li>
+<li>配置webpack.config.js<br><code>watchOptions:{
+   poll:1000,   //监视时间，毫秒单位
+   aggregeateTimeout:500,  //防止重复进行保存，打包出错
+   ignored:/node_modules/,
+}</code>      </li>
+</ul>
+</li>
+<li><p>使用webpack-dev-server</p>
+<ul>
+<li>webpack-dev-server为你提供了一个简单的web服务器，并且呢能够实时进行重新加载，这也是webpack-dev-server相比观察模式好的地方    </li>
+<li><code>npm install --save-dev webpack-dev-server</code>     </li>
+<li>webpack.config.js中添加DevServer，设置可访问文件   </li>
+<li>package.json中添加npm script脚本，可以直接运行开发服务器</li>
+<li>使用最为广泛    </li>
+</ul>
+</li>
+<li><p>使用webpack-dev-middleware</p>
+<ul>
+<li>中间件容器     </li>
+<li><code>npm isntall --save-dev express webpack-dev-middleware</code></li>
+<li>webpack.config.js中output配置中添加publicPath   </li>
+<li>设置自定义的express服务，新建server.js       </li>
+<li>package.json中添加npm script脚本 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>这里有个问题?? 目前添加的npm script都是需要使用npm run XX来运行，只有webpack-dev-server 是直接使用npm start。这是为什么呢?<br>    <em>npm start是npm run start的简写。可以使用npm run来运行scripts里的条目。</em>                 </p>
+<h4 id="模块热替换"><a href="#模块热替换" class="headerlink" title="模块热替换"></a>模块热替换</h4><ul>
+<li>热更新(Hot Module Replacement)，是webpack提供的最有用的功能之一，解决了前端开发中修改代码后需要手动刷新浏览器的问题，它允许在运行的时候更新各种模块。        <blockquote>
+<p>不适用于生产环境，只能在开发环境中使用       </p>
+</blockquote>
+</li>
+<li>启用HMR<br>  更新webpack-dev-server的配置<br>  <img src="http://ow4f5k7el.bkt.clouddn.com/HMR.png" width="550" height="320" alt="htmlwebpackplugin" align="center">          </li>
+</ul>
+<h4 id="Tree-Shaking"><a href="#Tree-Shaking" class="headerlink" title="Tree Shaking"></a>Tree Shaking</h4><p><strong><em>用于移除JS上下文中问未引用代码</em></strong>  </p>
+<ul>
+<li>未使用的代码依然存在bundle.js中，但是并没有被导出     <ul>
+<li>对于上述的情况，在实际开发中我们希望打包之后，未使用的代码直接删除也不会存在bundle.js中,在这里可以使用压缩工具-UglifyJSPlugin   <ul>
+<li><code>npm isntall --save-dev uglifyjs-webpack-plugin</code>  </li>
+<li>webpack.config.js中plugins中添加配置</li>
+<li>在实际的开发中对于bundle.js会产生显著的体积优化</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="生产环境构建"><a href="#生产环境构建" class="headerlink" title="生产环境构建"></a>生产环境构建</h4><blockquote>
+<p>开发环境(development)和生产环境(production)的构建目标差异很大。          </p>
+</blockquote>
+<p><em>在开发环境中，我们需要具有实时重新加载或者热更新的source map和loaclhost server</em>    <em>在生产环境中，我们需要更小的bundle，更轻量的source map，以及更优化的资源</em><br>我们写一个通用的配置文件，再分别针对开发环境和生产环境写各自的配置文件。为了将这些配置合并在一起，使用<strong>webpack-merge</strong>工具。<br><code>npm install --save-dev webpack-merge</code><br>在开发环境中使用inline-source-map,在生产环境中使用souce-map     </p>
+<ul>
+<li>指定环境<br><em>通过与process.env.NODE_ENV 环境变量关联,判断是什么环境环境还是开发环境决定应该引用那些内容。</em> <ul>
+<li>使用webpack内置的DefinePlugin为所有的依赖定义这个变量 </li>
+</ul>
+</li>
+</ul>
+<h4 id="代码分离"><a href="#代码分离" class="headerlink" title="代码分离"></a>代码分离</h4><p><em>代码分离可以把代码分离到不同的bundle中，然后按需加载或并行加载。</em>       </p>
+<ul>
+<li>入口文件      <ul>
+<li>使用entry配置手动地分离代码<br><img src="http://ow4f5k7el.bkt.clouddn.com/entrySperate.png" width="450" height="100" alt="htmlwebpackplugin" align="center">   </li>
+<li>缺点:如果入口chunks之间包含重复法人模块，重复的模块都会被引入到各个bundle中。从上图可以看到，我们在两个文件都引入了lodsh               </li>
+</ul>
+</li>
+<li><p>防止重复        </p>
+<ul>
+<li>CommonsChunkPlugin插件可以将公共的依赖模块提取到已有的入口chunk中，或者提取到一个新生成的chunk.        </li>
+</ul>
+</li>
+<li><p>动态导入<br>  动态代码拆分，有两个类似的技术。第一种也是优先选择的方式，使用import()语法；第二种是使用webpack特定的require.ensure.       </p>
+</li>
+</ul>
+<h4 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h4><p><em>懒加载或者按需加载，是一种很好的优化网页或应用的方法。这样加快了应用的初始加载速度，减轻了它的总体积。</em><br><img src="http://ow4f5k7el.bkt.clouddn.com/lazyload.png" width="450" height="230" alt="htmlwebpackplugin" align="center">   </p>
+<h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4><p><em>客户端从服务器请求资源是比较耗费时间的，只额就是为什么浏览器使用一种名问缓存的技术。可以使用命中缓存，以降低网络流量，是网站加载速度更快。但是在我们不熟新版本的时候不更改文件名，浏览器会认为它没有被更新，就会使用缓存版本。但是如何才能获取到新的代码呢？</em>        </p>
+<ul>
+<li><p>输出文件的文件名  </p>
+<ul>
+<li>通过使用output.filename进行<strong>文件名替换</strong>，配置webpack.config.js中output模块，<code>filename:&#39;[name].[chunkhash].js&#39;</code><br><img src="http://ow4f5k7el.bkt.clouddn.com/chunkhash.png" width="550" height="220" alt="htmlwebpackplugin" align="center"><br><br><br> <strong>注意</strong> 开发环境中只能使用[hash]，在生产环境中使用[chunkhash]，不能和热更新同时使用(然而热更新只是在开发环境中使用的)<br><img src="http://ow4f5k7el.bkt.clouddn.com/hash.png" width="550" height="230" alt="htmlwebpackplugin" align="center">         </li>
+</ul>
+</li>
+<li><p>提取模板<br>  <em>使用CommonsChunkPlugin在每次修改后的构建结果中，将webpack的样板和mainfest提取出来。通过指定entry配置中未用到的名称，这个插件会自动将我们需要的内容提取到单独的包中。</em>     </p>
+</li>
+</ul>
+<h4 id="PostCSS"><a href="#PostCSS" class="headerlink" title="PostCSS"></a>PostCSS</h4><p><em>自动处理CSS3属性前缀</em><br><code>npm install --save-dev postcss-loader autoprefixer</code><br>新建 post.config.css配置文件  module模块下的css文件中use增加 postcss-loader<br>执行webpack，在dist文件夹中我们看到CSS3前缀已经自动加上<br><a href="https://github.com/postcss/postcss-loader" target="_blank" rel="noopener">postcss Loader</a></p>
+<h4 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h4><p>转换ES6、转换JSX<br>安装依赖:<code>npm install --save-dev babel-core babel-loader bebel-preset-es2015 babel-preset-react</code><br>webpack.config.js中module中配置增加对js的Loader。也可以在根目录下增加.babelrc配置文件，配置<code>&quot;presets&quot;:[&quot;react&quot;,&quot;es2015&quot;]</code><br>执行webpack，在打包好的dist文件夹中可以看到es6,以及react中的jsx语法被转换。       </p>
+<p><em>转换es6,es7,es8</em><br><code>npm install --save-dev babel-preset-env</code><br>修改presets 渲染器中的es2015为env         </p>
+<h4 id="打包第三方类库"><a href="#打包第三方类库" class="headerlink" title="打包第三方类库"></a>打包第三方类库</h4><p>两种方式: </p>
+<ol>
+<li>import<br><code>npm install --save jquery</code><br><code>import $ from jquery</code>          </li>
+<li>webpack自带ProvidePlugin插件<br>webpack.config.js<br><code>const webpack = require(&#39;webpack&#39;);</code><br>配置plugins `new webpack.ProvidePlugin({<pre><code>  $:&quot;jquery&quot;      
+})`       
+</code></pre></li>
+</ol>
+<p>以上内容是对照官网进行的简单练习，知识点比较零散。在实际的开发中，需要结合实际的项目进行相关的配置。</p>
+
+        </div>
+
+        
+          <div class="license mdui-typo">
+            <span>
+              Article License: 
+              
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
+              
+            </span>
+            <br />
+            <span>Article Permalink: <a href="http://yoursite.com/2017/12/20/webpackStudy/">http://yoursite.com/2017/12/20/webpackStudy/</a></span>
+            
+              <br />
+              <span>Article Markdown: <a href="http://yoursite.com/2017/12/20/webpackStudy/webpackStudy.md">http://yoursite.com/2017/12/20/webpackStudy/webpackStudy.md</a></span>
+            
+          </div>
+        
+
+        
+          <div class="posts-info">
+            
+              <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: 'Buy me a beer?', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
+            
+            <div class="flex-spacer"></div>
+            
+            
+              <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
+              </div>
+              <div class="content mdui-typo">
+                
+                  <a href="/tags/学习笔记/">
+                    <span>学习笔记</span>
+                  </a>
+                
+                  <a href="/tags/webpack/">
+                    <span>webpack</span>
+                  </a>
+                
+              </div>
+            
+          </div>
+        
+        
+          
+        
+      </div>
+      
+        <div id="card-toc" class="
+        
+          mdui-color-theme
+        
+        ">
+          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#起步"><span class="post-toc-number">1.<span class="post-toc-text">起步</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#第一次打包"><span class="post-toc-number">1.1.<span class="post-toc-text">第一次打包</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#webpack-config-js"><span class="post-toc-number">1.2.<span class="post-toc-text">webpack.config.js</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#管理资源"><span class="post-toc-number">2.<span class="post-toc-text">管理资源</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#加载CSS"><span class="post-toc-number">2.1.<span class="post-toc-text">加载CSS</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#加载图片"><span class="post-toc-number">2.2.<span class="post-toc-text">加载图片</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#加载数据"><span class="post-toc-number">2.3.<span class="post-toc-text">加载数据</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#管理输出"><span class="post-toc-number">3.<span class="post-toc-text">管理输出</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#开发"><span class="post-toc-number">4.<span class="post-toc-text">开发</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#模块热替换"><span class="post-toc-number">5.<span class="post-toc-text">模块热替换</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#Tree-Shaking"><span class="post-toc-number">6.<span class="post-toc-text">Tree Shaking</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#生产环境构建"><span class="post-toc-number">7.<span class="post-toc-text">生产环境构建</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#代码分离"><span class="post-toc-number">8.<span class="post-toc-text">代码分离</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#懒加载"><span class="post-toc-number">9.<span class="post-toc-text">懒加载</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#缓存"><span class="post-toc-number">10.<span class="post-toc-text">缓存</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#PostCSS"><span class="post-toc-number">11.<span class="post-toc-text">PostCSS</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#Babel"><span class="post-toc-number">12.<span class="post-toc-text">Babel</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#打包第三方类库"><span class="post-toc-number">13.<span class="post-toc-text">打包第三方类库</span></span></a></a></ul>
+        </div>
+      
+    </div>
+  </div>
+  <div class="post-pagination mdui-color-theme">
+  
+    <div class="prev mdui-ripple mdui-color-theme mdui-valign">
+      <a href="/2018/01/10/shell/" class="content no-text-decoration mdui-text-left">
+        <div>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">Newer Post</span>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          
+        </div>
+      </a>
+    </div>
+  
+
+  
+    <div class="next mdui-ripple mdui-color-theme mdui-valign">
+      <a href="/2017/12/05/cssStudy/" class="content no-text-decoration mdui-text-right">
+        <div>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">Older Post</span>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          CSS学习笔记
+        </div>
+      </a>
+    </div>
+    
+</div>
+
+  
+    <button id="button-toc" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-hidden-md-up" style="z-index: 9;" mdui-menu="{target: '#menu-toc', fixed: true}">
+  <i class="mdui-icon material-icons">&#xe242;</i>
+</button>
+<ul class="mdui-menu mdui-typo no-margin-bottom auto-width" id="menu-toc" style="padding: 8px;max-height: 80%">
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#起步"><span class="toc-text">起步</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#第一次打包"><span class="toc-text">第一次打包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#webpack-config-js"><span class="toc-text">webpack.config.js</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#管理资源"><span class="toc-text">管理资源</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#加载CSS"><span class="toc-text">加载CSS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#加载图片"><span class="toc-text">加载图片</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#加载数据"><span class="toc-text">加载数据</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#管理输出"><span class="toc-text">管理输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开发"><span class="toc-text">开发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块热替换"><span class="toc-text">模块热替换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tree-Shaking"><span class="toc-text">Tree Shaking</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生产环境构建"><span class="toc-text">生产环境构建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码分离"><span class="toc-text">代码分离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#懒加载"><span class="toc-text">懒加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缓存"><span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PostCSS"><span class="toc-text">PostCSS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Babel"><span class="toc-text">Babel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打包第三方类库"><span class="toc-text">打包第三方类库</span></a></li></ol>
+</ul>
+
+
+  
+
+</div>
+
+</main>
+
+<div id="outdated" style="z-index: 9999;">
+  <h6>Your browser is out-of-date!</h6>
+  <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+  <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+
+  <div class="mdui-dialog" id="donateDialog">
+    <div class="mdui-dialog-title">Buy me a beer?</div>
+    <div class="mdui-dialog-content no-padding-bottom">
+      <div class="mdui-list">
+        
+          <a href="/img/avatar.png" title="wechat" class="mdui-list-item mdui-ripple" target="_blank">
+            
+            
+            
+            wechat
+          </a>
+        
+      </div>
+    </div>
+    <div class="mdui-dialog-actions">
+      <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close>cancel</button>
+    </div>
+  </div>
+
+
+
+  <div class="mdui-dialog" id="contactDialog">
+    <div class="mdui-dialog-title">
+      How to contact me
+    </div>
+    <div class="mdui-dialog-content no-padding-bottom">
+      <div class="mdui-list">
+        
+          <a href="https://facebook.com" title="Facebook" class="mdui-list-item mdui-ripple" target="_blank">
+            
+            
+            
+            Facebook
+          </a>
+        
+      </div>
+    </div>
+    <div class="mdui-dialog-actions">
+      <button class="mdui-btn mdui-ripple" mdui-dialog-close>
+        Close
+      </button>
+    </div>
+  </div>
+
+
+<!-- Import JS -->
+
+  <script>lsloader.load("outdatedbrowser_js","/js/outdatedbrowser.min.js?e/I5uIbdkHHfJGD4oNpMfA==", true)</script>
+
+
+
+    <script>lsloader.load("main_js","/js/js.min.js?8pm7SsSS86MBkm5xIeRcLg==", true)</script>
+
+
+
+
+
+  
+    <script type="text/ls-javascript" id="global-script">
+  /* appbar button */
+  (function() {
+    var drawer = document.querySelector('#drawer')
+    var drawerBtn = document.querySelector('.drawer-button')
+
+    drawer.addEventListener('open.mdui.drawer', function (e) {
+      drawerBtn.classList.add('back')
+    })
+    drawer.addEventListener('close.mdui.drawer', function (e) {
+      drawerBtn.classList.remove('back')
+    })
+  })();
+
+  
+</script>
+
+
+  <script type="text/ls-javascript" id="appbar-script">
+  /* post appbar */
+  (function() {
+    var pageFlag = false;
+    var appbar = new mdui.Headroom('#blog-appbar');
+    appbar.disable();
+    var toolbar = document.querySelector('#blog-appbar .mdui-toolbar')
+
+    window.addEventListener('scroll', function() {
+      var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      var divTop = document.querySelector('div#top').offsetTop
+
+      var pageLocation = divTop - bodyTop;
+      if (!pageFlag && pageLocation < 0) {
+        toolbar.classList.add('mdui-shadow-2')
+        appbar.enable();
+        pageFlag = true;
+      } else if (pageFlag && pageLocation >= 0) {
+        toolbar.classList.remove('mdui-shadow-2')
+        appbar.disable();
+        pageFlag = false;
+      }
+    })
+  })();
+</script>
+
+  <script type="text/ls-javascript" id="toc-active-script">
+  if (document.querySelector('ul#menu-toc > ol') !== null && document.querySelector('div#card-toc > ul') !== null) {
+    window.addEventListener("load", function() {
+      var timer;
+      function doWork() {
+        listens.forEach(function(value, index) {
+          value[1]();
+          value[0].classList.remove("mdui-list-item-active");
+        })
+        let actionToc = (listens[listens.reduce(function(r, v, index) {
+          if (v[2] == true) {
+            return index;
+          } else return r;
+        }, undefined)] || [])[0] || listens[0][0];
+        actionToc.classList.add("mdui-list-item-active");
+        if(actionToc.getClientRects().length == 0)return;
+        showToc(actionToc);
+      }
+
+      function showToc(toc) {
+        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
+        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
+        let offset = 0;
+        if (offsetTop < 0) offset = offsetTop;
+        if (offsetBottom > 0) offset = offsetBottom;
+        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
+        clearInterval(timer);
+        timer = setInterval(function() {
+          var now = cardToc.scrollTop;
+          var speed = (targetTop - now) / 10;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          if (Math.abs(now - targetTop) < 1) {
+            clearInterval(timer);
+          }
+          cardToc.scrollTop = now + speed;
+        }, 30);
+      }
+      var listens = [];
+      var cardToc = document.querySelector('#card-toc');
+      var links = document.querySelectorAll("a.post-toc-link");
+      var toclist = document.querySelector("#card-toc > ul");
+      Array.prototype.forEach.call(links, function(value, index) {
+        var id = (value.getAttribute("href") || "#").slice(1);
+        var element = document.getElementById(id);
+        listens.push([value, function() {
+          var readed = false;
+          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
+            readed = true;
+          } else {
+            readed = false;
+          }
+          listens[index][2] = readed;
+        }, false])
+      })
+      doWork();
+      window.addEventListener("scroll", doWork)
+    });
+  }
+</script>
+
+  <script type="text/ls-javascript" id="post-lg-script">
+  var images = document.querySelectorAll('#post-content img')
+  for (i = 0; i < images.length; i++) {
+    images[i].addEventListener("click", openLG);
+  }
+  function openLG() {
+    var img_src = this.getAttribute('src');
+    var img_alt = this.getAttribute('alt');
+    lightGallery(this, {
+      dynamic: true,
+      counter: false,
+      dynamicEl: [{
+        "src": img_src,
+        'subHtml': "<span author>yan</span> • Public<div descr>" + img_alt + "</div>"
+      }],
+    });
+  }
+</script>
+
+  <!-- content warning -->
+<script type="text/ls-javascript" id="content-warning-script">
+  (function() {
+    var postLastModifiedDate = 1513772091000
+    var today = (new Date()).getTime()
+    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
+    if (difference >= 100) {
+      document.querySelector('div.warning').style.display = 'block'
+      document.querySelector('#content-warning').textContent = difference
+    }
+  })();
+</script>
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <script>lsloader.load("lightgallery_js","/js/lightgallery.min.js?tQptxVaCRzQ3zx70gMUYig==", true)</script>
+
+
+
+
+
+
+
+  <script type="text/javascript" src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- Custom javascript -->
+
+
+<!-- remove diplay:none -->
+<script type="text/ls-javascript" id="html-script">
+  if (document.readyState === 'complete' || document.readyState !== 'loading') {
+    showHTML();
+  } else {
+    document.addEventListener('DOMContentLoaded', showHTML);
+  }
+  function showHTML(){
+    document.querySelector('html').style.display = 'block';
+  }
+</script>
+
+<script>
+  (function(){
+    var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+    for (var i = 0; i < scriptList.length; ++i) {
+      var item = scriptList[i];
+      lsloader.runInlineScript(item.id,item.id);
+    }
+  })()
+  /*! Copyright 2017 Halyul */
+  console.info("%cCopyright © 2017 Halyul\n"+'Theme Version: 1.4.8'+'%c\nhttps://github.com/Halyul/hexo-theme-mdui',"font-size: 14px;color: #3F51B5;","color: #448AFF;text-decoration: none");
+</script>
+
+<script type='text/javascript' src='../../source/js/love.js'></script>
+
+<a href="https://github.com/YLiJingan"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:999;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+</body>
+
+</html>

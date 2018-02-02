@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title></title>
+      <url>/2018/01/10/shell/</url>
+      <content type="html"><![CDATA[<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell?"></a>什么是Shell?</h4><p>shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.</p>
+<blockquote>
+<p>Shell是你（用户）和Linux（或者更准确的说，是你和Linux内核）之间的接口程序。你输入的每个命令都由shell先解释然后传给Linux内核。</p>
+</blockquote>
+<h4 id="Shell分类"><a href="#Shell分类" class="headerlink" title="Shell分类"></a>Shell分类</h4><ul>
+<li>sh：Bourne Shell 的缩写。可以说是目前所有 Shell 的祖先。</li>
+<li>bash：Bourne Again Shell 的缩写。因此说明 bash 是 sh 的一个进阶版本，比 sh 更优。bash 是目前大多数 Linux 发行版和苹果的 Mac OS X 操作系统的默认 Shell。</li>
+<li>ksh：Korn Shell 的缩写。一般在收费的 Unix 版本上比较多见。</li>
+<li>csh：C Shell 的缩写。 此 Shell 的语法有点类似 C 语言。</li>
+<li>tcsh： Tenex C Shell 的缩写。csh 的优化版本。</li>
+<li><p>zsh： Z Shell 的缩写。比较新近的一个 Shell，集 bash，ksh 和 tcsh 各家之大成。</p>
+<p><strong><em>zsh优点</em></strong>    </p>
+<ul>
+<li>完全兼容bash,之前的使用习惯可以继续使用 </li>
+<li>更强的的tab补全<ul>
+<li>更智能的切换目录</li>
+<li>命令选项补齐</li>
+<li>命令参数补全</li>
+<li>可以定义丰富多彩的主题</li>
+<li>可以集成各种类型的插件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h4><blockquote>
+<p>默认的 shell 是每个用户帐号的一个参数。Linux中典型的默认 shell是/bin/bash，不过也可以用其他的shell.</p>
+</blockquote>
+<p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH" target="_blank" rel="noopener">zsh安装</a>,mac已经预装了zsh<br><a href="http://ohmyz.sh/" target="_blank" rel="noopener">oh my zsh安装</a></p>
+<p><code>cat /etc/shells</code>     –查看系统有几种shell<br><code>echo $SHELL</code>              -查看当前使用的shell<br><code>chsh</code>               –更换shell,change shell</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[webpack学习笔记]]></title>
+      <url>/2017/12/20/webpackStudy/</url>
+      <content type="html"><![CDATA[<p>本次使用开发工具为 VSCode，相对webstrome能轻巧一些。这个小项目主要是webpack的demo</p>
+<h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><h5 id="第一次打包"><a href="#第一次打包" class="headerlink" title="第一次打包"></a>第一次打包</h5><ul>
+<li><code>./node_modules/.bin/webpack src/index.js dist/bundle.js</code>   </li>
+<li><code>./node_modules/.bin/webpack</code> 就可以找到node_modules下的webpack shell脚本脚本。照着官网上的例子输的，执行这句就报错了。尴尬了</li>
+<li><p><code>webpack src/index.js dist/bundle.js</code>执行这句打包成功。<br>  上述命令结束说明:<br>  <code>webpack {entry file} {destination for bundled file}</code><br>  <img src="http://ow4f5k7el.bkt.clouddn.com/firstBundle.png" width="450" height="180" alt="first_bundle" align="center"></p>
+<ul>
+<li>查阅相关资料，发现是全局安装和本地安装的问题。<br><img src="http://ow4f5k7el.bkt.clouddn.com/npmGInstall.png" width="450" height="180" alt="first_bundle" align="center"><br>我已经全局安装过webpack了，直接使用webpack执行就可以。由于官网推荐的是本地安装，使用命令./node_modules/.bin/webpack指定webpack的地址。       </li>
+</ul>
+</li>
+</ul>
+<h5 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h5><ul>
+<li>配置入口 出口文件<br>  从上面的第一次打包过程我们发现，每次打包的时候都需要手动写入口文件和出口文件，使用webpack.config.js配置文件，我们就可以进行配置，之后直接执行webpack.<br>  然而天不遂人愿，又报错了。<br>  <img src="http://ow4f5k7el.bkt.clouddn.com/error_1.png" width="550" height="320" alt="first_bundle" align="center"><br>  <code>path.resolve(_dirname,&#39;dist&#39;)</code>是获取项目的绝对路径，需要将这里的dirname改为’./‘       </li>
+<li>npm脚本<br>  package.json中 script 添加 “build”:”webpack”       </li>
+</ul>
+<h4 id="管理资源"><a href="#管理资源" class="headerlink" title="管理资源"></a>管理资源</h4><blockquote>
+<p>loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。</p>
+</blockquote>
+<h5 id="加载CSS"><a href="#加载CSS" class="headerlink" title="加载CSS"></a>加载CSS</h5><p> <code>npm install --save-dev style-loader css-loader</code><br>  webpack.config.js中module配置中添加style-loader css-loader          </p>
+<blockquote>
+<p>webpack 根据正则表达式，来确定应该查找哪些文件，并将其提供给指定的 loader。在这种情况下，以 .css 结尾的全部文件，都将被提供给 style-loader 和 css-loader。</p>
+<h5 id="加载图片"><a href="#加载图片" class="headerlink" title="加载图片"></a>加载图片</h5><p><code>npm install --save-dev file-loader</code><br>webpack.config.js中module配置中添加file-loader        </p>
+<h5 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h5><p><code>npm install --save-dev csv-loader xml-loader</code><br>webpack.config.js中module配置中添加csv-loader xml-loader    </p>
+</blockquote>
+<h4 id="管理输出"><a href="#管理输出" class="headerlink" title="管理输出"></a>管理输出</h4><ul>
+<li>设定 HtmlWebpackPlugin<br><em>如果我们更改了我们的一个入口起点的名称，甚至添加了一个新的名称，会发生什么？生成的包将被重命名在一个构建中，但是我们的index.html文件仍然会引用旧的名字。我们用 HtmlWebpackPlugin 来解决这个问题</em><br><code>npm install --save-dev html-webpack-plugin</code><br>webpack.config.js中plugins配置中添加HtmlWebpackPlugin，需要先引入html-webpack-plugin<br><img src="http://ow4f5k7el.bkt.clouddn.com/htmlwebpackplugin.png" width="550" height="320" alt="htmlwebpackplugin" align="center">                </li>
+<li>清理/dist文件夹<br>在上面的那张图中，可以看到我的dist文件夹现在是相当的杂乱，这还只是个小demo，clean-webpack-plugin是一个比较普及的管理插件。在每次重新构建之前，删除dist文件夹，构建的时候再重新生成。                         </li>
+<li><code>npm install clean-webpack-plugin --save-dev</code>     </li>
+</ul>
+<h4 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h4><p>开发环境和生产环境的依赖不同。<br><strong>package.json dependencies生产依赖  devDependencies开发依赖</strong><br>安装依赖:npm install xxxx(安装到系统中了,package.json中没有记录)<br>        npm install xxxx –save (保存到本地目录,dependencies生产依赖)<br>        npm install xxxx –save-dev (保存到本地目录,devDependencies开发依赖)<br>模块化开发(开发环境和生产环境并行：)<br>    修改package.json 添加dev npm script，并通过环境变量来进行区分。<br>            “build”: “set type=build&amp;webpack”, 生产<br>            “dev”:”set type=dev&amp;webpack”,       开发<br>    修改webpack.config.js<br>        <code>console.log(encodeURIComponent(process.env.type));     
+        if(process.env.type == &quot;build&quot;){      
+            var website = {     
+                publicePath:&#39;http://192.168.91.1:9001&#39;      
+            }   
+        }else{    
+            var website = {     
+                publicePath:&#39;http://www.angryyan.com:9001&#39;      
+            }     
+        }</code><br>        端口号是在devServer中进行配置的。<br><em>使用source map(便于打包之后进行调试)</em><br>    为了更方便的追踪错误和警告，JS提供了source map功能，将编译后的代码映射回原始源代码。这个在Chrome的控制台中可以找到<br>    <strong>上线之前，需要删除devtool。</strong><br>    webpack.config.js中配置devtool选项,有4中模式：      </p>
+<pre><code>1. source-map:会减慢打包速度，在一个单独文件中产生一个完整其功能完全的文件，会提示第几行的哪里有错误。        打包完成之后，会生成一个.map独立文件      
+2. cheap-module-source-map 也会生成独立的文件，会提示在第几行出现错误，但是不提示具体错误在这一行的哪里       
+3. eval-source-map 不生成独立的文件，打包速度比较快，有安全问题,会提示第几行的哪里有错误(开发阶段)          
+4. cheap-module-eval-source-map  不生成独立的文件，会提示在第几行出现错误，但是不提示具体错误在这一行的哪里(开发阶段)        
+</code></pre><ul>
+<li><p>开发工具</p>
+<ul>
+<li>每次要编译代码的时候，都需要手动运行npm run build 就会变的很麻烦。我们可以使用中工具在代码发生变化之后进行自动编译<br><strong>webpack’s Watch Mode</strong><br><strong>webpack-dev-server</strong><br><strong>webpack-dev-middleware</strong>  </li>
+<li>使用观察模式   <ul>
+<li>package.json中添加用于启动webpack的观察模式的npm script脚本</li>
+<li>npm run watch执行之后，wenpack会一直观察文件，当发生变化时，自动重新编译。   </li>
+<li>缺点：代码是重新编译过的，但是我们要在浏览器中看到最新的代码的话，需要手动进行刷新   </li>
+<li>配置webpack.config.js<br><code>watchOptions:{
+   poll:1000,   //监视时间，毫秒单位
+   aggregeateTimeout:500,  //防止重复进行保存，打包出错
+   ignored:/node_modules/,
+}</code>      </li>
+</ul>
+</li>
+<li><p>使用webpack-dev-server</p>
+<ul>
+<li>webpack-dev-server为你提供了一个简单的web服务器，并且呢能够实时进行重新加载，这也是webpack-dev-server相比观察模式好的地方    </li>
+<li><code>npm install --save-dev webpack-dev-server</code>     </li>
+<li>webpack.config.js中添加DevServer，设置可访问文件   </li>
+<li>package.json中添加npm script脚本，可以直接运行开发服务器</li>
+<li>使用最为广泛    </li>
+</ul>
+</li>
+<li><p>使用webpack-dev-middleware</p>
+<ul>
+<li>中间件容器     </li>
+<li><code>npm isntall --save-dev express webpack-dev-middleware</code></li>
+<li>webpack.config.js中output配置中添加publicPath   </li>
+<li>设置自定义的express服务，新建server.js       </li>
+<li>package.json中添加npm script脚本 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>这里有个问题?? 目前添加的npm script都是需要使用npm run XX来运行，只有webpack-dev-server 是直接使用npm start。这是为什么呢?<br>    <em>npm start是npm run start的简写。可以使用npm run来运行scripts里的条目。</em>                 </p>
+<h4 id="模块热替换"><a href="#模块热替换" class="headerlink" title="模块热替换"></a>模块热替换</h4><ul>
+<li>热更新(Hot Module Replacement)，是webpack提供的最有用的功能之一，解决了前端开发中修改代码后需要手动刷新浏览器的问题，它允许在运行的时候更新各种模块。        <blockquote>
+<p>不适用于生产环境，只能在开发环境中使用       </p>
+</blockquote>
+</li>
+<li>启用HMR<br>  更新webpack-dev-server的配置<br>  <img src="http://ow4f5k7el.bkt.clouddn.com/HMR.png" width="550" height="320" alt="htmlwebpackplugin" align="center">          </li>
+</ul>
+<h4 id="Tree-Shaking"><a href="#Tree-Shaking" class="headerlink" title="Tree Shaking"></a>Tree Shaking</h4><p><strong><em>用于移除JS上下文中问未引用代码</em></strong>  </p>
+<ul>
+<li>未使用的代码依然存在bundle.js中，但是并没有被导出     <ul>
+<li>对于上述的情况，在实际开发中我们希望打包之后，未使用的代码直接删除也不会存在bundle.js中,在这里可以使用压缩工具-UglifyJSPlugin   <ul>
+<li><code>npm isntall --save-dev uglifyjs-webpack-plugin</code>  </li>
+<li>webpack.config.js中plugins中添加配置</li>
+<li>在实际的开发中对于bundle.js会产生显著的体积优化</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="生产环境构建"><a href="#生产环境构建" class="headerlink" title="生产环境构建"></a>生产环境构建</h4><blockquote>
+<p>开发环境(development)和生产环境(production)的构建目标差异很大。          </p>
+</blockquote>
+<p><em>在开发环境中，我们需要具有实时重新加载或者热更新的source map和loaclhost server</em>    <em>在生产环境中，我们需要更小的bundle，更轻量的source map，以及更优化的资源</em><br>我们写一个通用的配置文件，再分别针对开发环境和生产环境写各自的配置文件。为了将这些配置合并在一起，使用<strong>webpack-merge</strong>工具。<br><code>npm install --save-dev webpack-merge</code><br>在开发环境中使用inline-source-map,在生产环境中使用souce-map     </p>
+<ul>
+<li>指定环境<br><em>通过与process.env.NODE_ENV 环境变量关联,判断是什么环境环境还是开发环境决定应该引用那些内容。</em> <ul>
+<li>使用webpack内置的DefinePlugin为所有的依赖定义这个变量 </li>
+</ul>
+</li>
+</ul>
+<h4 id="代码分离"><a href="#代码分离" class="headerlink" title="代码分离"></a>代码分离</h4><p><em>代码分离可以把代码分离到不同的bundle中，然后按需加载或并行加载。</em>       </p>
+<ul>
+<li>入口文件      <ul>
+<li>使用entry配置手动地分离代码<br><img src="http://ow4f5k7el.bkt.clouddn.com/entrySperate.png" width="450" height="100" alt="htmlwebpackplugin" align="center">   </li>
+<li>缺点:如果入口chunks之间包含重复法人模块，重复的模块都会被引入到各个bundle中。从上图可以看到，我们在两个文件都引入了lodsh               </li>
+</ul>
+</li>
+<li><p>防止重复        </p>
+<ul>
+<li>CommonsChunkPlugin插件可以将公共的依赖模块提取到已有的入口chunk中，或者提取到一个新生成的chunk.        </li>
+</ul>
+</li>
+<li><p>动态导入<br>  动态代码拆分，有两个类似的技术。第一种也是优先选择的方式，使用import()语法；第二种是使用webpack特定的require.ensure.       </p>
+</li>
+</ul>
+<h4 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h4><p><em>懒加载或者按需加载，是一种很好的优化网页或应用的方法。这样加快了应用的初始加载速度，减轻了它的总体积。</em><br><img src="http://ow4f5k7el.bkt.clouddn.com/lazyload.png" width="450" height="230" alt="htmlwebpackplugin" align="center">   </p>
+<h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4><p><em>客户端从服务器请求资源是比较耗费时间的，只额就是为什么浏览器使用一种名问缓存的技术。可以使用命中缓存，以降低网络流量，是网站加载速度更快。但是在我们不熟新版本的时候不更改文件名，浏览器会认为它没有被更新，就会使用缓存版本。但是如何才能获取到新的代码呢？</em>        </p>
+<ul>
+<li><p>输出文件的文件名  </p>
+<ul>
+<li>通过使用output.filename进行<strong>文件名替换</strong>，配置webpack.config.js中output模块，<code>filename:&#39;[name].[chunkhash].js&#39;</code><br><img src="http://ow4f5k7el.bkt.clouddn.com/chunkhash.png" width="550" height="220" alt="htmlwebpackplugin" align="center"><br><br><br> <strong>注意</strong> 开发环境中只能使用[hash]，在生产环境中使用[chunkhash]，不能和热更新同时使用(然而热更新只是在开发环境中使用的)<br><img src="http://ow4f5k7el.bkt.clouddn.com/hash.png" width="550" height="230" alt="htmlwebpackplugin" align="center">         </li>
+</ul>
+</li>
+<li><p>提取模板<br>  <em>使用CommonsChunkPlugin在每次修改后的构建结果中，将webpack的样板和mainfest提取出来。通过指定entry配置中未用到的名称，这个插件会自动将我们需要的内容提取到单独的包中。</em>     </p>
+</li>
+</ul>
+<h4 id="PostCSS"><a href="#PostCSS" class="headerlink" title="PostCSS"></a>PostCSS</h4><p><em>自动处理CSS3属性前缀</em><br><code>npm install --save-dev postcss-loader autoprefixer</code><br>新建 post.config.css配置文件  module模块下的css文件中use增加 postcss-loader<br>执行webpack，在dist文件夹中我们看到CSS3前缀已经自动加上<br><a href="https://github.com/postcss/postcss-loader" target="_blank" rel="noopener">postcss Loader</a></p>
+<h4 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h4><p>转换ES6、转换JSX<br>安装依赖:<code>npm install --save-dev babel-core babel-loader bebel-preset-es2015 babel-preset-react</code><br>webpack.config.js中module中配置增加对js的Loader。也可以在根目录下增加.babelrc配置文件，配置<code>&quot;presets&quot;:[&quot;react&quot;,&quot;es2015&quot;]</code><br>执行webpack，在打包好的dist文件夹中可以看到es6,以及react中的jsx语法被转换。       </p>
+<p><em>转换es6,es7,es8</em><br><code>npm install --save-dev babel-preset-env</code><br>修改presets 渲染器中的es2015为env         </p>
+<h4 id="打包第三方类库"><a href="#打包第三方类库" class="headerlink" title="打包第三方类库"></a>打包第三方类库</h4><p>两种方式: </p>
+<ol>
+<li>import<br><code>npm install --save jquery</code><br><code>import $ from jquery</code>          </li>
+<li>webpack自带ProvidePlugin插件<br>webpack.config.js<br><code>const webpack = require(&#39;webpack&#39;);</code><br>配置plugins `new webpack.ProvidePlugin({<pre><code>  $:&quot;jquery&quot;      
+})`       
+</code></pre></li>
+</ol>
+<p>以上内容是对照官网进行的简单练习，知识点比较零散。在实际的开发中，需要结合实际的项目进行相关的配置。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> webpack </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CSS学习笔记]]></title>
+      <url>/2017/12/05/cssStudy/</url>
+      <content type="html"><![CDATA[<h2 id="《CSS权威指南》学习笔记"><a href="#《CSS权威指南》学习笔记" class="headerlink" title="《CSS权威指南》学习笔记"></a>《CSS权威指南》学习笔记</h2><p><strong><em>学习进度 </em></strong><br><strong>2017/10/23 更新 第五章进行中 </strong><br><strong>2017/11/5 更新 第七章进行中 </strong><br><strong>2017/11/19 更新 第10章进行中 </strong><br><strong>2017/12/3 完结 </strong>        </p>
+<h3 id="第一章-CSS和文档"><a href="#第一章-CSS和文档" class="headerlink" title="第一章 CSS和文档"></a>第一章 CSS和文档</h3><p>想起了之前看到的一句话——<strong>结构和表现分离的重要性。</strong>    </p>
+<blockquote>
+<p>HTML弃用了之前与文档样式相关的元素，专注于文档结构。    CSS专注于文档样式。</p>
+</blockquote>
+<p><em>结构</em>，是由文档中的主体部分。 <em>表现</em> ,是赋予内容的一种样式，表现就是文档看起来的样子，尽可能的把结构和表现相分离。<br>我们使用 HTML文档来保存内容与结构，使用CSS文档来控制整个文档的表现。这样还有一个好处就是CSS文档的可复用性，有个CSS文档可以在多个HTML文档中使用。</p>
+<h4 id="替换元素与非替换元素"><a href="#替换元素与非替换元素" class="headerlink" title="替换元素与非替换元素"></a>替换元素与非替换元素</h4><p>之前自己都没有这个概念<br><strong>替换元素:</strong>是指用来替换元素内容的部分并非由文档内容直接表示。例如img,input标签<br><strong>非替换元素:</strong>大多数元素都是非替换元素，其内容由用户代理在元素本身生成的框中显示。</p>
+<h4 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h4><p>@import 和 link 均是用来加载外部CSS文件的，并在表现HTML文档文档时使用。<br>@import只能在CSS文件中使用，并且要放在其他CSS规则之前。</p>
+<h3 id="第二章-选择器"><a href="#第二章-选择器" class="headerlink" title="第二章 选择器"></a>第二章 选择器</h3><h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><ol>
+<li><p>简单属性选择：选择具有某个属性的元素，该属性的值不做限定<br> <code>h1[class]{color:red;}</code> ——选择有class属性的h1元素，至于class的值是什么我不关心<br> 还可以根据多个属性进行选择：<code>a[href][title]{color:red;}</code>——选择同时具有href和title属性的a元素</p>
+</li>
+<li><p>根据具体属性值选择<br> <code>h1[class=&#39;title&#39;]{color:red;}</code><br> <code>a[href=&#39;http://www.w3.org/&#39;][title=&#39;W3C Home&#39;]{color:red;}</code><br> 当某个元素拥有两个class时，使用属性来选择，要求两个class都必须有而且是由顺序的。<strong>实际上是一个完全串匹配</strong>    </p>
+<p> 在这里有提到ID选择器和指定id属性的选择器是不同的。即<code>h1#page-title</code> <code>h1[id=&#39;page-title&#39;]</code>是不同的。一开始自己只想到了最终选择的元素是一样的(然而并不一样)，并没有想出有什么不同。看了后续的内容，并明白了。这都是CSS选择器，选出特定的元素并应用我们指定的CSS样式，这两者最主要的不同就是权重不同(书中说的是特殊性)</p>
+</li>
+<li><p>根据部分属性值选择<br> <code>[foo^=&#39;bar&#39;]</code>——foo属性值以bar开头的所有元素<br> <code>[foo$=&#39;bar&#39;]</code>——foo属性值以bar结尾的所有元素<br> <code>[foo*=&#39;bar&#39;]</code>——foo属性值中包含子串’bar’的所有元素    </p>
+</li>
+<li><p>特定属性选择类型<br> <code>*[lang|=&#39;en&#39;]{color:red;}</code>——lang属性等于en或者以en-开头的所有元素<br> 这种属性选择器最常见的用途是匹配语言值</p>
+</li>
+</ol>
+<h4 id="CSS结合符"><a href="#CSS结合符" class="headerlink" title="CSS结合符"></a>CSS结合符</h4><ol>
+<li>后代选择器        <ul>
+<li>选出所有的后代元素，无论嵌套几层    </li>
+<li>以空格作为结合符</li>
+<li>这里有写到，要求<strong>必须从右向左读选择器。</strong><br>HTML经过解析生成DOM Tree；在CSS解析完毕后，需要将解析的结果与DOM Tree的内容一起进行分析建立一棵Render Tree，然后渲染到浏览器上。在建立Render Tree的时候，浏览器要为每个DOM Tree中的元素根据Style Rules来确定生成怎样的render.对于每个DOM元素，必须在所有的Style Rules中找到符合的selector并将对应的规则进行合并。<br><code>h1 em{color:red;}</code><br><em>从右向左：</em>首先判断是否为em元素，若不是就可以直接排除。只有在匹配了之后才会进一步判断父节点。<strong><em>执行效率高    </em></strong><br><em>若从左向右：</em>需要先找到h1元素，然后再向下找，若不匹配就必须回到上层h1。这样回溯若干次才能确定是否匹配成功。效率很低。        </li>
+</ul>
+</li>
+<li>子元素选择器        <ul>
+<li>只选择子元素而非后代元素    </li>
+<li>以 &gt; 作为结合符    </li>
+</ul>
+</li>
+<li>相邻兄弟元素选择器    <ul>
+<li>选择紧邻在另一个元素后的元素，并且二者有相同的父元素    </li>
+<li>以 + 作为结合符        </li>
+</ul>
+</li>
+</ol>
+<h4 id="伪类伪元素"><a href="#伪类伪元素" class="headerlink" title="伪类伪元素"></a>伪类伪元素</h4><ol>
+<li>伪类        <ul>
+<li>本质上还是类    </li>
+<li>链接伪类     :link-未访问 :visited-已访问，不能把互斥的伪类结合在一起使用。</li>
+<li>动态伪类 :focus-获得焦点  :hover-鼠标悬浮  :active-激活</li>
+<li>伪类常用于超链接-a标签。<br>这里有提到伪类的顺序很重要——LoVe,HA。因为它们有相同的权重、来源和特殊性，因此与元素匹配的最后一个选择器才会胜出。<br>若我们按照AHLV顺序排列链接样式，那么任何链接都不会显示:hover和:active的样式，因为:link和:visited规则后出现。所有的链接嗾使要么已访问，要么未访问，所以后面的样式会覆盖前面的样式。            </li>
+<li>:first-child 用来选择元素的第一个子元素。之前的理解有误，书里也特别提到了常见的错误理解。<br>  <strong><em>正确的理解 </em></strong>p:first-child 选择作为某元素的第一个元素的所有P元素    </li>
+</ul>
+</li>
+<li>伪元素    <ul>
+<li>本质上还是一个元素。所有伪元素都必须出现在该伪元素的选择器的最后面。        </li>
+<li>设置首字母样式  :first-letter        </li>
+<li>设置第一行的样式    :first-line        </li>
+<li>设置之前和之后元素的样式 :before        :after    </li>
+</ul>
+</li>
+</ol>
+<h3 id="第三章-结构和层叠"><a href="#第三章-结构和层叠" class="headerlink" title="第三章 结构和层叠"></a>第三章 结构和层叠</h3><p><em>不管怎样，无论问题看上去多抽象，多难懂，都要继续努力！你的努力不会白费。</em> </p>
+<h4 id="特殊性-权重"><a href="#特殊性-权重" class="headerlink" title="特殊性[权重]"></a>特殊性[权重]</h4><ol>
+<li>ID属性值——0,1,0,0</li>
+<li>CLASS属性值,属性选择或者伪类——0,0,1,0</li>
+<li>TAG和伪元素——0,0,0,1</li>
+<li>结合符和通配符选择器对权重没有贡献</li>
+<li>之前自己记权重这一块的时候，都是直接按照100,10,1来记的，没有注意到前边还有一个0。这里有说明。第一个0是为内联样式样式声明保留的。                </li>
+<li>!important拥有最高的权重。必须正确的放置!important,!important总是放在声明的最后        </li>
+<li>以上都是比较简单的选择器权重的基础，在实际的应用中。多是复合选择器权重的判断，只要记住基本的权重然后进行选择器的判断并进行基本权重的相加就好了。(之前这块的知识比较零散，每次看到了还要查一下)        </li>
+</ol>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><ol>
+<li>样式不仅应用到指定的元素，还会应用到它的后代元素。</li>
+<li>有些属性是不能继承的。        </li>
+<li>通配符适用于所有元素，而且有0特殊性，其指定的样式优于继承值，因为继承值根本就没有特殊性。        </li>
+</ol>
+<h4 id="层叠"><a href="#层叠" class="headerlink" title="层叠"></a>层叠</h4><ol>
+<li>CSS就是层叠样式表。CSS所基于的方式就是让样式层叠在一起，这是通过结合继承和特殊性做到的。    </li>
+<li>只要还是样式<strong>顺序</strong> 的问题。(这里的顺序指的是CSS文件引入的顺序或者样式规则在文件中的书写顺序)<br><code>&lt;p class=&#39;A B&#39;&gt;XXX&lt;/p&gt;</code> 这里的class A和B有没有优先级的问题?<br><strong>没有没有</strong>            <a href="http://jsbin.com/gutasetexo/3/edit?html,css,output" target="_blank" rel="noopener">戳我戳我</a><br>选择器的权重和类名在html中写的顺序没有半毛钱的关系。有关系的是你在CSS中写的选择器的权重以及在CSS中的顺序。    </li>
+</ol>
+<h3 id="第四章-值和单位"><a href="#第四章-值和单位" class="headerlink" title="第四章 值和单位"></a>第四章 值和单位</h3><h4 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h4><ol>
+<li>表示方式    <ul>
+<li>颜色名——eg:red,green,white,black    </li>
+<li>RGB <ul>
+<li>函数RGB颜色——rgb(color),其中color是一个百分数或者整数三原组表示。百分数值在0%-100%，整数范围在0~255<br>eg:rgb(75%,0%,0%),rgb(255,255,255)        </li>
+<li>十六进制RGB颜色——#RRGGGBB,将三个介于00~FF的十六进制数连接起来，就可以设置一种颜色。<br>eg:#903bc0 ,    #FFFF(简写 #FFF)    </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安全颜色    <ul>
+<li>所谓’Web安全’颜色是指，在256计算机系统上总能避免抖动的颜色。    <ul>
+<li>0%或者0也是一个安全色。</li>
+<li>若使用RGB百分数，要让所有的三个分量都要么是0，要么是一个能被能被20整除的数。</li>
+<li>若使用0~255范围的RGB值，则个分量要么是0要么是能被51整除的数。</li>
+<li>若使用十六进制记法，使用00、33、66、99、CC和FF的三元组都被认为是安全的。    </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><ol>
+<li><p>em——定义为一种给定字体的font-size值。        </p>
+<ul>
+<li>一个元素的font-szie为14px，则 1em 就等于14px。    </li>
+<li>当我们在每个元素都级联em定义的字体大小时会发生什么??        <a href="https://jsbin.com/sababeh/1/edit?html,css,output" target="_blank" rel="noopener">戳我戳我</a></li>
+</ul>
+</li>
+<li><p>rem——font-size基于根元素进行设置，在大多数情况下根元素为html元素。</p>
+</li>
+<li>px    </li>
+<li>vh——等于viewport高度的1/100。</li>
+<li>vw——等于viewport宽度的1/100。</li>
+</ol>
+<h3 id="第五章-字体"><a href="#第五章-字体" class="headerlink" title="第五章  字体"></a>第五章  字体</h3><h4 id="字体系列"><a href="#字体系列" class="headerlink" title="字体系列"></a>字体系列</h4><p><strong>划重点</strong> – 我们通常说的字体是一个字体系列，而不只是单个的字体。</p>
+<ol>
+<li>font-family    <ul>
+<li>应用某一通用字体系列<br>  <code>body {font-family:sans-serif;}</code></li>
+<li>具体字体与通用字体系列的结合<br>  为了保证用户电脑上没有安装这个具体字体，并且不想要是要默认字体显示。所以强烈建议在规则中提供一个通用字体系列。<br>  <code>body {font-family:Georgia,serif;}</code><br>  <code>body{font-family: Times, TimeNR, &#39;New Century Schoolbook&#39;,Georgia,&#39;New York&#39;,serif;}</code>–用户代理会按照列表顺序查找这些字体，若都不可用，则简单的选择一种可用的serif字体。<br>  在看书的时候，看到用户代理就知识简单的直接为浏览器，其实不然。用户代理(User Agent)是用来表示浏览用户的身份，让开发者可以获得终端的信息。<br>  这里还有一个，之前自己没有注意到的点，就是当字体名中出现空格或者特殊符号的时候，需要加引号。    </li>
+</ul>
+</li>
+<li>font-weight<br> 自己最常用的是bold,其他的属性值用的很少。看到100-900的值是懵逼的，怎么还有这些取值                <ul>
+<li>字体加粗如何起作用<br>  关键字100-900，100对应最细的字体变形，900对应最粗的字体变形。一般地，400对应normal,700对应bold。每个数对应一个加粗度，它至少与前一个数制定的加粗度相同。<br>  给定的字体系列中定义的具体字体少于9中的话，用户代码会自动进行填补。填补规则是根据，后一个的加粗度不会比前一个的加粗度小。    </li>
+<li>bolder和lighter：它们会让文本比其父元素的字体更粗或者更细。<br>  基于从父元素继承到的font-family,根据元素本身的font-weight来进行加粗度的上移或上移。        </li>
+</ul>
+</li>
+<li>font-size    <ul>
+<li>font-size的作用是为给定字体的eme框提供一个大小，但是不能保证显示字符就是这种大小。    </li>
+<li>绝对大小:xx-small、x-small、small、medium、large、x-large和xx-large</li>
+<li>相对大小:larger和smaller。这两个关键字是元素的带下相对于其父元素的大小在绝对梯度上上移或者下移。</li>
+<li>百分比和大小<br>  百分比总是根据从父元素继承的大小来计算。<br>  font-size是可以继承的，继承的不是百分数而是计算值。    </li>
+</ul>
+</li>
+</ol>
+<h4 id="风格和变形"><a href="#风格和变形" class="headerlink" title="风格和变形"></a>风格和变形</h4><ol>
+<li>font-style<ul>
+<li>normal | italic | oblique | inherit        </li>
+<li>italic：斜体，一种字体风格</li>
+<li>oblique：正常竖直文本的倾斜版本        </li>
+</ul>
+</li>
+<li>font-variant – 字体变形<ul>
+<li>自己平时都没有使用过，其实还是很方便的属性。这就是那种当你不知道有这个东西的时候，可能需要付出更多，知道有这么个东西的话，那真的就是很简单了。        </li>
+<li>small-caps:小型大写字母。什么鬼这是!!这是我看这个属性的第一印象。即所有的字母都是大写，但是和一般的大写还有有区别的，首字母的大小要大于其他字母。        </li>
+</ul>
+</li>
+<li>font-stretch    – 将字体水平拉伸</li>
+<li>font-size-adjust –调整字体的大小<ul>
+<li>当两种字体在同样的大小情况下，可能有一种字体可以辨识而另一种字体已经不能辨识了。该属性就是用来解决这用情况的。</li>
+<li>这个属性需要根据x-height 以及font-size进行计算，目前使用的概率较小。就以上的情况，我觉得大家都会选择使用font-size进行调整。        </li>
+</ul>
+</li>
+<li>font属性<ul>
+<li>复合属性，自己平时使用的基本使用部分属性。        </li>
+<li>[font-style][font-variant][font-weight] 这三个属性的顺序随意，若某个值为normal，就可以省略。    </li>
+<li>[font-size][font-family]必须要按照这个顺序来写，而且font声明中必须要有这两个值，不能省略。    </li>
+<li>其实就是对以上的每个font样式属性，进行了整合，就是相对比较方便，不用我们每个属性都写。    </li>
+</ul>
+</li>
+</ol>
+<h3 id="第六章-文本属性"><a href="#第六章-文本属性" class="headerlink" title="第六章  文本属性"></a>第六章  文本属性</h3><h4 id="缩进和水平对齐"><a href="#缩进和水平对齐" class="headerlink" title="缩进和水平对齐"></a>缩进和水平对齐</h4><ol>
+<li>text-indent<ul>
+<li>段落的首行缩进,应用于<strong>块级元素</strong></li>
+<li>可以取负值。负值可能会超出浏览器窗口的边界，针对负缩进设置内边距或者外边距。    </li>
+<li>取值为百分比时，是相对父元素的宽度进行缩进的。    </li>
+</ul>
+</li>
+<li>text-align<ul>
+<li>文本行之间的对齐方式。left | right | center | justify(两端对齐) | inherit</li>
+<li><strong>应用于块级元素</strong></li>
+<li>不影响元素的对齐方式，只影响其内部内容。</li>
+</ul>
+</li>
+</ol>
+<h4 id="垂直对齐"><a href="#垂直对齐" class="headerlink" title="垂直对齐"></a>垂直对齐</h4><ol>
+<li>line-height  <a href="http://jsbin.com/kidaborebi/edit?html,css,output" target="_blank" rel="noopener">戳我戳我</a><ul>
+<li>该属性是指文本行基线之间的距离、它确定了将各个元素框的告诉增加或者减少多少。    </li>
+<li>line-height的值减去字体大小就是行间距。    </li>
+<li>相对于元素的字体大小</li>
+<li>取值为一个数的时候，就是缩放因子。缩放因子是继承值而不是计算值，这个数会应用到该元素及其所有子元素。    </li>
+<li>常用的就是把元素的height和line-height设置相同的值，达到垂直居中<br>文本行(inline box):文本行中的每个元素都会生成一个内容区，这由字体的大小确定，这个内容区就是文本行。<br>引用<a href="http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/" target="_blank" rel="noopener">大神的博客</a>。之前自己也一直认为是元素中的文字内容将div撑开了，但其实深究就会发现不是文字撑开了div的高度而是line-height。</li>
+</ul>
+</li>
+<li>vertical-align<ul>
+<li>垂直对齐文本，<strong>只能应用于行内元素和替换元素</strong></li>
+<li>该属性值不能继承</li>
+<li>baseline–基线对齐,sub–下标,super–上标,bottom–底部对齐,top–顶部对齐,middle–居中对齐</li>
+<li>如果设置为一个百分数，则要根据该元素的line-height值进行计算而不是父元素的。</li>
+</ul>
+</li>
+</ol>
+<h4 id="字间隔和字母间隔"><a href="#字间隔和字母间隔" class="headerlink" title="字间隔和字母间隔"></a>字间隔和字母间隔</h4><ol>
+<li>word-spacing<ul>
+<li>接受正值或者负值，这个长度会增加到字之间的标准间隔。</li>
+<li>word word 修改字间间隔</li>
+<li>该值可能受text-align属性值的影响。若text-align设置为两端对齐，字母和字之间的空间可能会调整，以实现两端对齐。</li>
+</ul>
+</li>
+<li>letter-spacing<ul>
+<li>修改字母间的间隔</li>
+</ul>
+</li>
+</ol>
+<h4 id="文本转换"><a href="#文本转换" class="headerlink" title="文本转换"></a>文本转换</h4><ol>
+<li>text-transform<ul>
+<li>uppercase | lowercase | capitalize</li>
+</ul>
+</li>
+<li>text-decoration<ul>
+<li>没有继承性</li>
+<li>none | underline | overline | line-through | blink(文本闪烁)</li>
+</ul>
+</li>
+<li>text-shadow<ul>
+<li>为文本增加阴影</li>
+<li>三个值。前两个长度值确定了阴影与文本的偏移距离，第三个长度值可选，定义阴影的’模糊半径’</li>
+</ul>
+</li>
+<li>white-space<ul>
+<li>影响浏览器处理字之间和文本行之间的空白符的方式。</li>
+<li>normal：默认值。所有的空白符都合并为一个空格</li>
+<li>pre:空白符不会被忽略</li>
+<li>nowrap:不允许自动换行，空白符会进行合并</li>
+<li>pre-line:空白符合并，换行符保留</li>
+<li>pre-wrap：空白符和换行符都会保留。</li>
+</ul>
+</li>
+</ol>
+<h3 id="第七章-基本视觉格式化"><a href="#第七章-基本视觉格式化" class="headerlink" title="第七章  基本视觉格式化"></a>第七章  基本视觉格式化</h3><h4 id="基本框-盒模型"><a href="#基本框-盒模型" class="headerlink" title="基本框(盒模型)"></a>基本框(盒模型)</h4><p>content,padding,border,margin<br>IE盒模型:margin+width(content+padding+border)<br>W3C盒模型:margin+border+padding+contnet<br>CSS3 <strong>box-sizing</strong>: content-box(在元素指定的宽度和高度之外增加padding，border)|border-box(在元素指定的宽度和高度之内增加padding，border)|inherit;</p>
+<h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><p>块级元素在正常的文本流中，会在其之前和之后生成‘换行’。所以说块级元素会独占一行，正常流中的块级元素会垂直摆放。通过display：block;可以让元素生成块级框。</p>
+<p>margin可以为负值，但是padding不可以。垂直方向上的外边距会出现高度塌陷的现象，合并之后的外边距不取两者之和，而是去两者之中较大的值。</p>
+<h4 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h4><p>在元素的前后不会生成‘行分隔符’，通过display:inline，可以让元素生成一个行内框就是变成一个行内元素喽。<br>行内元素在正常文本流中是一个挨着一个一行一行的堆放的。</p>
+<h4 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h4><p>display改变的只是元素的显示角色，而不是其本质。     </p>
+<ul>
+<li>inline-block 行内块级元素，可以设置width,height属性                          </li>
+<li>run-in 元素会根据上下文作为块级元素或者内联元素显示<br>  若设置display：run-in元素的后面是紧跟的是一个块级元素则该元素会作为块级元素的一个行内元素；<br>  display:run-in元素后面没有跟一个块级元素，则该元素就会成为一个会计元素。        </li>
+</ul>
+<h3 id="第八章-内边距、边框和外边距"><a href="#第八章-内边距、边框和外边距" class="headerlink" title="第八章 内边距、边框和外边距"></a>第八章 内边距、边框和外边距</h3><h4 id="宽度和高度"><a href="#宽度和高度" class="headerlink" title="宽度和高度"></a>宽度和高度</h4><p>不能应用到行内非替换元素。        </p>
+<h4 id="外边距-margin"><a href="#外边距-margin" class="headerlink" title="外边距 margin"></a>外边距 margin</h4><ul>
+<li>margin的默认值是0，但是浏览器对许多元素已经提供了预定的样式。这也就是我们写css的时候会出现一些公用的初始化样式的原因。        </li>
+<li>margin:上 右 下 左(4个值)        </li>
+<li>margin:上下 左右(2个值)    值复制    </li>
+<li>margin设置百分数是相对于父元素的width计算的。这会得到‘流式’页面，即元素的外边距会扩大或者缩小以适应父元素的实际大小。        </li>
+</ul>
+<h4 id="边框-border"><a href="#边框-border" class="headerlink" title="边框 border"></a>边框 border</h4><p>border:1px solid red;每个边框都有3个方面，宽度、样式和颜色。</p>
+<h4 id="border-style-边框样式"><a href="#border-style-边框样式" class="headerlink" title="border-style 边框样式"></a>border-style 边框样式</h4><ul>
+<li>none | dotted | dashed |　solid | inset | outset | double</li>
+<li>double定义两条线的宽度再加上这两条线之间的空间等于border-width</li>
+<li>border-style:top right bottom left;设置多种样式，或者进行单边设置 border-style-top</li>
+</ul>
+<h4 id="border-width-边框宽度"><a href="#border-width-边框宽度" class="headerlink" title="border-width 边框宽度"></a>border-width 边框宽度</h4><ul>
+<li>thin |　medium | thick | length</li>
+<li>根本没有边框：border-style:none</li>
+</ul>
+<h4 id="border-color-边框颜色"><a href="#border-color-边框颜色" class="headerlink" title="border-color 边框颜色"></a>border-color 边框颜色</h4><ul>
+<li>默认颜色是元素的前景色</li>
+<li>也可以进行单边设置</li>
+<li>透明边框 border-color:transparent;</li>
+</ul>
+<p>以上关于border的三个方面，可以使用简写属性 border来完成，而且三者的顺序并不重要。如果少一个值，就会自动填入默认值。当然，无论为行内元素的帮狂制定怎样的宽度，行内元素的行高还是不会改变的。        </p>
+<h4 id="内边距-padding"><a href="#内边距-padding" class="headerlink" title="内边距 padding"></a>内边距 padding</h4><ul>
+<li>默认情况下元素是没有padding的，元素的背景会延伸到其内边距但是不会延伸到外边距。</li>
+<li>设置内边距为百分数，则也是相对于它父元素的width进行计算的。上下内边距会相对其父元素的宽度进行计算而不是高度。</li>
+<li>也可以设置单边内边距 padding-top    </li>
+</ul>
+<h3 id="第九章-颜色和背景"><a href="#第九章-颜色和背景" class="headerlink" title="第九章  颜色和背景"></a>第九章  颜色和背景</h3><h4 id="颜色-1"><a href="#颜色-1" class="headerlink" title="颜色"></a>颜色</h4><ol>
+<li>前景色 <ul>
+<li>设置元素的前景色，使用colro属性。     </li>
+<li>color值会影响元素周围的边框，要覆盖这种默认颜色，可以使用border-color    </li>
+<li>color属性可以继承</li>
+</ul>
+</li>
+<li>背景<ul>
+<li>background-color 设置背景色，默认值是transparent,背景颜色不能继承。</li>
+<li>background-image 设置背景图片，不能继承。在使用背景图片的时候最好再制定一个背景颜色。    </li>
+<li>background-repeat 背景图片的重复 repeat | repeat-x| repeat-y |no-repeat</li>
+<li>background-position 背景定位<br>关键字:top bottom left right,不能超过两个关键字，一个对应水平方向，一个对应垂直方向。<br>百分数值,同时应用于元素和原图像，使用百分数值时，总是水平值先出现的。<br>background-position的默认值0% 0%，相当于background-position:top left;       </li>
+<li>background-attachment scroll |　fixed | inherit<br>如果一个文档超级长，我们将背景图片放在body元素的中心，那么这个背景图片开始是对用户不可见的，必须要向下滚动滚动条才能看到背景图片。<br>background-attachment:fixed; 背景图片不会随着文档滚动，背景图片的位置由可视区的大小确定而不是包含该元素的大小。<br>background-attachment:scroll;会导致背景随其文档滚动。</li>
+</ul>
+</li>
+</ol>
+<p>以上的以上，都可以使用一个简写属性,也是使用最多的. background，以上各个属性不限定顺序，若有没设置的，则使用默认值。</p>
+<h3 id="第十章-浮动和定位"><a href="#第十章-浮动和定位" class="headerlink" title="第十章 浮动和定位"></a>第十章 浮动和定位</h3><h4 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h4><ul>
+<li>float:left| right| none| inhert</li>
+<li>该属性可以应用于所有元素    </li>
+</ul>
+<ol>
+<li>浮动元素<ul>
+<li>浮动元素会脱离正常文档流，但是还是会影响布局。我们会当一个元素浮动时，其他内容会‘环绕该元素’。</li>
+<li>浮动元素周围的外边距是不会合并的。</li>
+<li>如果浮动元素为非替换元素，则必须为这个元素声明一个width。</li>
+</ul>
+</li>
+<li>深入浮动<ul>
+<li>包含块：距离浮动元素最近的块级祖先元素</li>
+<li>无论元素本身是块级元素还是内联元素，设置浮动属性后该元素就会生成一个块级框。</li>
+<li>浮动规则：<ul>
+<li>浮动元素的左右外边界不能超出其包含块的左右内边界</li>
+<li>浮动元素的左右外边界必须是源文档中之前出现的左浮动或者右浮动元素的左右边界，除非后出现的浮动元素的顶端在先浮动元素的底端下面。这个话呢，要读上两遍才能明白说的什么意思，简而言之说的就是浮动元素的先来后到，以及浮动元素之间是不会发生重叠的。</li>
+<li>一个浮动元素的顶端不能比其父元素的内顶端更高。</li>
+<li>浮动元素的顶端不能比之前所有浮动元素或块级元素的顶端更高。</li>
+<li>浮动元素不能超出其包含块的边界，当浮动元素的包含块空间不足时，浮动元素会被挤到下一行。</li>
+<li>书上写的浮动规则比较多，我这里只列举了几项。这里说的多是浮动元素之前以及于东元素与父元素的规则，但是在实际的开发中我们碰到比较多的还是浮动元素与正常文档流中元素的布局情况。这里是让我们对于浮动的基础规则有个比较清晰的认识。    </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实用行为        <ul>
+<li>当浮动元素比父元素高时，在上述的规则中我们有提到浮动元素的顶端不能超过之前的浮动元素的底端或者包含块的顶端。这种情况下，我们可以将父元素置为浮动元素，这样就可以把浮动元素包含在父元素内。        </li>
+<li>浮动元素超出父元素的所有边界：1.负外边距2.浮动元素比父元素更宽。</li>
+<li>浮动元素、内容和重叠。内联元素完全覆盖浮动元素，该块级元素其内容显示在浮动元素之上，其余部分(background,border等)显示在浮动元素之下。</li>
+<li>清除浮动 clear.恩，之前感觉自己都是稀里糊涂的在用，现在可算是搞明白了。clear属性应用于块级元素，both确保该元素不会与如何浮动元素在同一行上，即左右浮动都清除。clear:left|right同理，即该元素的左边或者右边没有浮动元素。    </li>
+</ul>
+</li>
+</ol>
+<h4 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h4><ul>
+<li>利用定位可以准确地定义元素狂相对于其正常位置应该出现在哪里或者相对于父元素、另一个元素甚至浏览器窗口本身的位置。    </li>
+<li>position:static| relative| absolute| fixed| inherit</li>
+</ul>
+<ol>
+<li>定位类型<ul>
+<li>static(默认值) 元素在正常文档流中的位置</li>
+<li>relative 相对定位，相对于该元素在正常文档流中为位置进行定位，该定位元素原本的位置仍然保留。    </li>
+<li>absolute 绝对定位，相对于最近的position取值不是static的祖先元素进行定位，该元素从文档流完全删除，在正常文档流中所占的空间会关闭，就好像该元素原来不存在一样。如果所有的祖先元素都没有position取值不为static的，则该元素相对于根元素进行定位。</li>
+<li>在这里，书上说的是包含块，即上面介绍的相对的那个元素。还要一点，元素可以定位到包含块的外面。</li>
+</ul>
+</li>
+<li>偏移属性<ul>
+<li>以上的介绍的定位，知识该元素进行定位了，但实际上并没有进行偏移。定位的目的就是要改变元素的位置，要是元素到达你想让他去的地方的话，需要使用偏移属性实现。</li>
+<li>top、left、bottom、right,设置position且取值不为static的元素，才能使用偏移属性进行定位。</li>
+<li>top 、bottom是相对于包含块的高度，left和right是相对于包含块的宽度。偏移属性取值为正值会导致向内偏移，即边界朝着包含块的中心移动，负值会导致向外偏移。</li>
+<li>通过使用负值可以将一个元素定位到包含块之外。</li>
+</ul>
+</li>
+<li>宽度和高度<ul>
+<li>定位元素的宽度和高度可以有偏移属性取值隐含确定。</li>
+<li>限制宽度和高度 min-width,min-height,max-width,max-height.这些属性的取值不能为负。</li>
+<li>限制宽度和高度的正确使用方法，配合百分比大小的同时，设置基于长度的限制。可以相对安全的混用不同的单位。</li>
+</ul>
+</li>
+<li>内容溢出和剪裁<ul>
+<li>溢出<ul>
+<li>一个元素的内容对于元素大小来说太大了，就可能溢出元素本身。</li>
+<li>overflow:visible(默认值)| hidden| scroll| auto| inhert</li>
+<li>visible，元素的内容在元素框外边不可见。scroll,生成滚动条。hidden会在元素框的边界处剪裁。</li>
+</ul>
+</li>
+<li>剪裁<ul>
+<li>绝对定位的元素内容溢出其内容框，并且overflow属性要求剪裁其内容，则可以使用clip属性剪裁区域的形状。</li>
+<li>rect(top,right,bottom,left)制定剪裁形状为矩形以及4个边的长度，可以设置负值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>元素可见性<ul>
+<li>visibility:visbile| hidden| collapse| inherit</li>
+<li>visible,元素不可见，元素还是会影响文档的布局，位置还在，就好像它还可见一样。display:none;不可见，不影响布局，该元素在文档中的位置不存在。display:none在生成渲染树的时候，不会存在。</li>
+</ul>
+</li>
+<li>绝对定位<ul>
+<li>Z-index应用于定位元素，可以改变元素相互覆盖的顺序。z-index可以取值为负值</li>
+</ul>
+</li>
+<li>固定定位<ul>
+<li>固定定位元素的包含块是视窗。元素会完全从文档流中去除，不会有相对于文档中任何部分的位置。</li>
+<li>固定定位的另一个用途是在屏幕上放置一个‘永久性’元素，不随文档滚动而滚动。</li>
+</ul>
+</li>
+<li>相对定位<br> 如果遇到过度受限的相对定位，一个值会被重置为另一个值的相反数。即bottom总是等于-top.</li>
+</ol>
+<h3 id="第十一章-表布局"><a href="#第十一章-表布局" class="headerlink" title="第十一章 表布局"></a>第十一章 表布局</h3><h4 id="表显示值"><a href="#表显示值" class="headerlink" title="表显示值"></a>表显示值</h4><ul>
+<li>table,生成块级表</li>
+<li>inline-table,生成行内级表</li>
+<li>table-row,指定一个元素为一个单元格的行，相应的HTML元素为tr元素</li>
+<li>table-row-group,指定一个元素是一个或多个行的组，对应的HTML元素是tbody元素</li>
+<li>table-header-group,指定一个元素为标题组包含多个行，相应的HTML元素是thead元素</li>
+<li>table-footer-group,类似于table-row-group,table-header-group,指定一个元素为脚注行组，相应的HTML元素是tfoot</li>
+<li>table-column,指定一个元素是一个单元格的列，相应的HTML元素是col元素</li>
+<li>table-column-group,指定一个元素是一个或多个列的组，相应的HTML元素是colgroup元素</li>
+<li>table-cell,指定一个元素表示表中的单个单元格，HTML元素th和td都属于table-cell元素</li>
+<li>table-caption,之低昂一个元素为一个表的总标题</li>
+</ul>
+<h4 id="以行为主"><a href="#以行为主" class="headerlink" title="以行为主"></a>以行为主</h4><ul>
+<li>css将表模型定义为‘以行为主’，而列是从行单元格行的布局中推导出来的</li>
+<li>在css中，列和列组只能接受4种样式：border,background,width和visibility,这4个属性有一些只能应用于列上下文的特殊规则</li>
+<li>border<ul>
+<li>只有当border-collapse:collapse;时才能为列或者列组设置边框</li>
+<li>background,只有当单元格及其行的背景为透明时，列或列组的背景才可见，</li>
+<li>width,定义列或列组的最小宽度</li>
+<li>visibility,如果一个列或列组的visibility:collapse;则该列组中所有单元格斗不显示。</li>
+</ul>
+</li>
+</ul>
+<h4 id="匿名表对象"><a href="#匿名表对象" class="headerlink" title="匿名表对象"></a>匿名表对象</h4><ul>
+<li>CSS定义了一种机制，可以将’遗漏的’组件作为匿名对象插入。其实可以简单的理解为，css要求表结构必须完整，为了方便使用表结构，当代码省略了某些结构的时候，将自动进行插入相应的元素以保证表结构的完整。</li>
+<li>对象插入规则<ul>
+<li>table-cell的父元素不是table-row，则会插入table-row作为table-cell的父元素。</li>
+<li>table-row的父元素不是table,inline-table,table-row-group，则会插入table元素，并且新插入的元素将包含该table-row元素的多有连续兄弟元素。</li>
+<li>table-column的父元素不是table,inline-table或者table-column-group,则插入匿名的table元素作为table-column的父元素。</li>
+<li>如果table-row-group,table-header-group,table-footer-group,table-column-group或table-caption的父元素不是table元素，则插入一个匿名的table元素作为父元素。</li>
+<li>……</li>
+<li>插入规则还有一些，我就不一一罗列了，都是相对简单的插入规则。</li>
+</ul>
+</li>
+</ul>
+<h4 id="表层"><a href="#表层" class="headerlink" title="表层"></a>表层</h4><p>前面有介绍background属性应用于列，只能是行或者行组的背景为透明时，但是这个为什么呢??  答案就在这里，<a href="http://ozq46i4wc.bkt.clouddn.com/%E8%A1%A8%E5%B1%82.jpg" target="_blank" rel="noopener">层级关系</a></p>
+<ul>
+<li>开心，终于把七牛云搞定了。之前一直说是要加图片但是七牛云不会用，其实真的是so easy!妈妈再也不用担心为的学习了</li>
+<li>从上面的这张图中我们很清楚的看到table的层级关系，表各个方面的样式都在其各自的层上进行绘制。从图中我们看到顶层是表单元格，将在最后进行绘制。</li>
+<li>有一点需要提箱一下，默认的情况下，所有元素的背景都是透明的。所以呢，也就说，如果单元格，行，列都没有自己的背景则table元素的背景将显示出来。</li>
+</ul>
+<h4 id="表标题"><a href="#表标题" class="headerlink" title="表标题"></a>表标题</h4><ul>
+<li>设置display:table-caption;的元素</li>
+<li>表标题可以位于table之上或者table之下，使用caption-side属性就可以进行设置。注意这个属性只能应用于display:table-caption的元素</li>
+<li>对之前介绍过的run-in还有影响吗?我造，是dispaly属性的一个取值，会根据情况不同来表现为款及元素或内联元素。在这里有一点需要进行说明，如果一个run-in元素位于table之前，它不会进入表的上标题，也不会进入表中，而是处理为display:block</li>
+</ul>
+<h4 id="表单元格边框"><a href="#表单元格边框" class="headerlink" title="表单元格边框"></a>表单元格边框</h4><ul>
+<li>border-collapse:collapse(合并边框模型)| separate(分隔边框模型)| inherit</li>
+<li>separate(分隔边框模型)<ul>
+<li>表中的每个单元格斗鱼其他单元格分开一定距离，而且单元格的边框彼此不会合并。</li>
+<li>边框间隔 border-spacing,该属性用来定义table的边框间隔，只能应用于dispaly:table/inline-table的元素</li>
+<li>border-spacing提供两个长度，要求第一个值始终是水平间隔，第二个值始终是垂直间隔</li>
+<li>空单元格 empty-cells:show;会画出空单元格的边框和北京，就好像这些表单元格有内容一样。empty-cells:hide;不会画出该单元格的任何部分，就好像这个单元格设置visibility:hidden</li>
+</ul>
+</li>
+<li>collapse(合并边框模型)<ul>
+<li>diaplay:table/inline-table;的元素不能有任何的内边距，但是可以有外边距。也就说表的边框和最外边的表单元格之间没有任何间隙</li>
+<li>边框可以应用到单元格、行、行组、列和列组，当然表元素本身也是有一个边框的</li>
+<li>边框合并<ul>
+<li>如果两个或多个边框相邻，他们会互相合并。</li>
+<li>合并规则又来了，好吧，我尽量不抄书，写的简单易懂一点<ul>
+<li>border-style:hidden的优先级最高，这个位置上的所有边框将都会隐藏</li>
+<li>border-style:none的优先级最低，border-style的默认值就是none</li>
+<li>如果border-style不全是none，那么就是这样的，比较boreder-width，窄边不敌宽边</li>
+<li>最后的最后，如果还是不知道决断不出来那要怎么办呢？？比较颜色吧，border也就只剩个border-style，哈哈哈哈</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="表大小"><a href="#表大小" class="headerlink" title="表大小"></a>表大小</h4><ul>
+<li>表宽度的确定有两种方法：固定宽度布局和自动宽度布局 table-layout,这两种布局有一个很明显的差异那就是速度</li>
+<li>不论使用哪种宽度布局，表高度都是自动计算的</li>
+<li>固定布局 table-layout:fixed<ul>
+<li>固定布局相对自动宽度布局更快，那这是为什么呢?脑子笨就要多思考，因为是固定的呀，布局不需要依赖于表单元格的内容，布局是根据表中的列和单元格的width值决定的。</li>
+<li>表的宽度设置为表的width值或列宽度之和(取这两个钟较大者)，表的宽度在表的第一行渲染出来的时候已经定了，后面不需要再改变表的宽度了。</li>
+</ul>
+</li>
+<li>自动布局<ul>
+<li>当表的width为auto的时候就会触发自动布局</li>
+<li>表布局完全取决于表内容，在生成全部表内容之前无法确定表的布局</li>
+</ul>
+</li>
+</ul>
+<h3 id="第十二章-列表与生成内容"><a href="#第十二章-列表与生成内容" class="headerlink" title="第十二章 列表与生成内容"></a>第十二章 列表与生成内容</h3><h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><ul>
+<li>display:list-item的元素</li>
+<li>列表类型 list-style-type,只能应用于display：list-item的元素，改变列表元素前面的小样式(其实人家是叫做显示标志)</li>
+<li>CSS无法区分有序列表和无序列表</li>
+<li>列表项图像 list-style-image：url();这里提醒一下，为了防止图像未加载，被破坏等无法显示的情况，我们需要在list-style-image之后设置一个备用的list-style,这样做是最安全的</li>
+<li>列表标志位置 list-style-position:inside| outside| inherit</li>
+<li>简写形式就是list-style，这个之间介绍的好多属性都是一样的，我相信你懂得。可以按照任何顺序出现，并且这些值都是可以忽略的</li>
+<li>列表布局<ul>
+<li>如果列表显示标志是在列表项内容的外面，则不会影响列表的布局，也不会影响列表项本身的布局</li>
+<li>如果列表显示标志是在列表项的内部的话，就相当于在列表内容开始出防止了一个行内元素</li>
+</ul>
+</li>
+</ul>
+<h4 id="生成内容"><a href="#生成内容" class="headerlink" title="生成内容"></a>生成内容</h4><ul>
+<li>还没看内容的时候我就在想，生成内容到底是个什么鬼，讲什么呀。看了内容有种，哦，原来这就是生成内容呀。就是感觉自己之前知道知识点，但是并没有这么专业的知道学术上叫啥。好吧，作为专业的前端工程师，还是要知道的</li>
+<li>生成内容是指由浏览器生成的而不是有标志或者内容来表示。上面介绍的列表标志就是生成内容，在代码中并没有任何代码直接表示这些标志</li>
+<li>插入生成内容<ul>
+<li>伪元素 :before 和 :after(对，没错就是他俩)</li>
+<li>:before/:after{content:’’} content中的内容就是插入的生成内容，注意了生成内容和元素内容之间是没有空格的。除非你在content中包含空格</li>
+<li>我写了上边我自己的描述，发现content叫指定内容，哈哈哈哈，没有关系了就是一个意思</li>
+<li>插入属性值:取一个元素的属性值，使之作为文档显示的一部分。如果一个属性不存在，会在相应位置插入一个空串</li>
+<li>生成引号 quotes，传两个串，前一个串定义开始引号，第二个串定义结束引号</li>
+</ul>
+</li>
+</ul>
+<h4 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h4><ul>
+<li>有序列表中的列表标志就是计数器</li>
+<li>重置和递增<ul>
+<li>设置计数器的起点 counter-reset。计数器默认值是0</li>
+<li>设置计数器递增 counter-increment</li>
+</ul>
+</li>
+<li>实际上，任何元素都可以利用计数器</li>
+</ul>
+<h3 id="第十三章-用户界面样式"><a href="#第十三章-用户界面样式" class="headerlink" title="第十三章 用户界面样式"></a>第十三章 用户界面样式</h3><h4 id="系统字体和颜色"><a href="#系统字体和颜色" class="headerlink" title="系统字体和颜色"></a>系统字体和颜色</h4><p>为了尽可能的模仿用户环境的计算机环境，我们可以使用系统字体和颜色，来让web组件看上去是用户操作系统的一部分。</p>
+<ol>
+<li>系统字体</li>
+</ol>
+<ul>
+<li>提供了6种系统字体关键字</li>
+<li>caption,icon,menu,message-box,small-caption,status-bar</li>
+<li>这些值，只能用于font属性，以上的这些值，他们本身就是简写属性</li>
+</ul>
+<ol>
+<li>光标</li>
+</ol>
+<ul>
+<li>利用cursor,可以将任何元素定义为像链接一样改变光标图标</li>
+<li>cursor:pointer 将光标改变为手型</li>
+<li>cursor:move 一颗改变光标为一个加粗的十字架，线的两端有箭头。也可以是一个‘拳头’</li>
+<li>cursor:wait/progress 都只是程序正在忙，wait表示需要一直等待，直到程序不忙的时候，而progress表示用户完全还可以继续和程序进行交互，虽然程序现在很忙</li>
+<li>cursor:help 可以一个问号，也可以是一个箭头旁边有一个小问号</li>
+<li>cursor:url(‘XXX’) pointer; 图形光标，无论使用什么图形光标，要求再设置一个光标属相值作为备选</li>
+</ul>
+<ol>
+<li>轮廓</li>
+</ol>
+<ul>
+<li>轮廓有点类似于边框，但是二者之间有很大的区别</li>
+<li>轮廓是不会像边框那样参与到文档流中，因此轮廓出现或者消失是不是影响文档流，既不会导致文档的重新显示</li>
+<li>轮廓和边框不是同一个东西，但是他们可以作用在同一个元素上</li>
+<li>轮廓一般用于指示当前焦点</li>
+<li>设置轮廓样式 outline_style,与边框的关键字基本一样。这里有一点不一样是 只能为outline-style之低昂一个关键字，而不能像边框那样，指定4个不同的值</li>
+<li>一个元素周围必然有相同的轮廓样式，而不论轮廓是否是矩形</li>
+<li>轮廓宽度 outline-width</li>
+<li>轮廓颜色 outline-color</li>
+<li>outline 简写属性</li>
+</ul>
+<h3 id="第十四章-非屏幕媒体"><a href="#第十四章-非屏幕媒体" class="headerlink" title="第十四章 非屏幕媒体"></a>第十四章 非屏幕媒体</h3><ul>
+<li>主要针对视觉障碍者，进行一些设计</li>
+<li>主要内容包括<ul>
+<li>设计特定于媒体的样式表</li>
+<li>分页媒体</li>
+<li>声音样式</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> CSS </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> 某人口中的抄书 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[面经第一波]]></title>
+      <url>/2017/12/05/%E9%9D%A2%E7%BB%8F20170905/</url>
+      <content type="html"><![CDATA[<p>以下面经为8月底到九月初的几次面经。本来打算的是每次面试完就写面经，但是秋招节奏比较快，公司多。(好多时间都用来填写每个公司的投递简历系统，这其中也不乏因为填不下去就干脆不投了的。譬如：苏宁照片就一直上传不上去，所以我就干脆放弃了)</p>
+<p>今天面了美团一面，感觉自己还是有些知识点不够细。小姐姐说是有二面，希望二面自己能答好点。还有，明天要去现场面绿盟二面。今天写面经，也帮自己回顾回顾之前的问题，不要再出现同样的问题，还是不会。</p>
+<h2 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h2><h3 id="研华实习面试"><a href="#研华实习面试" class="headerlink" title="研华实习面试"></a>研华实习面试</h3><p>  <strong>实习实习实习!!!</strong>    请注意这个是实习面试，相对问的比较浅，只要你知道这个就好了。</p>
+<blockquote>
+<p>2017.8.30         </p>
+<pre><code>1. 自我介绍        
+2. 块级元素，内联元素 举例        
+3. 两列布局的实现 (主要想考察float属性以及对flex的了解)        
+4. 兼容性的发现与处理 推荐大家一个网站.[兼容性检测](https://caniuse.com/)        
+5. vue生命周期(官网的那张图，自行去找吧)        
+6. 平时的学习方式    
+7. 介绍一下webpack    
+8. Vuex中怎么改变state的值    
+9. 数据问题 ajax    
+10. ES6新特性
+</code></pre></blockquote>
+<h3 id="绿盟科技一面"><a href="#绿盟科技一面" class="headerlink" title="绿盟科技一面"></a>绿盟科技一面</h3><p>  <strong>明天更新二面</strong>    </p>
+<blockquote>
+<p>2017.8.31         </p>
+<pre><code>1. 自我介绍        
+2. JS内置对象有哪些        
+3. JS数组方法        
+4. JS字符串方法        
+5. Join 和 + 的执行效率        
+6. null和undefined的区别  什么情况下回出现undefined        
+7. ajax同步异步  同步、异步、回调的执行顺序    
+8. bootstrap栅格系统及原理        
+9. echart饼图添加点击事件(echart只用过一丢丢)        
+10. git常用命令、主从分支协作以及冲突解决    
+11. http状态码  400是什么        
+12. JS内存回收机制        
+13. 内存泄露        
+14. 有什么想问的吗    
+</code></pre></blockquote>
+<h3 id="美团内推一面"><a href="#美团内推一面" class="headerlink" title="美团内推一面"></a>美团内推一面</h3><p>  <strong>期待二面</strong><br>  上周五面试官小姐姐打电话预约了周一中午面试，周末两天自己一直在看面经复习。但是今天还是有些紧张，相对电话面试我还是比较喜欢现场面试，面对面的交流可以更好的展示自己。<br>  <em>已然挺近二面，好好学习三面就在前方。</em></p>
+<blockquote>
+<p>2017.9.4         </p>
+<pre><code>1. 自我介绍            
+2. 介绍自己做的一个项目            
+3. 为什么学习前端            
+4. 变量提升        
+5. 数组方法                
+6. 字符串方法            
+7. 数组 sort方法详细介绍(小姐姐问了半天我没明白是在问什么，最后小姐姐给我说是想问返回值。原谅我一脸懵逼)            
+8. ES6新特性            
+9. 简单介绍 插入排序            
+10. 排序算法中时间复杂度比较低的是        
+11. JS数据类型            
+12. position            
+13. 两列布局            
+14. CSS的优先级        
+15. 原生操作dom的方法有哪些    
+16. var let的区别    
+17. 自己实现的比较熟悉的页面交互效果    
+18. 水平垂直居中    
+</code></pre></blockquote>
+<pre><code>从上面的问题，大家肯定会发现神奇的事情。那就是那就是那就是--自己好好看看去,我不告你 :)
+</code></pre><p>对于数组字符串的方法，自己一直比较ran.在这里放上两张图镇楼。<br><!-- [数组](http://ow4f5k7el.bkt.clouddn.com/%E6%95%B0%E7%BB%84.png)    
+[字符串](http://ow4f5k7el.bkt.clouddn.com/%E5%AD%97%E7%AC%A6%E4%B8%B2.gif) --><br><img src="http://ow4f5k7el.bkt.clouddn.com/%E6%95%B0%E7%BB%84.png" alt="数组方法" width="300" height="500"><br><a href="http://ow4f5k7el.bkt.clouddn.com/%E5%AD%97%E7%AC%A6%E4%B8%B2.gif" target="_blank" rel="noopener">字符串</a><br> 囧,本地图片怎么放不进来，明天再放。<br> 滚去复习了。    </p>
+<p> 2017/12/04更新</p>
+<p> 哈哈哈哈哈,还是在2017把图片的问题搞定了，其实超级简单的，就是之前没有好好搞</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[面经第四波]]></title>
+      <url>/2017/09/26/%E9%9D%A2%E7%BB%8F20170925/</url>
+      <content type="html"><![CDATA[<h2 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h2><h3 id="广联达面试"><a href="#广联达面试" class="headerlink" title="广联达面试"></a>广联达面试</h3><h4 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h4><p>广联达今年给的薪资比较高，所以自己也去面试试试。目前美团那边还是在等，希望美团hr小姐姐早点联系我。<br>广联达之前有线下笔试，感谢师妹帮我做的笔试题。去面试的时候，还需要做两道编程题。<br><code>1)一个已经排好序的数组，给定一个数，找出数组中两个数之和等于这个数。</code></p>
+<p> 借助散列表：先构建一个散列表，存储数组每个值。然后遍历数组，查看 target 与每项的差是否在散列表中，如果在就返回两个值。这个方法的时间复杂度和空间复杂度均为O(n)。代码示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var twoSum = function (nums, target) &#123;	</span><br><span class="line">	var map = &#123;&#125;;	</span><br><span class="line">	for (var i = 0; i &lt; nums.length; i++) &#123;	</span><br><span class="line">		if (nums[i] in map) &#123;	</span><br><span class="line">			return [map[nums[i]], i];	</span><br><span class="line">		&#125; else &#123;	</span><br><span class="line">			map[target - nums[i]] = i;	</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>双指针两端扫描：若数组无序，就先排序后扫描。扫描方法是用两个指针 i 和 j，先放在数组首尾，如果指向的两个数之和大于 target，就 j–，否则 i++，直到两个数之和为 target，然后返回这两个数。该方法的时间复杂度最后为：有序O(n)，无序O(nlogn + n)=O(nlogn)，空间复杂度都为O(1)。代码示例如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var twoSum2 = function (nums, target) &#123;		</span><br><span class="line">    var l = 0,	</span><br><span class="line">    r = nums.length - 1,	</span><br><span class="line">    results = [];	</span><br><span class="line">    while (l &lt; r) &#123;	</span><br><span class="line">        var s = nums[l] + nums[r];	</span><br><span class="line">        if (s === target) &#123;	</span><br><span class="line">            results.push([l, r]);	</span><br><span class="line">            while (l &lt; r &amp;&amp; nums[l] === nums[l + 1]) &#123;l++;&#125; 	</span><br><span class="line">            while (r &gt; l &amp;&amp; nums[r] === nums[r - 1]) &#123;r++;&#125; 	</span><br><span class="line">				l++;	</span><br><span class="line">				r--;	</span><br><span class="line">			&#125; else if (s &lt; target) &#123;	</span><br><span class="line">				l++;	</span><br><span class="line">			&#125; else &#123;	</span><br><span class="line">				r--;	</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;	</span><br><span class="line">	return result;	</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><code>2) 一个已经排好序的整数数组，找出这个数组中数组元素等于下标的数</code>    </p>
+<p>由于官网没有前端岗，直接和面试官说明情况。问了刚才做的一道编程题，说了一下思路。<br>之后问了3道智力题:<br>1   分金子问题  7天工钱，一根金条，切两次  1+2+4<br>2 12个球，有一个重量不同。利用天平找出<br>3 利用任何方法求一根香蕉的表面积<br>问了实习的情况，自己实习中的难点。</p>
+<h4 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h4><blockquote>
+<p>2017.9.22<br>    真的问了超级多<br>    1 自我介绍<br>    2 最近最有成就感的事情<br>    3 实习的收获<br>    4 最讨厌什么样的人<br>    5 比较欣赏什么样的人<br>    6 为什么选择前端<br>    7 为什么选择考研<br>    8 上研究生的收获<br>    9 考研开始时间？？考研学习计划<br>    10 为什么喜欢跑步<br>    11 你觉得编程的乐趣在哪儿<br>    12 遇到问题怎么解决<br>    13 学习前端的新东西有哪些<br>    14 前端圈里最近的事    </p>
+</blockquote>
+<p><strong>和我一起二面的同学已经收到了通知，然而我还是木有</strong></p>
+<h3 id="好未来"><a href="#好未来" class="headerlink" title="好未来"></a>好未来</h3><h4 id="一面-已挂"><a href="#一面-已挂" class="headerlink" title="一面(已挂)"></a>一面(已挂)</h4><p>开始面试的时候已经是11点50了，感觉面试官是不是饿了呀。12点半的时候说了一次时间，然而我并没有理他，接着说我该说的。(估计面试官的内心是奔溃的) 面到了1点，哈哈哈，最后面试官都没有让我问他问题，直接就站起来的，我也是一脸懵逼呀。整个面试过程体验一点也不好，面试官肯定不是专业的前端。</p>
+<blockquote>
+<p>2017.09.24<br>    好未来一面<br>    照着简历问,看我本科是网络工程的，一上来就问我为什么TCP要进行拥塞控制？？(黑人问号脸)<br>    1 自我介绍<br>    2 介绍实习项目<br>    3 套jsp的缺点<br>    4 tcp为什么需要进行拥塞控制<br>    5 http响应码<br>    6 c语言掌握程度，说自己比较懂的部分（这个面试官比较坑）<br>    7 查找数组中两个数和为定值<br>    8 查找数组中最大的数<br>    9 查找数组中第二大的数<br>    10 手写快速排序<br>    11 手写二分查找<br>    12 tcp报头内容<br>    13 git操作    </p>
+</blockquote>
+<p><strong>虽然面试体验不是很好，但是还是自己基础不够好。每次面试的时候，碰到手撕代码，就会很紧张。我觉得主要还是自己不够自自信，自己知道自己的弱点，在平时的时候更不能躲避，要努力去攻克。对，就是这样。</strong></p>
+<p><strong>加油，争取做到,手撕代码，我不怕不怕了:)</strong></p>
+<h3 id="京颐集团"><a href="#京颐集团" class="headerlink" title="京颐集团"></a>京颐集团</h3><p>差点忘记写今天下午面的这个，京颐集团就是之前的趣医网。美团小姐姐一直没有联系我，想先给自己找个保底的。<br>今天下午1点半开始买面试，不到3点就结束了3面。整个流程很快，效率比较高。只要一面是技术面，也问的比较基础，我感觉这家工作更看重的是应聘者的整体能力。据说明天会有结果    </p>
+<h4 id="一面-1"><a href="#一面-1" class="headerlink" title="一面"></a>一面</h4><blockquote>
+<p>2017.09.25<br>    京颐一面<br>    1 自我介绍<br>    2 css盒模型<br>    3 块级元素 内联元素<br>    4 浏览器引擎<br>    5 实习项目<br>    6 兼容性<br>    7 vue的优点<br>    8 vue和angular的区别<br>    9 能不能接受加班<br>    10 cookie localstorage sessionstorage的区别<br>    11 为什么学习前端</p>
+</blockquote>
+<h4 id="二面-1"><a href="#二面-1" class="headerlink" title="二面"></a>二面</h4><blockquote>
+<p>2017.09.25<br>    二面<br>    1 自我介绍<br>    2 期望薪资<br>    3 3-5年职业规划<br>    都是常规为题，和Hr小姐姐比较能聊到一块</p>
+</blockquote>
+<h4 id="三面"><a href="#三面" class="headerlink" title="三面"></a>三面</h4><blockquote>
+<p>2017.09.25<br>    三面<br>    总监面，一上来就说我本科怎么了，感觉有点奇怪。后来才知道，人家是要卡本科的。看来我是运气好<br>    就大概了解了一下个人情况，10分钟左右。    </p>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[狗东面经]]></title>
+      <url>/2017/09/26/%E7%8B%97%E4%B8%9C%E9%9D%A2%E7%BB%8F20170925/</url>
+      <content type="html"><![CDATA[<p><em>逗逼的傲娇(本来想起这个名字呢，可是刚才查了一下京东的状态，已挂。也没有拒绝人家的机会了，所以说还是低调一点吧)</em></p>
+<h4 id="单独写一个狗东面经–你懂得-吐槽"><a href="#单独写一个狗东面经–你懂得-吐槽" class="headerlink" title="单独写一个狗东面经–你懂得(吐槽)"></a>单独写一个狗东面经–你懂得(吐槽)</h4><h3 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h3><p>一面的小姐姐对我还是挺好的，虽然小姐姐头发有点油(小姐姐很好的)。<br>先吐槽一下狗东找的这个地方吧！会展国际酒店，赶脚是不是挺高端的。然而我下了地铁跑了十分钟才找到，太背了。好吧，这你可以怪我，说我不提前查好。再说说面试的地方，就教研室这么大一个地方，密密麻麻的摆满了桌子，我面试的时候都能听到旁边的面试官和同学的对话，现场很吵的(虽然cvte也是这样，但是我就是想吐槽狗东)。</p>
+<blockquote>
+<p>2017.09.23<br>    京东一面<br>    1 自我介绍<br>    2 介绍实习的项目<br>    3 实习时浏览器兼容行问题解决方法<br>    4 vue生命周期<br>    5 vue父子组件传值<br>    6 webpack<br>    7 css 选择器优先级<br>    8 css权重（面试官手写了一道题)<br>    9 变量提升 作用域 （面试官手写了一道题)<br>    10 es6<br>    11 var let const<br>    12 原型链<br>    13 数组常用方法<br>    14 实现去除某一个数组元素<br>    15 手写数组去重<br>    16 函数参数不定<br>    17 有地域限制没            </p>
+</blockquote>
+<p><strong><em>划重点划重点 重点来了</em></strong>    </p>
+<h3 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h3><p>我今天去二面，等了一小会就进去面试了。恩，面试官是个大胡子中年男人。初见第一眼感觉这个怪叔叔还挺和蔼的，对你微微一笑，然而木有想到的是。在我很认真的回答问题的时候，他也发出了他银铃般的笑声。(虽然声音比较小) 面试全程有被鄙视的感觉，面试官打开我的github看了一眼，然后特别鄙视的说，你这提交的也不多呀。(你TMD能不能看一下内容，不要只看提交次数呀。要问那家绿的多，当属脚本跑一个喽。呵呵哒)全程面试不到10分钟，如下</p>
+<blockquote>
+<p>2017.09.25<br>    1 自我介绍<br>    2 为什么想去北京<br>    3 数组扁平化<br>    4 为什么学习前端<br>    5 为什么想去北京(面试官大哥，你拿瓶水的时间你就忘了，你问过我这个问题了吗。我的内心是崩溃的)    </p>
+</blockquote>
+<p><strong>拉黑狗东，不说了，回宿舍</strong></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[面经第三波]]></title>
+      <url>/2017/09/17/%E9%9D%A2%E7%BB%8F20170917/</url>
+      <content type="html"><![CDATA[<p>迟到的面经第三波，这周三9.13号是终于接到了美团hr小姐姐的电话。然而得到的结果还是需要再等等，因为Hr还需要和项目组那边在商议商议。和二面面试官发了微信，说是等校招组来了西安可以见面谈谈。这几天在牛客上看到说是美团需要进行交叉面，不太清楚企业平台这边的情况。希望美团能收了我吧，赐给我Offer!<br>在等美团的过程中，也有在进行笔试，昨天面试cvte,很巧的是又遇到了当时实习面试我的面试官。相比实习的那次面试，这次自己表现的好多了，但还是不够好。面试官小哥哥给的建议很好，最重要的是方法，而不是死记硬背。</p>
+<h2 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h2><h3 id="美团hr面-电面"><a href="#美团hr面-电面" class="headerlink" title="美团hr面 (电面)"></a>美团hr面 (电面)</h3><p>  <strong>不是技术!!!</strong>。 之前二面面试官说是周五会有hr面，但是一直等到了这周三。这其中很感谢杨林师兄，以及二面面试官的帮助，帮忙提醒hr那边。校招季，也能理解，hr也是很辛苦的。面试我的hr小姐姐，很温柔。</p>
+<blockquote>
+<p>2017.9.13         </p>
+<pre><code>1. 自我介绍        
+2. 介绍下之前实习的公司        
+3. 介绍项目
+4. 浏览器兼容性如何兼容    
+5. 去北京可以吗        
+6. 希望薪资    
+7. 有些记不太清了，都是常规问题
+</code></pre></blockquote>
+<p><em>美团下周应该就会出结果了，祝自己好运</em></p>
+<h3 id="CVTE-一面"><a href="#CVTE-一面" class="headerlink" title="CVTE 一面"></a>CVTE 一面</h3><p>  3月份找实习的时候，第一次面试就是面的cvte，所以对面试小哥哥印象比较深刻。这次又碰到了这个面试官，只能说还是自己太弱了，学习知识还是要系统的学习。    小哥哥有说道自己的项目经验不够，加油。(这次面试收获很大)</p>
+<blockquote>
+<p>2017.9.16         </p>
+<pre><code>1. 自我介绍            
+2. 介绍实习时的项目        
+3. 闭包            
+4. http        
+5. 状态码  自己对4开头的认识不到位                
+6. 缓存过程描述 自己只记得几个零散的知识点，不能完整的说出整个过程            
+7. 文档流 flex有没有脱离文档流  怎么判断与没有脱离文档流        
+8. 写布局 box-sizing (inline-block 之间有间隙)
+9. 手撕代码 JS function compose(arr){index:1}; arr[fun1,fun2.fun3]; 1 2 3 顺序执行            
+10. 3个门 选礼物，换不换自己的选的门        
+11. 代码如何实现            
+12. 要做一个善于思考的人        
+</code></pre></blockquote>
+<p><strong>很感谢小哥哥，虽然自己很菜，但还是很细心的给我讲解每个知识点。感谢 :)</strong></p>
+<p> 祝我好运吧 :)。<br> 滚去复习了。    </p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[个人博客搭建]]></title>
+      <url>/2017/09/09/hexo+github/</url>
+      <content type="html"><![CDATA[<p>之前在网上看到许多人的个人博客，以为大家都是自己买的服务器搭建的个人博客。之后在群里看到大家在讨论，才知道是用了Github+Hexo.<br>在这里首先感谢技术胖提供的技术交流平台，技术胖的<a href="http://jspang.com/" target="_blank" rel="noopener">个人博客</a>.</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><pre><code>1.node安装
+2.github新建仓库
+</code></pre><p><em>node的安装大家自行查阅资料，我在这里就不介绍了。<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node官网</a></em>        <strong>技术胖的博客中也有相关介绍</strong></p>
+<p><strong>github新建仓库</strong> <strong><em>划重点:)</em></strong><br>&emsp; &emsp;新建仓库本身的操作没什么可说了,这里需要注意的是:仓库名称必须为xxx(你的github用户名).github.io.</p>
+<h3 id="github-pages"><a href="#github-pages" class="headerlink" title="github pages"></a>github pages</h3><p>&emsp; &emsp;<em>github pages</em> 是github提供给用户用来展示个人或者项目主页的静态网页系统。每个用户都可以使用自己的github项目创建，上传静态页面的html文件，github会帮你自动更新你的页面。</p>
+<h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><p>&emsp; &emsp;<em>hexo</em>博客是使用<strong>nodejs</strong>构建的一个轻量级的静态博客，相当于一个markdown解析器。我们只需要把我们写的markdown文件放在指定的文    件夹中，再通过一些配置，在本地使用nodejs构建生成普通的html页面。</p>
+<h3 id="博客初养成"><a href="#博客初养成" class="headerlink" title="博客初养成"></a>博客初养成</h3><blockquote>
+<p>恩，目前就酱样子。markdown还在熟悉中</p>
+</blockquote>
+<h3 id="没有面的面经-没有游的游记"><a href="#没有面的面经-没有游的游记" class="headerlink" title="没有面的面经,没有游的游记"></a>没有面的面经,没有游的游记</h3><p>&emsp; &emsp;本以为<strong><em>没有面试的面经</em></strong>，没想到明天早早的有个<a href="https://www.lagou.com/gongsi/107353.html" target="_blank" rel="noopener">面试</a>。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> githubpages </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[面经第二波]]></title>
+      <url>/2017/09/08/%E9%9D%A2%E7%BB%8F20170907/</url>
+      <content type="html"><![CDATA[<p>昨天面了美团二面，和面试官小哥哥聊的比较嗨，聊了一个小时。最后小哥哥说会有三面，周五，是hr面。昨天整个面试过程都比较轻松，小哥哥有介绍他们项目组的情况，希望自己可以拿到美团offer!</p>
+<h2 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h2><h3 id="绿盟二面"><a href="#绿盟二面" class="headerlink" title="绿盟二面"></a>绿盟二面</h3><p>  <strong>不是技术!!!</strong>。 一面到通知二面中间过了一个星期，感觉自己像是替补一样。然而hr说的面完当天有消息，着都过了两天还是没消息呀。全程在聊人生，面了20几分钟吧。感觉应该是挂了，毕竟一面答的不是很好</p>
+<blockquote>
+<p>2017.9.5         </p>
+<pre><code>1. 自我介绍        
+2. 聊聊职业规划        
+3. 目前有没有在找其他的(自己给自己挖了个坑)        
+4. 怎么了解我们公司的？和大厂的区别    
+5. 面试官在讲他们公司与大厂的区别        
+6. 随便还聊了一些，记不太清了  反正就是聊人生    
+7. 我问了一个技术栈的问题，面试官开始讲...(记不清了)
+8. 最后面试官建议我可以去关注关注UI方向的一些东西。
+</code></pre></blockquote>
+<h3 id="美团内推二面"><a href="#美团内推二面" class="headerlink" title="美团内推二面"></a>美团内推二面</h3><p>  <strong>期待hr面</strong><br>  二面相对一面表现更好，自己觉得。虽然一面小姐姐很温柔，但是自己还是比较紧张的。二面小哥哥先让我介绍了自己的实习，学习方式等等。等说完这些话后，其实已经放松了，没有那么紧张了。整个过程聊的都比较好，除了自己在技术上的一些细节，小哥哥也有说需要在细节上多学习学习，面试完加了微信，感觉很有希望呀。明天hr面，加油!<br>  <em>已然挺近hr面，好好学习offer就在前方。</em></p>
+<blockquote>
+<p>2017.9.4         </p>
+<pre><code>1. 自我介绍            
+2. 实习项目    以及主要职责        
+3. 学习前端的方法 看的那些书            
+4. 最近遇到比较有挑战性的问题        
+5. 为秋招做的准备                
+6. html实现布局 input+button 要求input自适应(要求说多尽可能多的方法)            
+7. JS call,apply的区别 参数传null时的this指向        
+8. 实现isEmpty() 参数可能为任意类型            
+9. 判断数组 对象是否为空            
+10. typeof instanceof        
+11. JS数组常用方法            
+12. 实现[1,2,3,4] 删除2,3 (splice(1,2))            
+13. 普通上传和文件上传的区别            
+14. ajax请求过程描述        
+15. 简述快排 时间复杂度
+16. 看技术博客 论坛，举一个具体看的知识点    
+17. 面试官开始讲项目组相关    
+18. 有问道，如果发offer，能不能去实习的问题
+19. 自己问了关于前端对UI以及后台语言的相关问题    
+</code></pre></blockquote>
+<p><strong>面试的时候，当面试官把话语权交给你。你需要一直说，相关的知识，把自己知道的尽可能详细的表达出来。    还有最重要的一点就是，需要自己可以带节奏，不能整个面试过程都是面试官再问，而自己只是被动的再回答 :)</strong></p>
+<p> 明天面完再来补充，为什么我没有收到金蝶的面试通知，不开心。<br> 滚去复习了。    </p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/2017/09/08/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> default </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
