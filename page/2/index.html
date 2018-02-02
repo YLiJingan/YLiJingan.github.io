@@ -18,7 +18,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.8 -->
   <meta charset="UTF-8">
-  <title> - Angryyan</title>
+  <title>首页 - Angryyan</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -57,7 +57,7 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content=" - Angryyan | Angryyan">
+  <meta property="og:title" content="首页 - Angryyan | Angryyan">
   <meta property="og:image" content="/img/favicon.png" />
   
         <meta property="og:description" content="我要一步一步向上爬">
@@ -107,8 +107,6 @@
   <body class="mdui-theme-primary-teal mdui-theme-accent-red
    
   
-    mdui-appbar-with-toolbar
-  
   " >
 
 
@@ -120,46 +118,16 @@
 
   
 
-  <div class="mdui-appbar mdui-shadow-0 mdui-appbar-fixed animate-appbar" id="blog-appbar">
-    <div class="mdui-toolbar mdui-color-theme">
+  <div class="mdui-appbar animate-appbar mdui-shadow-0" id="blog-appbar">
+    <div class="mdui-toolbar">
       <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon">
           <span></span>
         </i>
       </button>
-      
-        <a href="/" class="mdui-typo-headline">
-          返回首页
-        </a>
-      
-      
-      
-        <div class="flex-spacer"></div>
-      
-      
-      
-  <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}" id="index-more">
-    <i class="mdui-icon material-icons">&#xe417;</i>
-  </button>
-
-  <ul class="mdui-menu" id="menu-index-more">
-    
-    
-      <li class="mdui-menu-item">
-        <a class="mdui-ripple menu-badge">
-          浏览量: 
-          <span class="badge" id="busuanzi_value_page_pv"></span>
-        </a>
-      </li>
-    
-  </ul>
-
-
     </div>
   </div>
 
-
-  <div id="search-cover" searchResult onclick="closeSearch()"></div>
 
 
 
@@ -191,14 +159,12 @@
   <div class="hexo">
     
       <div class="mdui-list no-padding-bottom">
-        <a href="/">
-          <li class="mdui-list-item mdui-ripple">
-            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
-            <div class="mdui-list-item-content">
-              首页
-            </div>
-          </li>
-        </a>
+        <li class="mdui-list-item mdui-ripple mdui-list-item-active">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme-accent">&#xe88a;</i>
+          <div class="mdui-list-item-content mdui-text-color-theme-accent">
+            首页
+          </div>
+        </li>
       </div>
     
     
@@ -346,229 +312,145 @@
 
 <main>
   
-
-
-  <style id="post_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("post_css","/css/src/now/post.min.css?MWI5mYfrtkkaVt0cXypQEA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-<style id="lightgallery_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("lightgallery_css","/css/src/lightgallery.min.css?+c5+nzUi2JvkvxweHDf/nA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-  <style id="prism_theme_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prism_theme_css","/css/src/prism-themes/dark.min.css?0qUPxIYO7HRq6/jdmib3dQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-
-  <style id="line_number_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("line_number_css","/css/src/prism-themes/line-number.min.css?3vej9ouE8RJMGe/3SzS8aw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-<style>
-  .lg-outer .lg-item {
-    background-image: url("/img/loading.gif");
-  }
-</style>
-<div class="post-warpper animate-post">
-  <div class="post-bg-color
+  <div class="index-warper animate-post">
+  <div id="index">
+    <div class="faviconImg">
+      <img class="mdui-img-fluid" src="/img/favicon.png" />
+    </div>
     
-      
-        mdui-color-theme
-      
+  </div>
+  <div id="search-cover" searchResult></div>
+
+  
+
+  <div id="posts">
     
-  "></div>
-  <div class="post-header
     
-      
-        mdui-color-theme
-      
-    
-  ">
-    <div class="post-header-container">
-      <div class="post-title mdui-text-truncate"></div>
-      <div class="post-actions mdui-valign">
-        <div>
-          <span>编写时间：</span>
-          <span style="float: right">Jan 10, 2018</span>
-          
-          <br>
-            <span>最后修改时间：</span>
-            <span>Feb 02, 2018</span>
-          
-        </div>
         
-
-        
-  <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-post-share'}">
-    <i class="mdui-icon material-icons">&#xe80d;</i>
-  </button>
-
-  <ul class="mdui-menu" id="menu-post-share">
-
-    
-      <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/01/10/shell/index.html" target="_blank" class="mdui-ripple">
-              分享到Facebook
-          </a>
-      </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-      <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com//2018/01/10/shell/index.html&via=yan" target="_blank" class="mdui-ripple">
-              分享到Twitter
-          </a>
-      </li>
-    
-
-    
-      <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://yoursite.com//2018/01/10/shell/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
-              分享到微博
-          </a>
-      </li>
-    
-
-  </ul>
-
-
+  
+<div class="mdui-card card-bottom-fix mdui-hoverable">
+  <div class="mdui-card-header posts-header">
+    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
+    <div class="content mdui-valign">
+      <div class="mdui-typo-body-1-opacity mdui-typo">
+        <span>yan</span>
+        <span> · </span>
+        <span>Sep 08, 2017</span>
       </div>
     </div>
+  <div class="flex-spacer"></div>
+    <a href="/2017/09/08/hello-world/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
   </div>
-  <div class="post-container flex-spacer
-  
-  ">
-    <div class="post-adjust">
-      <div class="mdui-card card-bottom-fix menu-fix mdui-hoverable" id="blog-post">
-        <div class="warning">
-          这篇文章最后修改于
-          <span id="content-warning"></span>
-          天之前。
-          本页内容可能已经过时！
-        </div>
+  <div class="mdui-card-content posts-content">
+    <div class="posts-excerpt">
+      <a href="/2017/09/08/hello-world/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
         
-        
-        <div class="post-content mdui-typo no-margin" id="post-content">
-          <hr>
-<p>title: Shell<br>comments: true   </p>
-<h2 id="tags-‘shell’-’学习笔记’"><a href="#tags-‘shell’-’学习笔记’" class="headerlink" title="tags: [‘shell’,’学习笔记’]"></a>tags: [‘shell’,’学习笔记’]</h2><h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell?"></a>什么是Shell?</h4><p>shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.</p>
-<blockquote>
-<p>Shell是你（用户）和Linux（或者更准确的说，是你和Linux内核）之间的接口程序。你输入的每个命令都由shell先解释然后传给Linux内核。</p>
-</blockquote>
-<h4 id="Shell分类"><a href="#Shell分类" class="headerlink" title="Shell分类"></a>Shell分类</h4><ul>
-<li>sh：Bourne Shell 的缩写。可以说是目前所有 Shell 的祖先。</li>
-<li>bash：Bourne Again Shell 的缩写。因此说明 bash 是 sh 的一个进阶版本，比 sh 更优。bash 是目前大多数 Linux 发行版和苹果的 Mac OS X 操作系统的默认 Shell。</li>
-<li>ksh：Korn Shell 的缩写。一般在收费的 Unix 版本上比较多见。</li>
-<li>csh：C Shell 的缩写。 此 Shell 的语法有点类似 C 语言。</li>
-<li>tcsh： Tenex C Shell 的缩写。csh 的优化版本。</li>
-<li><p>zsh： Z Shell 的缩写。比较新近的一个 Shell，集 bash，ksh 和 tcsh 各家之大成。</p>
-<p><strong><em>zsh优点</em></strong>    </p>
-<ul>
-<li>完全兼容bash,之前的使用习惯可以继续使用 </li>
-<li>更强的的tab补全<ul>
-<li>更智能的切换目录</li>
-<li>命令选项补齐</li>
-<li>命令参数补全</li>
-<li>可以定义丰富多彩的主题</li>
-<li>可以集成各种类型的插件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h4><blockquote>
-<p>默认的 shell 是每个用户帐号的一个参数。Linux中典型的默认 shell是/bin/bash，不过也可以用其他的shell.</p>
-</blockquote>
-<p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH" target="_blank" rel="noopener">zsh安装</a>,mac已经预装了zsh<br><a href="http://ohmyz.sh/" target="_blank" rel="noopener">oh my zsh安装</a></p>
-<p><code>cat /etc/shells</code>     –查看系统有几种shell<br><code>echo $SHELL</code>              -查看当前使用的shell<br><code>chsh</code>               –更换shell,change shell</p>
-
-        </div>
-
-        
-          <div class="license mdui-typo">
-            <span>
-              本文许可协议：
-              
-                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
-              
-            </span>
-            <br />
-            <span>本文永久链接：<a href="http://yoursite.com/2018/01/10/shell/">http://yoursite.com/2018/01/10/shell/</a></span>
-            
-              <br />
-              <span>本文Markdown：<a href="http://yoursite.com/2018/01/10/shell/shell.md">http://yoursite.com/2018/01/10/shell/shell.md</a></span>
-            
-          </div>
-        
-
-        
-          <div class="posts-info">
-            
-              <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '打赏我一个吧', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
-            
-            <div class="flex-spacer"></div>
-            
-            
-          </div>
-        
-        
-          
-        
+        Hello World
+      </a>
+      <div class="posts-strip mdui-typo-body-1">
+        Welcome to 
       </div>
-      
-        <div id="card-toc" class="
-        
-          mdui-color-theme
-        
-        ">
-          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#tags-‘shell’-’学习笔记’"><span class="post-toc-number">1.<span class="post-toc-text">tags: [‘shell’,’学习笔记’]</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#Shell"><span class="post-toc-number">1.1.<span class="post-toc-text">Shell</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#什么是Shell"><span class="post-toc-number">1.1.1.<span class="post-toc-text">什么是Shell?</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#Shell分类"><span class="post-toc-number">1.1.2.<span class="post-toc-text">Shell分类</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#zsh"><span class="post-toc-number">1.1.3.<span class="post-toc-text">zsh</span></span></a></a></ul></a></ul></a></ul>
-        </div>
-      
     </div>
-  </div>
-  <div class="post-pagination mdui-color-theme">
-  
-    <div class="prev mdui-ripple mdui-color-theme mdui-valign">
-      <a href="/2018/01/15/多个ssh key管理/" class="content no-text-decoration mdui-text-left">
-        <div>
-          <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
-          <span class="mdui-typo-body-2-opacity mdui-text-center">新的文章</span>
-        </div>
-        <div class="mdui-typo-title mdui-text-truncate">
-          多个SSH KEY 以及 HEXO
-        </div>
-      </a>
-    </div>
-  
-
-  
-    <div class="next mdui-ripple mdui-color-theme mdui-valign">
-      <a href="/2017/12/20/webpackStudy/" class="content no-text-decoration mdui-text-right">
-        <div>
-          <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
-          <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
-        </div>
-        <div class="mdui-typo-title mdui-text-truncate">
-          webpack学习笔记
-        </div>
-      </a>
-    </div>
+    <div class="flex-spacer"></div>
     
+  </div>
+  
+    <div class="mdui-divider" style="margin: 0 16px;"></div>
+    <div class="posts-bottom">
+      
+      
+        <div class="mdui-chip">
+          <span class="mdui-chip-icon"><i class="mdui-icon
+           
+             mdui-text-color-black-icon
+           
+           fa fa-tags mdui-text-center"></i></span>
+        </div>
+        <div class="content mdui-typo">
+          
+            <a href="/tags/hexo/">
+              <span>hexo</span>
+            </a>
+          
+            <a href="/tags/default/">
+              <span>default</span>
+            </a>
+          
+        </div>
+      
+    </div>
+  
 </div>
 
+
+
+    
+  </div>
   
-    <button id="button-toc" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-hidden-md-up" style="z-index: 9;" mdui-menu="{target: '#menu-toc', fixed: true}">
-  <i class="mdui-icon material-icons">&#xe242;</i>
+  <ul class="pagination">
+    
+    <li class="mdui-ripple">
+      
+      <a href="/" class="mdui-text-color-theme-text">
+      
+        <i class="mdui-icon material-icons">&#xe5cb;</i>
+      </a>
+    </li>
+    
+
+    
+      
+        <li class="mdui-ripple">
+          <a href="/" class="mdui-text-color-theme-text">
+            1
+          </a>
+        </li>
+      
+    
+
+    
+
+    
+      
+    
+      
+        
+      
+    
+
+    
+      <li class="mdui-color-theme-accent">
+        <a class="mdui-text-color-theme-text">2</a>
+      </li>
+    
+
+    
+      
+    
+      
+    
+
+    
+
+    
+
+    
+      <li>
+        <a class="mdui-text-color-theme-icon-disabled">
+          <i class="mdui-icon material-icons">&#xe5cc;</i>
+        </a>
+      </li>
+    
+   </ul>
+
+
+  <button id="toTop" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-fab-hide" style="z-index: 9;" onclick="smoothScroll.animateScroll( 0 );">
+  <i class="mdui-icon material-icons">&#xe5d8;</i>
 </button>
-<ul class="mdui-menu mdui-typo no-margin-bottom auto-width" id="menu-toc" style="padding: 8px;max-height: 80%">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-‘shell’-’学习笔记’"><span class="toc-text">tags: [‘shell’,’学习笔记’]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Shell"><span class="toc-text">Shell</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是Shell"><span class="toc-text">什么是Shell?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shell分类"><span class="toc-text">Shell分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zsh"><span class="toc-text">zsh</span></a></li></ol></li></ol></li></ol>
-</ul>
-
-
-  
 
 </div>
+
+
 
 </main>
 
@@ -654,141 +536,39 @@
 </script>
 
 
-  <script type="text/ls-javascript" id="appbar-script">
-  /* post appbar */
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/ls-javascript" id="to-top-script">
+  /* fab */
   (function() {
     var pageFlag = false;
-    var appbar = new mdui.Headroom('#blog-appbar');
-    appbar.disable();
-    var toolbar = document.querySelector('#blog-appbar .mdui-toolbar')
-
+    var fab = new mdui.Fab('#toTop');
+    fab.hide();
     window.addEventListener('scroll', function() {
       var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
       var divTop = document.querySelector('div#top').offsetTop
-
       var pageLocation = divTop - bodyTop;
       if (!pageFlag && pageLocation < 0) {
-        toolbar.classList.add('mdui-shadow-2')
-        appbar.enable();
+        fab.show();
         pageFlag = true;
       } else if (pageFlag && pageLocation >= 0) {
-        toolbar.classList.remove('mdui-shadow-2')
-        appbar.disable();
+        fab.hide();
         pageFlag = false;
       }
-    })
+    });
   })();
 </script>
 
-  <script type="text/ls-javascript" id="toc-active-script">
-  if (document.querySelector('ul#menu-toc > ol') !== null && document.querySelector('div#card-toc > ul') !== null) {
-    window.addEventListener("load", function() {
-      var timer;
-      function doWork() {
-        listens.forEach(function(value, index) {
-          value[1]();
-          value[0].classList.remove("mdui-list-item-active");
-        })
-        let actionToc = (listens[listens.reduce(function(r, v, index) {
-          if (v[2] == true) {
-            return index;
-          } else return r;
-        }, undefined)] || [])[0] || listens[0][0];
-        actionToc.classList.add("mdui-list-item-active");
-        if(actionToc.getClientRects().length == 0)return;
-        showToc(actionToc);
-      }
-
-      function showToc(toc) {
-        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
-        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
-        let offset = 0;
-        if (offsetTop < 0) offset = offsetTop;
-        if (offsetBottom > 0) offset = offsetBottom;
-        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
-        clearInterval(timer);
-        timer = setInterval(function() {
-          var now = cardToc.scrollTop;
-          var speed = (targetTop - now) / 10;
-          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-          if (Math.abs(now - targetTop) < 1) {
-            clearInterval(timer);
-          }
-          cardToc.scrollTop = now + speed;
-        }, 30);
-      }
-      var listens = [];
-      var cardToc = document.querySelector('#card-toc');
-      var links = document.querySelectorAll("a.post-toc-link");
-      var toclist = document.querySelector("#card-toc > ul");
-      Array.prototype.forEach.call(links, function(value, index) {
-        var id = (value.getAttribute("href") || "#").slice(1);
-        var element = document.getElementById(id);
-        listens.push([value, function() {
-          var readed = false;
-          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
-            readed = true;
-          } else {
-            readed = false;
-          }
-          listens[index][2] = readed;
-        }, false])
-      })
-      doWork();
-      window.addEventListener("scroll", doWork)
-    });
-  }
-</script>
-
-  <script type="text/ls-javascript" id="post-lg-script">
-  var images = document.querySelectorAll('#post-content img')
-  for (i = 0; i < images.length; i++) {
-    images[i].addEventListener("click", openLG);
-  }
-  function openLG() {
-    var img_src = this.getAttribute('src');
-    var img_alt = this.getAttribute('alt');
-    lightGallery(this, {
-      dynamic: true,
-      counter: false,
-      dynamicEl: [{
-        "src": img_src,
-        'subHtml': "<span author>yan</span> • 公开<div descr>" + img_alt + "</div>"
-      }],
-    });
-  }
-</script>
-
-  <!-- content warning -->
-<script type="text/ls-javascript" id="content-warning-script">
-  (function() {
-    var postLastModifiedDate = 1517544543102
-    var today = (new Date()).getTime()
-    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
-    if (difference >= 100) {
-      document.querySelector('div.warning').style.display = 'block'
-      document.querySelector('#content-warning').textContent = difference
-    }
-  })();
-</script>
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -796,8 +576,6 @@
   
 
 
-
-  <script>lsloader.load("lightgallery_js","/js/lightgallery.min.js?tQptxVaCRzQ3zx70gMUYig==", true)</script>
 
 
 

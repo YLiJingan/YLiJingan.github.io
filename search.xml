@@ -3,9 +3,77 @@
   
     
     <entry>
-      <title><![CDATA[Shell]]></title>
+      <title><![CDATA[多个SSH KEY 以及 HEXO]]></title>
+      <url>/2018/01/15/%E5%A4%9A%E4%B8%AAssh%20key%E7%AE%A1%E7%90%86/</url>
+      <content type="html"><![CDATA[<h3 id="多个SSH-KEY的管理"><a href="#多个SSH-KEY的管理" class="headerlink" title="多个SSH KEY的管理"></a>多个SSH KEY的管理</h3><p>多ssh-key模式 是开发时可能遇到的问题，自己之前在使用多 ssh key 模式时不知所措,今天配置好了，记录下来。</p>
+<h4 id="github提交验证机制"><a href="#github提交验证机制" class="headerlink" title="github提交验证机制"></a>github提交验证机制</h4><p>使用一下命令生成ssh<br><code>$ ssh-keygen -t rsa -C &quot;youremail@email.com&quot;</code><br>这里需要我们输入生成的公钥和私钥路径，默认是~/.ssh/id_rsa,由于我之前已经有一个Key了，这里我进行了路径自定义，以防止覆盖之前生成的key。<br><img src="http://ow4f5k7el.bkt.clouddn.com/ssh.png" alt=""><br>这时会在用户根目录下生成一个.ssh文件夹，一个私钥：id_rsa，一个公钥：id_rsa_pub，该公钥和私钥包含了你邮箱的信息，具有随机不可复现性！</p>
+<p><strong>在输入路径之后，Enter passphrase默认是空值，这里直接回车就好了。如果在这里输入了，那么每次push提交代码的时候，都需要输入你在这里输入的字符串</strong></p>
+<hr>
+<p>ssh公钥私钥同时生成且唯一配对。公钥用于远程主机，私钥存储在本地工作机，私钥用于在push（即write操作）时验证身份。因为公钥与私钥的唯一对应性，只有能和公钥配对的私钥才能对远程主机进行写操作！</p>
+<p>我们在使用github时会发现有两个地方牵涉到公钥添加，一个是账号设置下的ssh setting，另一个是单个仓库设置的Deploy key。添加至前者则代表 私钥主机可对当前远程主机的所有仓库进行写操作，添加至后者则代表 私钥主机只能对当前仓库进行写操作。</p>
+<p>每次连接时SSH客户端发送本地私钥（默认~/.ssh/id_rsa）到远程主机进行公私钥配对验证！</p>
+<h4 id="多个-SSH-key-管理"><a href="#多个-SSH-key-管理" class="headerlink" title="多个 SSH key 管理"></a>多个 SSH key 管理</h4><ol>
+<li>生成多个key<br> ~/.ssh文件夹<br> <img src="http://ow4f5k7el.bkt.clouddn.com/~:.ssh%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt=""></li>
+<li>在github远程添加公钥</li>
+<li>新建config文件，用于配置各个公私钥对应的主机。未设置的将使用默认的私钥。<br><code>cat config</code><br> <img src="http://ow4f5k7el.bkt.clouddn.com/config.png" alt=""><br> <img src="http://ow4f5k7el.bkt.clouddn.com/ssh_config.png" alt=""></li>
+<li><p>测试连接情况<br><code>ssh -T git@second.github.com</code><br><img src="http://ow4f5k7el.bkt.clouddn.com/git%20ssh%E6%B5%8B%E8%AF%95.png" alt=""><br>如上情况，则测试成果。之后我们可以向之前一样使用就好了</p>
+<hr>
+</li>
+</ol>
+<p>  以上操作都完美执行之后，在进行push的时候，出现了如下所示的错误。<br>  <img src="http://ow4f5k7el.bkt.clouddn.com/chmod.png" alt=""><br>  需要执行<code>chmod 0600 /User/.ssh/id_rsa_ylijingan</code>修改私钥的权限    </p>
+<h3 id="迁移HEXO"><a href="#迁移HEXO" class="headerlink" title="迁移HEXO"></a>迁移HEXO</h3><h4 id="MAC命令行-解压rar"><a href="#MAC命令行-解压rar" class="headerlink" title="MAC命令行 解压rar"></a>MAC命令行 解压rar</h4><ol>
+<li>使用Homebrew安装unrar<br> <code>brew install unrar</code>    </li>
+<li>解压文件<br> <code>unrar x 需解压的文件目录</code>   </li>
+</ol>
+<h4 id="hexo-迁移过程-传送门"><a href="#hexo-迁移过程-传送门" class="headerlink" title="hexo    迁移过程 传送门"></a>hexo    迁移过程 <a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">传送门</a></h4><ol>
+<li>安装 git   </li>
+<li>按照上述内容添加ssh key   </li>
+<li>安装 node  </li>
+<li>安装hexo <code>npm install hexo-cli -g</code>   </li>
+<li><p>拷贝原来文件夹的内容</p>
+<ul>
+<li><strong>必须保留</strong> <ul>
+<li>_config.yml(自己修改的站点配置文件)</li>
+<li>theme/(主题文件夹)</li>
+<li>source/(自己写的博客文件)</li>
+<li>scaffolds/(文章模板)</li>
+<li>package.json</li>
+</ul>
+</li>
+<li><strong>可以删除(.gitignore 中的内容)</strong><ul>
+<li>node_modules/</li>
+<li>.git/</li>
+<li>public/(hexo g会重新生成)</li>
+<li>.deploy_git/(hexo d会重新生成)</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文件夹下，npm install</p>
+</li>
+<li>hexo g</li>
+<li>hexo d –没有报错，即转移成功!👌👌👌</li>
+</ol>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> ssh key </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title></title>
       <url>/2018/01/10/shell/</url>
-      <content type="html"><![CDATA[<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell?"></a>什么是Shell?</h4><p>shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.</p>
+      <content type="html"><![CDATA[<hr>
+<p>title: Shell<br>comments: true   </p>
+<h2 id="tags-‘shell’-’学习笔记’"><a href="#tags-‘shell’-’学习笔记’" class="headerlink" title="tags: [‘shell’,’学习笔记’]"></a>tags: [‘shell’,’学习笔记’]</h2><h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell?"></a>什么是Shell?</h4><p>shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.</p>
 <blockquote>
 <p>Shell是你（用户）和Linux（或者更准确的说，是你和Linux内核）之间的接口程序。你输入的每个命令都由shell先解释然后传给Linux内核。</p>
 </blockquote>
@@ -37,14 +105,6 @@
 <p><code>cat /etc/shells</code>     –查看系统有几种shell<br><code>echo $SHELL</code>              -查看当前使用的shell<br><code>chsh</code>               –更换shell,change shell</p>
 ]]></content>
       
-        
-        <tags>
-            
-            <tag> 学习笔记 </tag>
-            
-            <tag> shell </tag>
-            
-        </tags>
         
     </entry>
     
@@ -201,9 +261,9 @@
         
         <tags>
             
-            <tag> webpack </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> webpack </tag>
             
         </tags>
         
@@ -743,9 +803,9 @@
         
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 某人口中的抄书 </tag>
             
@@ -822,9 +882,9 @@
         
         <tags>
             
-            <tag> 面经 </tag>
-            
             <tag> 秋招 </tag>
+            
+            <tag> 面经 </tag>
             
         </tags>
         
@@ -864,9 +924,9 @@
         
         <tags>
             
-            <tag> 面经 </tag>
-            
             <tag> 秋招 </tag>
+            
+            <tag> 面经 </tag>
             
         </tags>
         
@@ -891,9 +951,9 @@
         
         <tags>
             
-            <tag> 面经 </tag>
-            
             <tag> 秋招 </tag>
+            
+            <tag> 面经 </tag>
             
         </tags>
         
@@ -938,9 +998,9 @@
         
         <tags>
             
-            <tag> 面经 </tag>
-            
             <tag> 秋招 </tag>
+            
+            <tag> 面经 </tag>
             
         </tags>
         
@@ -1019,9 +1079,9 @@
         
         <tags>
             
-            <tag> 面经 </tag>
-            
             <tag> 秋招 </tag>
+            
+            <tag> 面经 </tag>
             
         </tags>
         

@@ -18,7 +18,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.8 -->
   <meta charset="UTF-8">
-  <title> - Angryyan</title>
+  <title>多个SSH KEY 以及 HEXO - Angryyan</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -42,7 +42,7 @@
   
       <meta name="description" content="我要一步一步向上爬">
   
-  <meta name="keywords" content="blog, hexo, mdui">
+  <meta name="keywords" content="blog, hexo, mdui,hexo,ssh key">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="Angryyan">
@@ -57,13 +57,13 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content=" - Angryyan | Angryyan">
+  <meta property="og:title" content="多个SSH KEY 以及 HEXO - Angryyan | Angryyan">
   <meta property="og:image" content="/img/favicon.png" />
   
         <meta property="og:description" content="我要一步一步向上爬">
     
 
-    
+    <meta property="og:article:tag" content="hexo"> <meta property="og:article:tag" content="ssh key"> 
 
   <!-- Cache -->
   <meta http-equiv="Cache-Control" content="max-age=7200" />
@@ -378,11 +378,11 @@
     
   ">
     <div class="post-header-container">
-      <div class="post-title mdui-text-truncate"></div>
+      <div class="post-title mdui-text-truncate">多个SSH KEY 以及 HEXO</div>
       <div class="post-actions mdui-valign">
         <div>
           <span>编写时间：</span>
-          <span style="float: right">Jan 10, 2018</span>
+          <span style="float: right">Jan 15, 2018</span>
           
           <br>
             <span>最后修改时间：</span>
@@ -400,7 +400,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/01/10/shell/index.html" target="_blank" class="mdui-ripple">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/01/15/多个ssh key管理/index.html" target="_blank" class="mdui-ripple">
               分享到Facebook
           </a>
       </li>
@@ -416,7 +416,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com//2018/01/10/shell/index.html&via=yan" target="_blank" class="mdui-ripple">
+          <a href="https://twitter.com/intent/tweet?text=多个SSH KEY 以及 HEXO&url=http://yoursite.com//2018/01/15/多个ssh key管理/index.html&via=yan" target="_blank" class="mdui-ripple">
               分享到Twitter
           </a>
       </li>
@@ -424,7 +424,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://yoursite.com//2018/01/10/shell/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+          <a href="http://service.weibo.com/share.php?appkey=&title=多个SSH KEY 以及 HEXO&url=http://yoursite.com//2018/01/15/多个ssh key管理/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
               分享到微博
           </a>
       </li>
@@ -450,38 +450,56 @@
         
         
         <div class="post-content mdui-typo no-margin" id="post-content">
-          <hr>
-<p>title: Shell<br>comments: true   </p>
-<h2 id="tags-‘shell’-’学习笔记’"><a href="#tags-‘shell’-’学习笔记’" class="headerlink" title="tags: [‘shell’,’学习笔记’]"></a>tags: [‘shell’,’学习笔记’]</h2><h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell?"></a>什么是Shell?</h4><p>shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.</p>
-<blockquote>
-<p>Shell是你（用户）和Linux（或者更准确的说，是你和Linux内核）之间的接口程序。你输入的每个命令都由shell先解释然后传给Linux内核。</p>
-</blockquote>
-<h4 id="Shell分类"><a href="#Shell分类" class="headerlink" title="Shell分类"></a>Shell分类</h4><ul>
-<li>sh：Bourne Shell 的缩写。可以说是目前所有 Shell 的祖先。</li>
-<li>bash：Bourne Again Shell 的缩写。因此说明 bash 是 sh 的一个进阶版本，比 sh 更优。bash 是目前大多数 Linux 发行版和苹果的 Mac OS X 操作系统的默认 Shell。</li>
-<li>ksh：Korn Shell 的缩写。一般在收费的 Unix 版本上比较多见。</li>
-<li>csh：C Shell 的缩写。 此 Shell 的语法有点类似 C 语言。</li>
-<li>tcsh： Tenex C Shell 的缩写。csh 的优化版本。</li>
-<li><p>zsh： Z Shell 的缩写。比较新近的一个 Shell，集 bash，ksh 和 tcsh 各家之大成。</p>
-<p><strong><em>zsh优点</em></strong>    </p>
+          <h3 id="多个SSH-KEY的管理"><a href="#多个SSH-KEY的管理" class="headerlink" title="多个SSH KEY的管理"></a>多个SSH KEY的管理</h3><p>多ssh-key模式 是开发时可能遇到的问题，自己之前在使用多 ssh key 模式时不知所措,今天配置好了，记录下来。</p>
+<h4 id="github提交验证机制"><a href="#github提交验证机制" class="headerlink" title="github提交验证机制"></a>github提交验证机制</h4><p>使用一下命令生成ssh<br><code>$ ssh-keygen -t rsa -C &quot;youremail@email.com&quot;</code><br>这里需要我们输入生成的公钥和私钥路径，默认是~/.ssh/id_rsa,由于我之前已经有一个Key了，这里我进行了路径自定义，以防止覆盖之前生成的key。<br><img src="http://ow4f5k7el.bkt.clouddn.com/ssh.png" alt=""><br>这时会在用户根目录下生成一个.ssh文件夹，一个私钥：id_rsa，一个公钥：id_rsa_pub，该公钥和私钥包含了你邮箱的信息，具有随机不可复现性！</p>
+<p><strong>在输入路径之后，Enter passphrase默认是空值，这里直接回车就好了。如果在这里输入了，那么每次push提交代码的时候，都需要输入你在这里输入的字符串</strong></p>
+<hr>
+<p>ssh公钥私钥同时生成且唯一配对。公钥用于远程主机，私钥存储在本地工作机，私钥用于在push（即write操作）时验证身份。因为公钥与私钥的唯一对应性，只有能和公钥配对的私钥才能对远程主机进行写操作！</p>
+<p>我们在使用github时会发现有两个地方牵涉到公钥添加，一个是账号设置下的ssh setting，另一个是单个仓库设置的Deploy key。添加至前者则代表 私钥主机可对当前远程主机的所有仓库进行写操作，添加至后者则代表 私钥主机只能对当前仓库进行写操作。</p>
+<p>每次连接时SSH客户端发送本地私钥（默认~/.ssh/id_rsa）到远程主机进行公私钥配对验证！</p>
+<h4 id="多个-SSH-key-管理"><a href="#多个-SSH-key-管理" class="headerlink" title="多个 SSH key 管理"></a>多个 SSH key 管理</h4><ol>
+<li>生成多个key<br> ~/.ssh文件夹<br> <img src="http://ow4f5k7el.bkt.clouddn.com/~:.ssh%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt=""></li>
+<li>在github远程添加公钥</li>
+<li>新建config文件，用于配置各个公私钥对应的主机。未设置的将使用默认的私钥。<br><code>cat config</code><br> <img src="http://ow4f5k7el.bkt.clouddn.com/config.png" alt=""><br> <img src="http://ow4f5k7el.bkt.clouddn.com/ssh_config.png" alt=""></li>
+<li><p>测试连接情况<br><code>ssh -T git@second.github.com</code><br><img src="http://ow4f5k7el.bkt.clouddn.com/git%20ssh%E6%B5%8B%E8%AF%95.png" alt=""><br>如上情况，则测试成果。之后我们可以向之前一样使用就好了</p>
+<hr>
+</li>
+</ol>
+<p>  以上操作都完美执行之后，在进行push的时候，出现了如下所示的错误。<br>  <img src="http://ow4f5k7el.bkt.clouddn.com/chmod.png" alt=""><br>  需要执行<code>chmod 0600 /User/.ssh/id_rsa_ylijingan</code>修改私钥的权限    </p>
+<h3 id="迁移HEXO"><a href="#迁移HEXO" class="headerlink" title="迁移HEXO"></a>迁移HEXO</h3><h4 id="MAC命令行-解压rar"><a href="#MAC命令行-解压rar" class="headerlink" title="MAC命令行 解压rar"></a>MAC命令行 解压rar</h4><ol>
+<li>使用Homebrew安装unrar<br> <code>brew install unrar</code>    </li>
+<li>解压文件<br> <code>unrar x 需解压的文件目录</code>   </li>
+</ol>
+<h4 id="hexo-迁移过程-传送门"><a href="#hexo-迁移过程-传送门" class="headerlink" title="hexo    迁移过程 传送门"></a>hexo    迁移过程 <a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">传送门</a></h4><ol>
+<li>安装 git   </li>
+<li>按照上述内容添加ssh key   </li>
+<li>安装 node  </li>
+<li>安装hexo <code>npm install hexo-cli -g</code>   </li>
+<li><p>拷贝原来文件夹的内容</p>
 <ul>
-<li>完全兼容bash,之前的使用习惯可以继续使用 </li>
-<li>更强的的tab补全<ul>
-<li>更智能的切换目录</li>
-<li>命令选项补齐</li>
-<li>命令参数补全</li>
-<li>可以定义丰富多彩的主题</li>
-<li>可以集成各种类型的插件</li>
+<li><strong>必须保留</strong> <ul>
+<li>_config.yml(自己修改的站点配置文件)</li>
+<li>theme/(主题文件夹)</li>
+<li>source/(自己写的博客文件)</li>
+<li>scaffolds/(文章模板)</li>
+<li>package.json</li>
+</ul>
+</li>
+<li><strong>可以删除(.gitignore 中的内容)</strong><ul>
+<li>node_modules/</li>
+<li>.git/</li>
+<li>public/(hexo g会重新生成)</li>
+<li>.deploy_git/(hexo d会重新生成)</li>
+<li>…</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<h4 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h4><blockquote>
-<p>默认的 shell 是每个用户帐号的一个参数。Linux中典型的默认 shell是/bin/bash，不过也可以用其他的shell.</p>
-</blockquote>
-<p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH" target="_blank" rel="noopener">zsh安装</a>,mac已经预装了zsh<br><a href="http://ohmyz.sh/" target="_blank" rel="noopener">oh my zsh安装</a></p>
-<p><code>cat /etc/shells</code>     –查看系统有几种shell<br><code>echo $SHELL</code>              -查看当前使用的shell<br><code>chsh</code>               –更换shell,change shell</p>
+<li><p>文件夹下，npm install</p>
+</li>
+<li>hexo g</li>
+<li>hexo d –没有报错，即转移成功!👌👌👌</li>
+</ol>
 
         </div>
 
@@ -494,10 +512,10 @@
               
             </span>
             <br />
-            <span>本文永久链接：<a href="http://yoursite.com/2018/01/10/shell/">http://yoursite.com/2018/01/10/shell/</a></span>
+            <span>本文永久链接：<a href="http://yoursite.com/2018/01/15/多个ssh key管理/">http://yoursite.com/2018/01/15/多个ssh key管理/</a></span>
             
               <br />
-              <span>本文Markdown：<a href="http://yoursite.com/2018/01/10/shell/shell.md">http://yoursite.com/2018/01/10/shell/shell.md</a></span>
+              <span>本文Markdown：<a href="http://yoursite.com/2018/01/15/多个ssh key管理/多个ssh key管理.md">http://yoursite.com/2018/01/15/多个ssh key管理/多个ssh key管理.md</a></span>
             
           </div>
         
@@ -509,6 +527,21 @@
             
             <div class="flex-spacer"></div>
             
+            
+              <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
+              </div>
+              <div class="content mdui-typo">
+                
+                  <a href="/tags/hexo/">
+                    <span>hexo</span>
+                  </a>
+                
+                  <a href="/tags/ssh key/">
+                    <span>ssh key</span>
+                  </a>
+                
+              </div>
             
           </div>
         
@@ -522,35 +555,25 @@
           mdui-color-theme
         
         ">
-          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#tags-‘shell’-’学习笔记’"><span class="post-toc-number">1.<span class="post-toc-text">tags: [‘shell’,’学习笔记’]</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#Shell"><span class="post-toc-number">1.1.<span class="post-toc-text">Shell</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#什么是Shell"><span class="post-toc-number">1.1.1.<span class="post-toc-text">什么是Shell?</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#Shell分类"><span class="post-toc-number">1.1.2.<span class="post-toc-text">Shell分类</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#zsh"><span class="post-toc-number">1.1.3.<span class="post-toc-text">zsh</span></span></a></a></ul></a></ul></a></ul>
+          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#多个SSH-KEY的管理"><span class="post-toc-number">1.<span class="post-toc-text">多个SSH KEY的管理</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#github提交验证机制"><span class="post-toc-number">1.1.<span class="post-toc-text">github提交验证机制</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#多个-SSH-key-管理"><span class="post-toc-number">1.2.<span class="post-toc-text">多个 SSH key 管理</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#迁移HEXO"><span class="post-toc-number">2.<span class="post-toc-text">迁移HEXO</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#MAC命令行-解压rar"><span class="post-toc-number">2.1.<span class="post-toc-text">MAC命令行 解压rar</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#hexo-迁移过程-传送门"><span class="post-toc-number">2.2.<span class="post-toc-text">hexo    迁移过程 传送门</span></span></a></a></ul></a></ul>
         </div>
       
     </div>
   </div>
   <div class="post-pagination mdui-color-theme">
   
-    <div class="prev mdui-ripple mdui-color-theme mdui-valign">
-      <a href="/2018/01/15/多个ssh key管理/" class="content no-text-decoration mdui-text-left">
-        <div>
-          <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
-          <span class="mdui-typo-body-2-opacity mdui-text-center">新的文章</span>
-        </div>
-        <div class="mdui-typo-title mdui-text-truncate">
-          多个SSH KEY 以及 HEXO
-        </div>
-      </a>
-    </div>
+    <div class="flex-spacer mdui-hidden-xs"></div>
   
 
   
     <div class="next mdui-ripple mdui-color-theme mdui-valign">
-      <a href="/2017/12/20/webpackStudy/" class="content no-text-decoration mdui-text-right">
+      <a href="/2018/01/10/shell/" class="content no-text-decoration mdui-text-right">
         <div>
           <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
         </div>
         <div class="mdui-typo-title mdui-text-truncate">
-          webpack学习笔记
+          
         </div>
       </a>
     </div>
@@ -562,7 +585,7 @@
   <i class="mdui-icon material-icons">&#xe242;</i>
 </button>
 <ul class="mdui-menu mdui-typo no-margin-bottom auto-width" id="menu-toc" style="padding: 8px;max-height: 80%">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-‘shell’-’学习笔记’"><span class="toc-text">tags: [‘shell’,’学习笔记’]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Shell"><span class="toc-text">Shell</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是Shell"><span class="toc-text">什么是Shell?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shell分类"><span class="toc-text">Shell分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zsh"><span class="toc-text">zsh</span></a></li></ol></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#多个SSH-KEY的管理"><span class="toc-text">多个SSH KEY的管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#github提交验证机制"><span class="toc-text">github提交验证机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多个-SSH-key-管理"><span class="toc-text">多个 SSH key 管理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迁移HEXO"><span class="toc-text">迁移HEXO</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MAC命令行-解压rar"><span class="toc-text">MAC命令行 解压rar</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hexo-迁移过程-传送门"><span class="toc-text">hexo    迁移过程 传送门</span></a></li></ol></li></ol>
 </ul>
 
 
@@ -763,7 +786,7 @@
   <!-- content warning -->
 <script type="text/ls-javascript" id="content-warning-script">
   (function() {
-    var postLastModifiedDate = 1517544543102
+    var postLastModifiedDate = 1517544546921
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {

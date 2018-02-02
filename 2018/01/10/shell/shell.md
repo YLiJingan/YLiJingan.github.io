@@ -1,8 +1,8 @@
 ---
-title: Shell
-comments: true
+title: Shell  
+comments: true   
 tags: ['shell','学习笔记']
----
+--- 
 ### Shell
 #### 什么是Shell?
 shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.

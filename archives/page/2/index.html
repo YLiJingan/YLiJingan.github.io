@@ -18,7 +18,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.8 -->
   <meta charset="UTF-8">
-  <title>搜索什么... - Angryyan</title>
+  <title>归档 - Angryyan</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -57,7 +57,7 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="搜索什么... - Angryyan | Angryyan">
+  <meta property="og:title" content="归档 - Angryyan | Angryyan">
   <meta property="og:image" content="/img/favicon.png" />
   
         <meta property="og:description" content="我要一步一步向上爬">
@@ -120,8 +120,43 @@
 
   
 
+      <div class="mdui-appbar mdui-appbar-fixed animate-appbar mdui-shadow-0" id="blog-appbar">
+        <div class="mdui-toolbar mdui-color-theme mdui-shadow-2">
+          <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
+            <i class="mdui-icon">
+              <span></span>
+            </i>
+          </button>
+          
+            <a href="/" class="mdui-typo-headline mdui-hidden-sm-down">
+              返回首页
+            </a>
+            <span class="appbar-border-line mdui-hidden-sm-down"></span>
+          
+          <span class="mdui-typo-title">yan</span>
+          <div class="mdui-toolbar-spacer"></div>
+          
+          
+  <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}" id="index-more">
+    <i class="mdui-icon material-icons">&#xe417;</i>
+  </button>
 
-  <div id="search-cover" searchResult onclick="closeSearch()"></div>
+  <ul class="mdui-menu" id="menu-index-more">
+    
+    
+      <li class="mdui-menu-item">
+        <a class="mdui-ripple menu-badge">
+          浏览量: 
+          <span class="badge" id="busuanzi_value_page_pv"></span>
+        </a>
+      </li>
+    
+  </ul>
+
+
+        </div>
+      </div>
+
 
 
 
@@ -164,113 +199,16 @@
       </div>
     
     
-      <div class="mdui-list no-padding">
-        <a href="/archives">
-          <li class="mdui-list-item mdui-ripple">
-            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
-            <div class="mdui-list-item-content">
-              归档
-              <span class="badge new mdui-color-theme-accent" data-badge-caption="">11</span>
-            </div>
-          </li>
-        </a>
+      <div class="mdui-list no-padding-top">
+        <li class="mdui-list-item mdui-ripple mdui-list-item-active">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme-accent">&#xe149;</i>
+          <div class="mdui-list-item-content mdui-text-color-theme-accent">
+            归档
+            <span class="badge new mdui-color-theme-accent" data-badge-caption="">11</span>
+          </div>
+        </li>
       </div>
     
-    
-      <div class="mdui-list no-padding-top" mdui-collapse="{accordion: true}" mdui-collapse>
-        
-        
-          <div class="mdui-collapse-item ">
-            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-              <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
-              <div class="mdui-list-item-content">标签</div>
-              <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-            </div>
-            <div class="mdui-collapse-item-body mdui-list">
-              
-                <a href="/tags/hexo/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  hexo
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">3</span>
-                </a>
-              
-                <a href="/tags/default/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  default
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
-                </a>
-              
-                <a href="/tags/githubpages/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  githubpages
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
-                </a>
-              
-                <a href="/tags/CSS/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  CSS
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
-                </a>
-              
-                <a href="/tags/学习笔记/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  学习笔记
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">2</span>
-                </a>
-              
-                <a href="/tags/某人口中的抄书/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  某人口中的抄书
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
-                </a>
-              
-                <a href="/tags/ssh key/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  ssh key
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
-                </a>
-              
-                <a href="/tags/webpack/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  webpack
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
-                </a>
-              
-                <a href="/tags/秋招/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  秋招
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">5</span>
-                </a>
-              
-                <a href="/tags/面经/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  面经
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">5</span>
-                </a>
-              
-            </div>
-          </div>
-        
-        <div class="mdui-collapse-item ">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
-            <div class="mdui-list-item-content">年份</div>
-            <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-          </div>
-          <div class="mdui-collapse-item-body mdui-list">
-            
-            
-              <a href="/archives/2018/" class="mdui-list-item mdui-ripple">
-                2018
-              </a>
-            
-              <a href="/archives/2017/" class="mdui-list-item mdui-ripple">
-                2017
-              </a>
-            
-          </div>
-        </div>
-      </div>
     
   </div>
   
@@ -307,23 +245,285 @@
 
 
 <main>
-  <style id="search_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("search_css","/css/src/plus/search.min.css?PsMrsW7mtwLjgUsSFl0MAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-<style id="index_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("index_css","/css/src/plus/index.min.css?WYKJSRDQmvHqC3U1Wgs23g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-<div id="search">
-  <div class="posts-container column-3">
-
+  
+  
+<style id="archives_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("archives_css","/css/src/shared/archives.min.css?P0dAOiv90Y3EOEbIb09QUw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+<div id="archives" class="animate-post">
+  <div class="header">
+    <div class="bg">
+      <img class="mdui-img-fluid mdui-img-rounded" src="/img/bg.jpg"/>
+    </div>
+    <div class="content" style="
+      background-color:
+      
+        #eeeeee
+      
+    ">
+      <img class="mdui-img-circle avatar" src="/img/cat.jpg"/>
+      <div class="info">
+        <div class="name">
+          yan
+        </div>
+        <div class="slogan">
+          能吃是福 吃饱了才能跑的动:)
+        </div>
+      </div>
+      <div class="flex-spacer mdui-hidden-sm-down"></div>
+      
+      
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-raised" mdui-dialog="{target: '#contactDialog'}">联系我</button>
+      
+    </div>
   </div>
-
-  <div id="content-list" searchResult>
-
+  <div class="items mdui-container-fluid">
+    <div class="title mdui-text-color-theme-secondary">
+      分类
+    </div>
+    <div class="container mdui-row">
+      
+    </div>
   </div>
-
-  <div class="footer">
-    <div class="mdui-text-center mdui-text-color-theme-text">
-      看起来已经没有了
+  <div class="items mdui-container-fluid">
+    <div class="title mdui-text-color-theme-secondary">
+      标签
+    </div>
+    <div class="container mdui-row">
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/hexo/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-cyan">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">hexo</div>
+                <div class="length">
+                  
+                    3 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/default/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-light-blue">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">default</div>
+                <div class="length">
+                  
+                    1 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/githubpages/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-blue-grey">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">githubpages</div>
+                <div class="length">
+                  
+                    1 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/CSS/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-deep-orange">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">CSS</div>
+                <div class="length">
+                  
+                    1 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/学习笔记/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-light-blue">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">学习笔记</div>
+                <div class="length">
+                  
+                    2 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/某人口中的抄书/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-green">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">某人口中的抄书</div>
+                <div class="length">
+                  
+                    1 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/ssh key/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-cyan">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">ssh key</div>
+                <div class="length">
+                  
+                    1 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/webpack/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-purple">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">webpack</div>
+                <div class="length">
+                  
+                    1 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/秋招/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-deep-orange">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">秋招</div>
+                <div class="length">
+                  
+                    5 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/tags/面经/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-grey">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">面经</div>
+                <div class="length">
+                  
+                    5 篇文章
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+    </div>
+  </div>
+  <div class="items mdui-container-fluid">
+    <div class="title mdui-text-color-theme-secondary">
+      年份
+    </div>
+    <div class="container mdui-row">
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/archives/2018/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-light-blue">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content no-length">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">2018</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="/archives/2017/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-deep-purple">
+              <div class="mdui-card-media" style="background-image: url(/img/random/picHD_1.png)">
+              </div>
+              <div class="content no-length">
+                <img class="mdui-img-circle avatar" src="/img/cat.jpg" />
+                <div class="category">2017</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
     </div>
   </div>
 </div>
+
+
+<button id="toTop" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-fab-hide" style="z-index: 9;" onclick="smoothScroll.animateScroll( 0 );">
+  <i class="mdui-icon material-icons">&#xe5d8;</i>
+</button>
+
 
 </main>
 
@@ -411,6 +611,12 @@
 
 
 
+  <script>
+    window.addEventListener("scroll", function(){
+       document.querySelector('#archives .bg .mdui-img-fluid.mdui-img-rounded')
+        .style.transform = 'translateY(' + document.body.scrollTop * 0.4 + 'px)';
+    })
+  </script>
 
 
 
@@ -419,6 +625,29 @@
 
 
 
+
+
+
+  <script type="text/ls-javascript" id="to-top-script">
+  /* fab */
+  (function() {
+    var pageFlag = false;
+    var fab = new mdui.Fab('#toTop');
+    fab.hide();
+    window.addEventListener('scroll', function() {
+      var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      var divTop = document.querySelector('div#top').offsetTop
+      var pageLocation = divTop - bodyTop;
+      if (!pageFlag && pageLocation < 0) {
+        fab.show();
+        pageFlag = true;
+      } else if (pageFlag && pageLocation >= 0) {
+        fab.hide();
+        pageFlag = false;
+      }
+    });
+  })();
+</script>
 
 
 
