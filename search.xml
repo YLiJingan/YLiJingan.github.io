@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[Shell]]></title>
       <url>/2018/01/10/shell/</url>
       <content type="html"><![CDATA[<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell?"></a>什么是Shell?</h4><p>shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.</p>
 <blockquote>
@@ -37,6 +37,14 @@
 <p><code>cat /etc/shells</code>     –查看系统有几种shell<br><code>echo $SHELL</code>              -查看当前使用的shell<br><code>chsh</code>               –更换shell,change shell</p>
 ]]></content>
       
+        
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> shell </tag>
+            
+        </tags>
         
     </entry>
     
@@ -193,9 +201,9 @@
         
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> webpack </tag>
+            
+            <tag> 学习笔记 </tag>
             
         </tags>
         
@@ -735,9 +743,9 @@
         
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> CSS </tag>
             
             <tag> 某人口中的抄书 </tag>
             
