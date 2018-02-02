@@ -147,7 +147,7 @@
     
       <li class="mdui-menu-item">
         <a class="mdui-ripple menu-badge">
-          浏览量: 
+          Views: 
           <span class="badge" id="busuanzi_value_page_pv"></span>
         </a>
       </li>
@@ -195,7 +195,7 @@
           <li class="mdui-list-item mdui-ripple">
             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
             <div class="mdui-list-item-content">
-              首页
+              Index
             </div>
           </li>
         </a>
@@ -207,7 +207,7 @@
           <li class="mdui-list-item mdui-ripple">
             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
             <div class="mdui-list-item-content">
-              归档
+              Archives
               <span class="badge new mdui-color-theme-accent" data-badge-caption="">11</span>
             </div>
           </li>
@@ -221,7 +221,7 @@
           <div class="mdui-collapse-item ">
             <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
               <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
-              <div class="mdui-list-item-content">标签</div>
+              <div class="mdui-list-item-content">Tags</div>
               <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
             </div>
             <div class="mdui-collapse-item-body mdui-list">
@@ -234,12 +234,6 @@
               
                 <a href="/tags/default/" class="mdui-list-item mdui-ripple" style="display: flex">
                   default
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
-                </a>
-              
-                <a href="/tags/githubpages/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  githubpages
                   <div style="flex-grow: 1;"></div>
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
                 </a>
@@ -262,8 +256,8 @@
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
                 </a>
               
-                <a href="/tags/shell/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  shell
+                <a href="/tags/githubpages/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  githubpages
                   <div style="flex-grow: 1;"></div>
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
                 </a>
@@ -280,14 +274,20 @@
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
                 </a>
               
-                <a href="/tags/面经/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  面经
+                <a href="/tags/shell/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  shell
                   <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">5</span>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
                 </a>
               
                 <a href="/tags/秋招/" class="mdui-list-item mdui-ripple" style="display: flex">
                   秋招
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">5</span>
+                </a>
+              
+                <a href="/tags/面经/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  面经
                   <div style="flex-grow: 1;"></div>
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">5</span>
                 </a>
@@ -298,7 +298,7 @@
         <div class="mdui-collapse-item ">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
-            <div class="mdui-list-item-content">年份</div>
+            <div class="mdui-list-item-content">Years</div>
             <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
           </div>
           <div class="mdui-collapse-item-body mdui-list">
@@ -387,7 +387,7 @@
       <div class="post-title mdui-text-truncate">Hello World</div>
       <div class="post-actions mdui-valign">
         <div>
-          <span>编写时间：</span>
+          <span>Posted: </span>
           <span style="float: right">Sep 08, 2017</span>
           
         </div>
@@ -403,7 +403,7 @@
     
       <li class="mdui-menu-item">
           <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/09/08/hello-world/index.html" target="_blank" class="mdui-ripple">
-              分享到Facebook
+              Share to Facebook
           </a>
       </li>
     
@@ -419,7 +419,7 @@
     
       <li class="mdui-menu-item">
           <a href="https://twitter.com/intent/tweet?text=Hello World&url=http://yoursite.com//2017/09/08/hello-world/index.html&via=yan" target="_blank" class="mdui-ripple">
-              分享到Twitter
+              Share to Twitter
           </a>
       </li>
     
@@ -427,7 +427,7 @@
     
       <li class="mdui-menu-item">
           <a href="http://service.weibo.com/share.php?appkey=&title=Hello World&url=http://yoursite.com//2017/09/08/hello-world/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
-              分享到微博
+              Share to Weibo
           </a>
       </li>
     
@@ -444,10 +444,10 @@
     <div class="post-adjust">
       <div class="mdui-card card-bottom-fix menu-fix mdui-hoverable" id="blog-post">
         <div class="warning">
-          这篇文章最后修改于
+          This article was last modified
           <span id="content-warning"></span>
-          天之前。
-          本页内容可能已经过时！
+          days ago.
+          The content of this post may be outdated!
         </div>
         
         
@@ -467,16 +467,16 @@
         
           <div class="license mdui-typo">
             <span>
-              本文许可协议：
+              Article License: 
               
                 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
               
             </span>
             <br />
-            <span>本文永久链接：<a href="http://yoursite.com/2017/09/08/hello-world/">http://yoursite.com/2017/09/08/hello-world/</a></span>
+            <span>Article Permalink: <a href="http://yoursite.com/2017/09/08/hello-world/">http://yoursite.com/2017/09/08/hello-world/</a></span>
             
               <br />
-              <span>本文Markdown：<a href="http://yoursite.com/2017/09/08/hello-world/hello-world.md">http://yoursite.com/2017/09/08/hello-world/hello-world.md</a></span>
+              <span>Article Markdown: <a href="http://yoursite.com/2017/09/08/hello-world/hello-world.md">http://yoursite.com/2017/09/08/hello-world/hello-world.md</a></span>
             
           </div>
         
@@ -484,7 +484,7 @@
         
           <div class="posts-info">
             
-              <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '打赏我一个吧', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
+              <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: 'Buy me a beer?', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
             
             <div class="flex-spacer"></div>
             
@@ -527,7 +527,7 @@
       <a href="/2017/09/08/面经20170907/" class="content no-text-decoration mdui-text-left">
         <div>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
-          <span class="mdui-typo-body-2-opacity mdui-text-center">新的文章</span>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">Newer Post</span>
         </div>
         <div class="mdui-typo-title mdui-text-truncate">
           面经第二波
@@ -557,13 +557,13 @@
 </main>
 
 <div id="outdated" style="z-index: 9999;">
-  <h6>你的浏览器一直过气辣！</h6>
-  <p>赶紧升级浏览器来访问本站吧！<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">现在就去</a></p>
-  <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="关闭">&times;</a></p>
+  <h6>Your browser is out-of-date!</h6>
+  <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+  <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 
   <div class="mdui-dialog" id="donateDialog">
-    <div class="mdui-dialog-title">打赏我一个吧</div>
+    <div class="mdui-dialog-title">Buy me a beer?</div>
     <div class="mdui-dialog-content no-padding-bottom">
       <div class="mdui-list">
         
@@ -577,7 +577,7 @@
       </div>
     </div>
     <div class="mdui-dialog-actions">
-      <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close>才不呢</button>
+      <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close>cancel</button>
     </div>
   </div>
 
@@ -585,7 +585,7 @@
 
   <div class="mdui-dialog" id="contactDialog">
     <div class="mdui-dialog-title">
-      如何联系我
+      How to contact me
     </div>
     <div class="mdui-dialog-content no-padding-bottom">
       <div class="mdui-list">
@@ -601,7 +601,7 @@
     </div>
     <div class="mdui-dialog-actions">
       <button class="mdui-btn mdui-ripple" mdui-dialog-close>
-        关闭
+        Close
       </button>
     </div>
   </div>
@@ -738,7 +738,7 @@
       counter: false,
       dynamicEl: [{
         "src": img_src,
-        'subHtml': "<span author>yan</span> • 公开<div descr>" + img_alt + "</div>"
+        'subHtml': "<span author>yan</span> • Public<div descr>" + img_alt + "</div>"
       }],
     });
   }
