@@ -69,6 +69,71 @@
     </entry>
     
     <entry>
+      <title><![CDATA[ES6,ES7]]></title>
+      <url>/2018/01/12/ES6,ES7%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/</url>
+      <content type="html"><![CDATA[<h2 id="ES6-ES7查漏补缺"><a href="#ES6-ES7查漏补缺" class="headerlink" title="ES6,ES7查漏补缺"></a>ES6,ES7查漏补缺</h2><h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h3><p><em>该方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。最终返回目标对象</em>    </p>
+<blockquote>
+<p>语法<br>Object.assign(target,…sources)    </p>
+</blockquote>
+<p><a href="https://jsbin.com/tuxozur/1/edit?html,js,output" target="_blank" rel="noopener">demo</a>    </p>
+<ul>
+<li>目标对象与源对象有相同属性，源对象属性将覆盖目标该属性的值</li>
+<li>该方法只后拷贝对象自身的并且可以枚举的属性到目标对象</li>
+<li>Object.assign是浅拷贝，拷贝的是属性值。假如源对象的属性值是一个指向对象的引用，则只能拷贝那个引用值</li>
+<li>继承属性和不可枚举属性是不能拷贝的</li>
+<li>原始类型会被包装成对象，null和undefined会被忽略</li>
+<li>异常会打断后续拷贝任务</li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">MDN</a>    </p>
+<h3 id="promise-es6-Generator函数-async-await-es7"><a href="#promise-es6-Generator函数-async-await-es7" class="headerlink" title="promise(es6),Generator函数,async/await(es7)"></a>promise(es6),Generator函数,async/await(es7)</h3><p><strong><em>都是用下解决回调地狱的问题,异步函数调用</em></strong></p>
+<h4 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h4><p>本质上，promise是某个函数返回的对象，你可以把回调函数绑定到这个对象上，而不是把函数当做函数参数使用。</p>
+<p><em>promise会带来一些保证：</em>   </p>
+<ul>
+<li>在JavaScript事件队列的当前运行完成之前，回调函数永远不会被调用。</li>
+<li>通过.then形式添加的回调函数，甚至都在异步操作完成之后才被添加的函数，都会被调用。</li>
+<li>通过多次调用.then，可以添加多个回调函数，它们会按照插入顺序并且独立运行。</li>
+</ul>
+<p><strong>promise最直接的好处就是链式调用。</strong><br><strong><em>链式调用</em></strong><br>连续执行两个或者多个异步操作，这种情况下，每一个后来的操作都在前面的操作执行成功之后，带着上一步操作所返回的结果开始执行。我们可以通过创造一个promise chain来完成这种需求。</p>
+<ul>
+<li>then函数会返回一个新的promise，跟原来的不同    </li>
+<li>每一个promise代表了链中另一个异步过程的完成</li>
+<li>一定要返回promise，不然的话回调不会形成链式，错误也获取不到（当省略{}时，箭头函数将隐式返回）。</li>
+<li>在一个失败操作（即一个 catch）之后可以继续使用链式操作，即使链式中的一个动作失败之后还能有助于新的动作继续完成。</li>
+<li>在传统的回调写法中，failureCallback会被多次调用。一个promise链式调用遇到错误会查找链式低端,寻找catch来代替当前操作执行。</li>
+</ul>
+<h4 id="Generator函数"><a href="#Generator函数" class="headerlink" title="Generator函数"></a>Generator函数</h4><p>generator最大的特点是可以交出函数的执行权（即暂停执行）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function* helloWorldGenerator() &#123;</span><br><span class="line">    yield &apos;hello&apos;;</span><br><span class="line">    yield &apos;world&apos;;</span><br><span class="line">    return &apos;ending&apos;;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> var hw = helloWorldGenerator();</span><br><span class="line"></span><br><span class="line">console.log(hw.next());</span><br><span class="line">// &#123; value: &apos;hello&apos;, done: false &#125;</span><br><span class="line"></span><br><span class="line">console.log(hw.next());</span><br><span class="line">// &#123; value: &apos;world&apos;, done: false &#125;</span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line">// &#123; value: &apos;ending&apos;, done: true &#125;</span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line">// &#123; value: undefined, done: true &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>generator函数使用function* 来进行标识    </li>
+<li>异步需要暂停的地方，使用yield语句注明</li>
+<li></li>
+</ul>
+<h4 id="async-await-es7语法糖"><a href="#async-await-es7语法糖" class="headerlink" title="async/await(es7语法糖)"></a>async/await(es7语法糖)</h4><p>async是generator函数的语法糖。<br>async function 函数声明将定义一个异步函数，返回 AsyncFunction 对象。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var asyncReadFile = async function ()&#123;	</span><br><span class="line">  var f1 = await readFile(&apos;/etc/fstab&apos;);</span><br><span class="line">  var f2 = await readFile(&apos;/etc/shells&apos;);</span><br><span class="line">  console.log(f1.toString());</span><br><span class="line">  console.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>async函数就是将Generator函数的星号（*）替换成async，将yield 替换成 await，仅此而已。</p>
+<p><strong><em>async优点</em></strong>              </p>
+<ul>
+<li>内置执行器</li>
+<li>更好的语义</li>
+<li>更广的实用性    </li>
+</ul>
+<p>await 命令后面的 Promise 对象，运行结果可能是 rejected，所以最好把 await 命令放在 try…catch 代码块中。<br>await 命令只能用在 async 函数之中，如果用在普通函数，就会报错。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> JS基础 </tag>
+            
+            <tag> ES6 </tag>
+            
+            <tag> ES7 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Shell]]></title>
       <url>/2018/01/10/shell/</url>
       <content type="html"><![CDATA[<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell?"></a>什么是Shell?</h4><p>shell 是一个命令语言解释器（command-language interpreter）,简单来说就是一组linux命令的集合.</p>
@@ -888,9 +953,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         
@@ -930,9 +995,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         
@@ -957,9 +1022,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         
@@ -1004,9 +1069,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         
@@ -1085,9 +1150,9 @@
         
         <tags>
             
-            <tag> 秋招 </tag>
-            
             <tag> 面经 </tag>
+            
+            <tag> 秋招 </tag>
             
         </tags>
         

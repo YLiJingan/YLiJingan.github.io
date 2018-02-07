@@ -18,7 +18,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.8 -->
   <meta charset="UTF-8">
-  <title>面经第一波 - Angryyan</title>
+  <title>ES6,ES7 - Angryyan</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -42,7 +42,7 @@
   
       <meta name="description" content="我要一步一步向上爬">
   
-  <meta name="keywords" content="blog, hexo, mdui,面经,秋招">
+  <meta name="keywords" content="blog, hexo, mdui,JS基础,ES6,ES7">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="Angryyan">
@@ -57,13 +57,13 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="面经第一波 - Angryyan | Angryyan">
+  <meta property="og:title" content="ES6,ES7 - Angryyan | Angryyan">
   <meta property="og:image" content="/img/favicon.png" />
   
         <meta property="og:description" content="我要一步一步向上爬">
     
 
-    <meta property="og:article:tag" content="面经"> <meta property="og:article:tag" content="秋招"> 
+    <meta property="og:article:tag" content="JS基础"> <meta property="og:article:tag" content="ES6"> <meta property="og:article:tag" content="ES7"> 
 
   <!-- Cache -->
   <meta http-equiv="Cache-Control" content="max-age=7200" />
@@ -402,11 +402,15 @@
     
   ">
     <div class="post-header-container">
-      <div class="post-title mdui-text-truncate">面经第一波</div>
+      <div class="post-title mdui-text-truncate">ES6,ES7</div>
       <div class="post-actions mdui-valign">
         <div>
           <span>Posted: </span>
-          <span style="float: right">Dec 05, 2017</span>
+          <span style="float: right">Jan 12, 2018</span>
+          
+          <br>
+            <span>Last Modified: </span>
+            <span>Feb 07, 2018</span>
           
         </div>
         
@@ -420,7 +424,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/12/05/面经20170905/index.html" target="_blank" class="mdui-ripple">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/01/12/ES6,ES7查漏补缺/index.html" target="_blank" class="mdui-ripple">
               Share to Facebook
           </a>
       </li>
@@ -436,7 +440,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=面经第一波&url=http://yoursite.com//2017/12/05/面经20170905/index.html&via=yan" target="_blank" class="mdui-ripple">
+          <a href="https://twitter.com/intent/tweet?text=ES6,ES7&url=http://yoursite.com//2018/01/12/ES6,ES7查漏补缺/index.html&via=yan" target="_blank" class="mdui-ripple">
               Share to Twitter
           </a>
       </li>
@@ -444,7 +448,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share.php?appkey=&title=面经第一波&url=http://yoursite.com//2017/12/05/面经20170905/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+          <a href="http://service.weibo.com/share.php?appkey=&title=ES6,ES7&url=http://yoursite.com//2018/01/12/ES6,ES7查漏补缺/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
               Share to Weibo
           </a>
       </li>
@@ -470,67 +474,53 @@
         
         
         <div class="post-content mdui-typo no-margin" id="post-content">
-          <p>以下面经为8月底到九月初的几次面经。本来打算的是每次面试完就写面经，但是秋招节奏比较快，公司多。(好多时间都用来填写每个公司的投递简历系统，这其中也不乏因为填不下去就干脆不投了的。譬如：苏宁照片就一直上传不上去，所以我就干脆放弃了)</p>
-<p>今天面了美团一面，感觉自己还是有些知识点不够细。小姐姐说是有二面，希望二面自己能答好点。还有，明天要去现场面绿盟二面。今天写面经，也帮自己回顾回顾之前的问题，不要再出现同样的问题，还是不会。</p>
-<h2 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h2><h3 id="研华实习面试"><a href="#研华实习面试" class="headerlink" title="研华实习面试"></a>研华实习面试</h3><p>  <strong>实习实习实习!!!</strong>    请注意这个是实习面试，相对问的比较浅，只要你知道这个就好了。</p>
+          <h2 id="ES6-ES7查漏补缺"><a href="#ES6-ES7查漏补缺" class="headerlink" title="ES6,ES7查漏补缺"></a>ES6,ES7查漏补缺</h2><h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h3><p><em>该方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。最终返回目标对象</em>    </p>
 <blockquote>
-<p>2017.8.30         </p>
-<pre><code>1. 自我介绍        
-2. 块级元素，内联元素 举例        
-3. 两列布局的实现 (主要想考察float属性以及对flex的了解)        
-4. 兼容性的发现与处理 推荐大家一个网站.[兼容性检测](https://caniuse.com/)        
-5. vue生命周期(官网的那张图，自行去找吧)        
-6. 平时的学习方式    
-7. 介绍一下webpack    
-8. Vuex中怎么改变state的值    
-9. 数据问题 ajax    
-10. ES6新特性
-</code></pre></blockquote>
-<h3 id="绿盟科技一面"><a href="#绿盟科技一面" class="headerlink" title="绿盟科技一面"></a>绿盟科技一面</h3><p>  <strong>明天更新二面</strong>    </p>
-<blockquote>
-<p>2017.8.31         </p>
-<pre><code>1. 自我介绍        
-2. JS内置对象有哪些        
-3. JS数组方法        
-4. JS字符串方法        
-5. Join 和 + 的执行效率        
-6. null和undefined的区别  什么情况下回出现undefined        
-7. ajax同步异步  同步、异步、回调的执行顺序    
-8. bootstrap栅格系统及原理        
-9. echart饼图添加点击事件(echart只用过一丢丢)        
-10. git常用命令、主从分支协作以及冲突解决    
-11. http状态码  400是什么        
-12. JS内存回收机制        
-13. 内存泄露        
-14. 有什么想问的吗    
-</code></pre></blockquote>
-<h3 id="美团内推一面"><a href="#美团内推一面" class="headerlink" title="美团内推一面"></a>美团内推一面</h3><p>  <strong>期待二面</strong><br>  上周五面试官小姐姐打电话预约了周一中午面试，周末两天自己一直在看面经复习。但是今天还是有些紧张，相对电话面试我还是比较喜欢现场面试，面对面的交流可以更好的展示自己。<br>  <em>已然挺近二面，好好学习三面就在前方。</em></p>
-<blockquote>
-<p>2017.9.4         </p>
-<pre><code>1. 自我介绍            
-2. 介绍自己做的一个项目            
-3. 为什么学习前端            
-4. 变量提升        
-5. 数组方法                
-6. 字符串方法            
-7. 数组 sort方法详细介绍(小姐姐问了半天我没明白是在问什么，最后小姐姐给我说是想问返回值。原谅我一脸懵逼)            
-8. ES6新特性            
-9. 简单介绍 插入排序            
-10. 排序算法中时间复杂度比较低的是        
-11. JS数据类型            
-12. position            
-13. 两列布局            
-14. CSS的优先级        
-15. 原生操作dom的方法有哪些    
-16. var let的区别    
-17. 自己实现的比较熟悉的页面交互效果    
-18. 水平垂直居中    
-</code></pre></blockquote>
-<pre><code>从上面的问题，大家肯定会发现神奇的事情。那就是那就是那就是--自己好好看看去,我不告你 :)
-</code></pre><p>对于数组字符串的方法，自己一直比较ran.在这里放上两张图镇楼。<br><!-- [数组](http://ow4f5k7el.bkt.clouddn.com/%E6%95%B0%E7%BB%84.png)    
-[字符串](http://ow4f5k7el.bkt.clouddn.com/%E5%AD%97%E7%AC%A6%E4%B8%B2.gif) --><br><img src="http://ow4f5k7el.bkt.clouddn.com/%E6%95%B0%E7%BB%84.png" alt="数组方法" width="300" height="500"><br><a href="http://ow4f5k7el.bkt.clouddn.com/%E5%AD%97%E7%AC%A6%E4%B8%B2.gif" target="_blank" rel="noopener">字符串</a><br> 囧,本地图片怎么放不进来，明天再放。<br> 滚去复习了。    </p>
-<p> 2017/12/04更新</p>
-<p> 哈哈哈哈哈,还是在2017把图片的问题搞定了，其实超级简单的，就是之前没有好好搞</p>
+<p>语法<br>Object.assign(target,…sources)    </p>
+</blockquote>
+<p><a href="https://jsbin.com/tuxozur/1/edit?html,js,output" target="_blank" rel="noopener">demo</a>    </p>
+<ul>
+<li>目标对象与源对象有相同属性，源对象属性将覆盖目标该属性的值</li>
+<li>该方法只后拷贝对象自身的并且可以枚举的属性到目标对象</li>
+<li>Object.assign是浅拷贝，拷贝的是属性值。假如源对象的属性值是一个指向对象的引用，则只能拷贝那个引用值</li>
+<li>继承属性和不可枚举属性是不能拷贝的</li>
+<li>原始类型会被包装成对象，null和undefined会被忽略</li>
+<li>异常会打断后续拷贝任务</li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">MDN</a>    </p>
+<h3 id="promise-es6-Generator函数-async-await-es7"><a href="#promise-es6-Generator函数-async-await-es7" class="headerlink" title="promise(es6),Generator函数,async/await(es7)"></a>promise(es6),Generator函数,async/await(es7)</h3><p><strong><em>都是用下解决回调地狱的问题,异步函数调用</em></strong></p>
+<h4 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h4><p>本质上，promise是某个函数返回的对象，你可以把回调函数绑定到这个对象上，而不是把函数当做函数参数使用。</p>
+<p><em>promise会带来一些保证：</em>   </p>
+<ul>
+<li>在JavaScript事件队列的当前运行完成之前，回调函数永远不会被调用。</li>
+<li>通过.then形式添加的回调函数，甚至都在异步操作完成之后才被添加的函数，都会被调用。</li>
+<li>通过多次调用.then，可以添加多个回调函数，它们会按照插入顺序并且独立运行。</li>
+</ul>
+<p><strong>promise最直接的好处就是链式调用。</strong><br><strong><em>链式调用</em></strong><br>连续执行两个或者多个异步操作，这种情况下，每一个后来的操作都在前面的操作执行成功之后，带着上一步操作所返回的结果开始执行。我们可以通过创造一个promise chain来完成这种需求。</p>
+<ul>
+<li>then函数会返回一个新的promise，跟原来的不同    </li>
+<li>每一个promise代表了链中另一个异步过程的完成</li>
+<li>一定要返回promise，不然的话回调不会形成链式，错误也获取不到（当省略{}时，箭头函数将隐式返回）。</li>
+<li>在一个失败操作（即一个 catch）之后可以继续使用链式操作，即使链式中的一个动作失败之后还能有助于新的动作继续完成。</li>
+<li>在传统的回调写法中，failureCallback会被多次调用。一个promise链式调用遇到错误会查找链式低端,寻找catch来代替当前操作执行。</li>
+</ul>
+<h4 id="Generator函数"><a href="#Generator函数" class="headerlink" title="Generator函数"></a>Generator函数</h4><p>generator最大的特点是可以交出函数的执行权（即暂停执行）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function* helloWorldGenerator() &#123;</span><br><span class="line">    yield &apos;hello&apos;;</span><br><span class="line">    yield &apos;world&apos;;</span><br><span class="line">    return &apos;ending&apos;;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> var hw = helloWorldGenerator();</span><br><span class="line"></span><br><span class="line">console.log(hw.next());</span><br><span class="line">// &#123; value: &apos;hello&apos;, done: false &#125;</span><br><span class="line"></span><br><span class="line">console.log(hw.next());</span><br><span class="line">// &#123; value: &apos;world&apos;, done: false &#125;</span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line">// &#123; value: &apos;ending&apos;, done: true &#125;</span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line">// &#123; value: undefined, done: true &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>generator函数使用function* 来进行标识    </li>
+<li>异步需要暂停的地方，使用yield语句注明</li>
+<li></li>
+</ul>
+<h4 id="async-await-es7语法糖"><a href="#async-await-es7语法糖" class="headerlink" title="async/await(es7语法糖)"></a>async/await(es7语法糖)</h4><p>async是generator函数的语法糖。<br>async function 函数声明将定义一个异步函数，返回 AsyncFunction 对象。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var asyncReadFile = async function ()&#123;	</span><br><span class="line">  var f1 = await readFile(&apos;/etc/fstab&apos;);</span><br><span class="line">  var f2 = await readFile(&apos;/etc/shells&apos;);</span><br><span class="line">  console.log(f1.toString());</span><br><span class="line">  console.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>async函数就是将Generator函数的星号（*）替换成async，将yield 替换成 await，仅此而已。</p>
+<p><strong><em>async优点</em></strong>              </p>
+<ul>
+<li>内置执行器</li>
+<li>更好的语义</li>
+<li>更广的实用性    </li>
+</ul>
+<p>await 命令后面的 Promise 对象，运行结果可能是 rejected，所以最好把 await 命令放在 try…catch 代码块中。<br>await 命令只能用在 async 函数之中，如果用在普通函数，就会报错。</p>
 
         </div>
 
@@ -543,10 +533,10 @@
               
             </span>
             <br />
-            <span>Article Permalink: <a href="http://yoursite.com/2017/12/05/面经20170905/">http://yoursite.com/2017/12/05/面经20170905/</a></span>
+            <span>Article Permalink: <a href="http://yoursite.com/2018/01/12/ES6,ES7查漏补缺/">http://yoursite.com/2018/01/12/ES6,ES7查漏补缺/</a></span>
             
               <br />
-              <span>Article Markdown: <a href="http://yoursite.com/2017/12/05/面经20170905/面经20170905.md">http://yoursite.com/2017/12/05/面经20170905/面经20170905.md</a></span>
+              <span>Article Markdown: <a href="http://yoursite.com/2018/01/12/ES6,ES7查漏补缺/ES6,ES7查漏补缺.md">http://yoursite.com/2018/01/12/ES6,ES7查漏补缺/ES6,ES7查漏补缺.md</a></span>
             
           </div>
         
@@ -564,12 +554,16 @@
               </div>
               <div class="content mdui-typo">
                 
-                  <a href="/tags/面经/">
-                    <span>面经</span>
+                  <a href="/tags/JS基础/">
+                    <span>JS基础</span>
                   </a>
                 
-                  <a href="/tags/秋招/">
-                    <span>秋招</span>
+                  <a href="/tags/ES6/">
+                    <span>ES6</span>
+                  </a>
+                
+                  <a href="/tags/ES7/">
+                    <span>ES7</span>
                   </a>
                 
               </div>
@@ -586,7 +580,7 @@
           mdui-color-theme
         
         ">
-          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#面经"><span class="post-toc-number">1.<span class="post-toc-text">面经</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#研华实习面试"><span class="post-toc-number">1.1.<span class="post-toc-text">研华实习面试</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#绿盟科技一面"><span class="post-toc-number">1.2.<span class="post-toc-text">绿盟科技一面</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#美团内推一面"><span class="post-toc-number">1.3.<span class="post-toc-text">美团内推一面</span></span></a></a></ul></a></ul>
+          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#ES6-ES7查漏补缺"><span class="post-toc-number">1.<span class="post-toc-text">ES6,ES7查漏补缺</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#Object-assign"><span class="post-toc-number">1.1.<span class="post-toc-text">Object.assign</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#promise-es6-Generator函数-async-await-es7"><span class="post-toc-number">1.2.<span class="post-toc-text">promise(es6),Generator函数,async/await(es7)</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#promise"><span class="post-toc-number">1.2.1.<span class="post-toc-text">promise</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#Generator函数"><span class="post-toc-number">1.2.2.<span class="post-toc-text">Generator函数</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#async-await-es7语法糖"><span class="post-toc-number">1.2.3.<span class="post-toc-text">async/await(es7语法糖)</span></span></a></a></ul></a></ul></a></ul>
         </div>
       
     </div>
@@ -594,13 +588,13 @@
   <div class="post-pagination mdui-color-theme">
   
     <div class="prev mdui-ripple mdui-color-theme mdui-valign">
-      <a href="/2017/12/05/cssStudy/" class="content no-text-decoration mdui-text-left">
+      <a href="/2018/01/15/多个ssh key管理/" class="content no-text-decoration mdui-text-left">
         <div>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
           <span class="mdui-typo-body-2-opacity mdui-text-center">Newer Post</span>
         </div>
         <div class="mdui-typo-title mdui-text-truncate">
-          CSS学习笔记
+          多个SSH KEY 以及 HEXO
         </div>
       </a>
     </div>
@@ -608,13 +602,13 @@
 
   
     <div class="next mdui-ripple mdui-color-theme mdui-valign">
-      <a href="/2017/09/26/面经20170925/" class="content no-text-decoration mdui-text-right">
+      <a href="/2018/01/10/shell/" class="content no-text-decoration mdui-text-right">
         <div>
           <span class="mdui-typo-body-2-opacity mdui-text-center">Older Post</span>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
         </div>
         <div class="mdui-typo-title mdui-text-truncate">
-          面经第四波
+          Shell
         </div>
       </a>
     </div>
@@ -626,7 +620,7 @@
   <i class="mdui-icon material-icons">&#xe242;</i>
 </button>
 <ul class="mdui-menu mdui-typo no-margin-bottom auto-width" id="menu-toc" style="padding: 8px;max-height: 80%">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#面经"><span class="toc-text">面经</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#研华实习面试"><span class="toc-text">研华实习面试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绿盟科技一面"><span class="toc-text">绿盟科技一面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#美团内推一面"><span class="toc-text">美团内推一面</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6-ES7查漏补缺"><span class="toc-text">ES6,ES7查漏补缺</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-assign"><span class="toc-text">Object.assign</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#promise-es6-Generator函数-async-await-es7"><span class="toc-text">promise(es6),Generator函数,async/await(es7)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#promise"><span class="toc-text">promise</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Generator函数"><span class="toc-text">Generator函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#async-await-es7语法糖"><span class="toc-text">async/await(es7语法糖)</span></a></li></ol></li></ol></li></ol>
 </ul>
 
 
@@ -827,7 +821,7 @@
   <!-- content warning -->
 <script type="text/ls-javascript" id="content-warning-script">
   (function() {
-    var postLastModifiedDate = 1512475487000
+    var postLastModifiedDate = 1518003598786
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
