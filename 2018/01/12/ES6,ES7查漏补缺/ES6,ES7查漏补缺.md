@@ -21,7 +21,7 @@ tags: ['JS基础','ES6','ES7']
 
 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)	
 ### promise(es6),Generator函数,async/await(es7)
-***都是用下解决回调地狱的问题,异步函数调用***
+***都是用来解决回调地狱的问题,异步函数调用***
 #### promise
 本质上，promise是某个函数返回的对象，你可以把回调函数绑定到这个对象上，而不是把函数当做函数参数使用。
 		
