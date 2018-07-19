@@ -3,15 +3,29 @@
   
     
     <entry>
-      <title><![CDATA[React状态提升]]></title>
+      <title><![CDATA[React状态提升 数据流]]></title>
       <url>/2018/07/18/React--%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/</url>
-      <content type="html"><![CDATA[<h3 id="React-状态提升"><a href="#React-状态提升" class="headerlink" title="React 状态提升"></a>React 状态提升</h3><p><strong>在看项目代码的时候，发现自己有好多东西都忘记(只能说之前掌握的也不是很好😅)。本次的查漏补缺主要是针对React的相关知识进行的，主要学习途径是<a href="https://doc.react-china.org/docs/lifting-state-up.html" target="_blank" rel="noopener">React官网</a>,学习方法不再是以往的只看不动手。</strong></p>
+      <content type="html"><![CDATA[<h3 id="React-状态提升-数据流"><a href="#React-状态提升-数据流" class="headerlink" title="React 状态提升 数据流"></a>React 状态提升 数据流</h3><p><strong>在看项目代码的时候，发现自己有好多东西都忘记(只能说之前掌握的也不是很好😅)。本次的查漏补缺主要是针对React的相关知识进行的，主要学习途径是<a href="https://doc.react-china.org/docs/lifting-state-up.html" target="_blank" rel="noopener">React官网</a>,学习方法不再是以往的只看不动手。</strong></p>
 <p>自己动手实现官网上的demo,在实现的过程中能够发现很多细节上的问题。</p>
-<p><em>质量比数量更重要</em> –真正的掌握了一个知识点，也好多走马观花的看了一本书。</p>
+<h4 id="状态提升"><a href="#状态提升" class="headerlink" title="状态提升"></a>状态提升</h4><p><em>质量比数量更重要</em> –真正的掌握了一个知识点，也好过走马观花的看了一本书。</p>
 <p><a href="https://codepen.io/anon/pen/rrLQVq" target="_blank" rel="noopener">Demo</a>使用在线代码编辑工具，codepen   也不知道能不能看👀👀</p>
 <ul>
 <li><strong>状态提升：</strong>通过将state数据提升至离需要这些数据组件最近的父组件来完成，这就是数据提升过程。</li>
 </ul>
+<h4 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h4><p><strong>react中的数据流是单向的，是从上向下的：即从父组件向子组件的方向</strong><br>state和props是react数据流中最重要的概念。其中state是组件本身的数据发生变化，存放的是和页面渲染相关的数据；而props是父子组件的通信。</p>
+<ul>
+<li><strong>props:</strong> 如果顶层(父)组件初始化props，那么React会向下遍历整颗组件树，重新渲染相关的子组件。props在子组件中是只读的。<ul>
+<li>父组件更新子组件，通过传递props就可以了</li>
+<li>子组件更新父组件状态:需要父组件传递回调函数给子组件，子组件调用触发即可。<a href="https://codepen.io/anon/pen/jpMxWX?editors=1010" target="_blank" rel="noopener">Demo</a></li>
+</ul>
+</li>
+<li><strong>state:</strong>表示的是每个组件中内部的的状态，这些状态只在组件内部改变。<ul>
+<li>可以通过setState异步方法改变组件内部state的值，组件重新渲染。由于setState是异步方法，故一个生命周期中的所有setState将进行合并执行。（异步操作队列）</li>
+</ul>
+</li>
+</ul>
+<p><em>把组件看成是一个函数，那么他接受props作为参数，内部由state作为函数的内部参数，返回一个虚拟dom的实现</em></p>
+<p>JSX注释  {/**/}<br>nodemodules是怎么</p>
 ]]></content>
       
         
@@ -1121,9 +1135,9 @@
         
         <tags>
             
-            <tag> hexo </tag>
-            
             <tag> githubpages </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
         
