@@ -18,7 +18,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.8 -->
   <meta charset="UTF-8">
-  <title>首页 - Angryyan</title>
+  <title>React状态提升 数据流 - Angryyan</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -42,7 +42,7 @@
   
       <meta name="description" content="我要一步一步向上爬">
   
-  <meta name="keywords" content="blog, hexo, mdui">
+  <meta name="keywords" content="blog, hexo, mdui,react,学习笔记,Demo">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="Angryyan">
@@ -57,13 +57,13 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="首页 - Angryyan | Angryyan">
+  <meta property="og:title" content="React状态提升 数据流 - Angryyan | Angryyan">
   <meta property="og:image" content="/img/favicon.png" />
   
         <meta property="og:description" content="我要一步一步向上爬">
     
 
-    
+    <meta property="og:article:tag" content="react"> <meta property="og:article:tag" content="学习笔记"> <meta property="og:article:tag" content="Demo"> 
 
   <!-- Cache -->
   <meta http-equiv="Cache-Control" content="max-age=7200" />
@@ -107,6 +107,8 @@
   <body class="mdui-theme-primary-teal mdui-theme-accent-red
    
   
+    mdui-appbar-with-toolbar
+  
   " >
 
 
@@ -118,16 +120,46 @@
 
   
 
-  <div class="mdui-appbar animate-appbar mdui-shadow-0" id="blog-appbar">
-    <div class="mdui-toolbar">
+  <div class="mdui-appbar mdui-shadow-0 mdui-appbar-fixed animate-appbar" id="blog-appbar">
+    <div class="mdui-toolbar mdui-color-theme">
       <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon">
           <span></span>
         </i>
       </button>
+      
+        <a href="/" class="mdui-typo-headline">
+          返回首页
+        </a>
+      
+      
+      
+        <div class="flex-spacer"></div>
+      
+      
+      
+  <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}" id="index-more">
+    <i class="mdui-icon material-icons">&#xe417;</i>
+  </button>
+
+  <ul class="mdui-menu" id="menu-index-more">
+    
+    
+      <li class="mdui-menu-item">
+        <a class="mdui-ripple menu-badge">
+          浏览量: 
+          <span class="badge" id="busuanzi_value_page_pv"></span>
+        </a>
+      </li>
+    
+  </ul>
+
+
     </div>
   </div>
 
+
+  <div id="search-cover" searchResult onclick="closeSearch()"></div>
 
 
 
@@ -159,12 +191,14 @@
   <div class="hexo">
     
       <div class="mdui-list no-padding-bottom">
-        <li class="mdui-list-item mdui-ripple mdui-list-item-active">
-          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme-accent">&#xe88a;</i>
-          <div class="mdui-list-item-content mdui-text-color-theme-accent">
-            首页
-          </div>
-        </li>
+        <a href="/">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
+            <div class="mdui-list-item-content">
+              首页
+            </div>
+          </li>
+        </a>
       </div>
     
     
@@ -354,690 +388,224 @@
 
 <main>
   
-  <div class="index-warper animate-post">
-  <div id="index">
-    <div class="faviconImg">
-      <img class="mdui-img-fluid" src="/img/favicon.png" />
-    </div>
-    
-  </div>
-  <div id="search-cover" searchResult></div>
 
-  
 
-  <div id="posts">
+  <style id="post_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("post_css","/css/src/now/post.min.css?MWI5mYfrtkkaVt0cXypQEA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+<style id="lightgallery_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("lightgallery_css","/css/src/lightgallery.min.css?+c5+nzUi2JvkvxweHDf/nA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+  <style id="prism_theme_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prism_theme_css","/css/src/prism-themes/dark.min.css?0qUPxIYO7HRq6/jdmib3dQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+  <style id="line_number_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("line_number_css","/css/src/prism-themes/line-number.min.css?3vej9ouE8RJMGe/3SzS8aw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+<style>
+  .lg-outer .lg-item {
+    background-image: url("/img/loading.gif");
+  }
+</style>
+<div class="post-warpper animate-post">
+  <div class="post-bg-color
     
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Aug 31, 2018</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2018/08/31/React--状态提升/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2018/08/31/React--状态提升/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        React状态提升 数据流
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
       
+        mdui-color-theme
       
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/react/">
-              <span>react</span>
-            </a>
-          
-            <a href="/tags/学习笔记/">
-              <span>学习笔记</span>
-            </a>
-          
-            <a href="/tags/Demo/">
-              <span>Demo</span>
-            </a>
+    
+  "></div>
+  <div class="post-header
+    
+      
+        mdui-color-theme
+      
+    
+  ">
+    <div class="post-header-container">
+      <div class="post-title mdui-text-truncate">React状态提升 数据流</div>
+      <div class="post-actions mdui-valign">
+        <div>
+          <span>编写时间：</span>
+          <span style="float: right">Aug 31, 2018</span>
           
         </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
         
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Aug 28, 2018</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2018/08/28/react生命周期/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2018/08/28/react生命周期/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
+
         
-        React生命周期
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/react/">
-              <span>react</span>
-            </a>
-          
-            <a href="/tags/学习笔记/">
-              <span>学习笔记</span>
-            </a>
-          
-            <a href="/tags/挖坑之后/">
-              <span>挖坑之后</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
+  <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-post-share'}">
+    <i class="mdui-icon material-icons">&#xe80d;</i>
+  </button>
 
-
+  <ul class="mdui-menu" id="menu-post-share">
 
     
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Jan 15, 2018</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2018/01/15/多个ssh key管理/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2018/01/15/多个ssh key管理/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        多个SSH KEY 以及 HEXO
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        ...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/hexo/">
-              <span>hexo</span>
-            </a>
-          
-            <a href="/tags/ssh key/">
-              <span>ssh key</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Jan 12, 2018</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2018/01/12/ES6,ES7查漏补缺/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2018/01/12/ES6,ES7查漏补缺/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        ES6,ES7
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/JS基础/">
-              <span>JS基础</span>
-            </a>
-          
-            <a href="/tags/ES6/">
-              <span>ES6</span>
-            </a>
-          
-            <a href="/tags/ES7/">
-              <span>ES7</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Jan 10, 2018</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2018/01/10/shell/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2018/01/10/shell/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        Shell
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/学习笔记/">
-              <span>学习笔记</span>
-            </a>
-          
-            <a href="/tags/shell/">
-              <span>shell</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Dec 20, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/12/20/webpackStudy/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/12/20/webpackStudy/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        webpack学习笔记
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        本次使用开发工具为 VSCode，相对...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/学习笔记/">
-              <span>学习笔记</span>
-            </a>
-          
-            <a href="/tags/webpack/">
-              <span>webpack</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Dec 05, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/12/05/cssStudy/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/12/05/cssStudy/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        CSS学习笔记
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/学习笔记/">
-              <span>学习笔记</span>
-            </a>
-          
-            <a href="/tags/CSS/">
-              <span>CSS</span>
-            </a>
-          
-            <a href="/tags/某人口中的抄书/">
-              <span>某人口中的抄书</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Dec 05, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/12/05/面经20170905/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/12/05/面经20170905/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        面经第一波
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        以下面经为8月底到九月初的几次面经。本...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/面经/">
-              <span>面经</span>
-            </a>
-          
-            <a href="/tags/秋招/">
-              <span>秋招</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Sep 26, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/09/26/面经20170925/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/09/26/面经20170925/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        面经第四波
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/面经/">
-              <span>面经</span>
-            </a>
-          
-            <a href="/tags/秋招/">
-              <span>秋招</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Sep 26, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/09/26/狗东面经20170925/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/09/26/狗东面经20170925/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        狗东面经
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        逗逼的傲娇(本来想起这个名字呢...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/面经/">
-              <span>面经</span>
-            </a>
-          
-            <a href="/tags/秋招/">
-              <span>秋招</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-  </div>
-  
-  <ul class="pagination">
-    
-    <li>
-      <a class="mdui-text-color-theme-icon-disabled">
-        <i class="mdui-icon material-icons">&#xe5cb;</i>
-      </a>
-    </li>
-    
-
-    
-      
-        <li class="mdui-color-theme-accent">
-          <a class="mdui-text-color-theme-text">1</a>
-        </li>
-      
-    
-
-    
-
-    
-      
-    
-      
-    
-
-    
-
-    
-      
-    
-      
-    
-
-    
-
-    
-      <li class="mdui-ripple">
-        <a href="/page/2/" class="mdui-text-color-theme-text">
-          2
-        </a>
+      <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/08/31/React--状态提升/index.html" target="_blank" class="mdui-ripple">
+              分享到Facebook
+          </a>
       </li>
     
 
     
-      
-        <li class="mdui-ripple">
-          <a href="/page/2/" class="mdui-text-color-theme-text">
-            <i class="mdui-icon material-icons">&#xe5cc;</i>
-          </a>
-        </li>
-      
+
     
-   </ul>
+
+    
+
+    
+
+    
+      <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=React状态提升 数据流&url=http://yoursite.com//2018/08/31/React--状态提升/index.html&via=yan" target="_blank" class="mdui-ripple">
+              分享到Twitter
+          </a>
+      </li>
+    
+
+    
+      <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share.php?appkey=&title=React状态提升 数据流&url=http://yoursite.com//2018/08/31/React--状态提升/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+              分享到微博
+          </a>
+      </li>
+    
+
+  </ul>
 
 
-  <button id="toTop" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-fab-hide" style="z-index: 9;" onclick="smoothScroll.animateScroll( 0 );">
-  <i class="mdui-icon material-icons">&#xe5d8;</i>
-</button>
+      </div>
+    </div>
+  </div>
+  <div class="post-container flex-spacer
+  
+  ">
+    <div class="post-adjust">
+      <div class="mdui-card card-bottom-fix menu-fix mdui-hoverable" id="blog-post">
+        <div class="warning">
+          这篇文章最后修改于
+          <span id="content-warning"></span>
+          天之前。
+          本页内容可能已经过时！
+        </div>
+        
+        
+        <div class="post-content mdui-typo no-margin" id="post-content">
+          <h3 id="React-状态提升-数据流"><a href="#React-状态提升-数据流" class="headerlink" title="React 状态提升 数据流"></a>React 状态提升 数据流</h3><p><strong>在看项目代码的时候，发现自己有好多东西都忘记(只能说之前掌握的也不是很好😅)。本次的查漏补缺主要是针对React的相关知识进行的，主要学习途径是<a href="https://doc.react-china.org/docs/lifting-state-up.html" target="_blank" rel="noopener">React官网</a>,学习方法不再是以往的只看不动手。</strong></p>
+<p>自己动手实现官网上的demo,在实现的过程中能够发现很多细节上的问题。</p>
+<h4 id="状态提升"><a href="#状态提升" class="headerlink" title="状态提升"></a>状态提升</h4><p><em>质量比数量更重要</em> –真正的掌握了一个知识点，也好过走马观花的看了一本书。</p>
+<p><a href="https://codepen.io/anon/pen/rrLQVq" target="_blank" rel="noopener">Demo</a>使用在线代码编辑工具，codepen   也不知道能不能看👀👀</p>
+<ul>
+<li><strong>状态提升：</strong>通过将state数据提升至离需要这些数据组件最近的父组件来完成，这就是数据提升过程。</li>
+</ul>
+<h4 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h4><p><strong>react中的数据流是单向的，是从上向下的：即从父组件向子组件的方向</strong><br>state和props是react数据流中最重要的概念。其中state是组件本身的数据发生变化，存放的是和页面渲染相关的数据；而props是父子组件的通信。</p>
+<ul>
+<li><strong>props:</strong> 如果顶层(父)组件初始化props，那么React会向下遍历整颗组件树，重新渲染相关的子组件。props在子组件中是只读的。<ul>
+<li>父组件更新子组件，通过传递props就可以了</li>
+<li>子组件更新父组件状态:需要父组件传递回调函数给子组件，子组件调用触发即可。<a href="https://codepen.io/anon/pen/jpMxWX?editors=1010" target="_blank" rel="noopener">Demo</a><br><img src="http://ow4f5k7el.bkt.clouddn.com/%E5%AD%90%E7%BB%84%E4%BB%B6%E5%90%91%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC.png" alt="子组件向父组件传值"></li>
+</ul>
+</li>
+<li><strong>state:</strong>表示的是每个组件中内部的的状态，这些状态只在组件内部改变。<ul>
+<li>可以通过setState异步方法改变组件内部state的值，组件重新渲染。由于setState是异步方法，故一个生命周期中的所有setState将进行合并执行。（异步操作队列）    </li>
+</ul>
+</li>
+</ul>
+<p><strong><a href="http://taobaofed.org/blog/2016/11/17/react-components-communication/" target="_blank" rel="noopener">组件之间的通信</a></strong>    <em>淘宝前端团队总结</em></p>
+<p><em>把组件看成是一个函数，那么他接受props作为参数，内部由state作为函数的内部参数，返回一个虚拟dom的实现</em></p>
+<p>JSX注释  {/**/}</p>
 
+        </div>
+
+        
+          <div class="license mdui-typo">
+            <span>
+              本文许可协议：
+              
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
+              
+            </span>
+            <br />
+            <span>本文永久链接：<a href="http://yoursite.com/2018/08/31/React--状态提升/">http://yoursite.com/2018/08/31/React--状态提升/</a></span>
+            
+              <br />
+              <span>本文Markdown：<a href="http://yoursite.com/2018/08/31/React--状态提升/React--状态提升.md">http://yoursite.com/2018/08/31/React--状态提升/React--状态提升.md</a></span>
+            
+          </div>
+        
+
+        
+          <div class="posts-info">
+            
+              <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '打赏我一个吧', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
+            
+            <div class="flex-spacer"></div>
+            
+            
+              <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
+              </div>
+              <div class="content mdui-typo">
+                
+                  <a href="/tags/react/">
+                    <span>react</span>
+                  </a>
+                
+                  <a href="/tags/学习笔记/">
+                    <span>学习笔记</span>
+                  </a>
+                
+                  <a href="/tags/Demo/">
+                    <span>Demo</span>
+                  </a>
+                
+              </div>
+            
+          </div>
+        
+        
+          
+        
+      </div>
+      
+        <div id="card-toc" class="
+        
+          mdui-color-theme
+        
+        ">
+          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#React-状态提升-数据流"><span class="post-toc-number">1.<span class="post-toc-text">React 状态提升 数据流</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#状态提升"><span class="post-toc-number">1.1.<span class="post-toc-text">状态提升</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#数据流"><span class="post-toc-number">1.2.<span class="post-toc-text">数据流</span></span></a></a></ul></a></ul>
+        </div>
+      
+    </div>
+  </div>
+  <div class="post-pagination mdui-color-theme">
+  
+    <div class="flex-spacer mdui-hidden-xs"></div>
+  
+
+  
+    <div class="next mdui-ripple mdui-color-theme mdui-valign">
+      <a href="/2018/08/28/react生命周期/" class="content no-text-decoration mdui-text-right">
+        <div>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          React生命周期
+        </div>
+      </a>
+    </div>
+    
 </div>
 
+  
+    <button id="button-toc" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-hidden-md-up" style="z-index: 9;" mdui-menu="{target: '#menu-toc', fixed: true}">
+  <i class="mdui-icon material-icons">&#xe242;</i>
+</button>
+<ul class="mdui-menu mdui-typo no-margin-bottom auto-width" id="menu-toc" style="padding: 8px;max-height: 80%">
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-状态提升-数据流"><span class="toc-text">React 状态提升 数据流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#状态提升"><span class="toc-text">状态提升</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据流"><span class="toc-text">数据流</span></a></li></ol></li></ol>
+</ul>
 
+
+  
+
+</div>
 
 </main>
 
@@ -1123,38 +691,140 @@
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <script type="text/ls-javascript" id="to-top-script">
-  /* fab */
+  <script type="text/ls-javascript" id="appbar-script">
+  /* post appbar */
   (function() {
     var pageFlag = false;
-    var fab = new mdui.Fab('#toTop');
-    fab.hide();
+    var appbar = new mdui.Headroom('#blog-appbar');
+    appbar.disable();
+    var toolbar = document.querySelector('#blog-appbar .mdui-toolbar')
+
     window.addEventListener('scroll', function() {
       var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
       var divTop = document.querySelector('div#top').offsetTop
+
       var pageLocation = divTop - bodyTop;
       if (!pageFlag && pageLocation < 0) {
-        fab.show();
+        toolbar.classList.add('mdui-shadow-2')
+        appbar.enable();
         pageFlag = true;
       } else if (pageFlag && pageLocation >= 0) {
-        fab.hide();
+        toolbar.classList.remove('mdui-shadow-2')
+        appbar.disable();
         pageFlag = false;
       }
-    });
+    })
   })();
 </script>
+
+  <script type="text/ls-javascript" id="toc-active-script">
+  if (document.querySelector('ul#menu-toc > ol') !== null && document.querySelector('div#card-toc > ul') !== null) {
+    window.addEventListener("load", function() {
+      var timer;
+      function doWork() {
+        listens.forEach(function(value, index) {
+          value[1]();
+          value[0].classList.remove("mdui-list-item-active");
+        })
+        let actionToc = (listens[listens.reduce(function(r, v, index) {
+          if (v[2] == true) {
+            return index;
+          } else return r;
+        }, undefined)] || [])[0] || listens[0][0];
+        actionToc.classList.add("mdui-list-item-active");
+        if(actionToc.getClientRects().length == 0)return;
+        showToc(actionToc);
+      }
+
+      function showToc(toc) {
+        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
+        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
+        let offset = 0;
+        if (offsetTop < 0) offset = offsetTop;
+        if (offsetBottom > 0) offset = offsetBottom;
+        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
+        clearInterval(timer);
+        timer = setInterval(function() {
+          var now = cardToc.scrollTop;
+          var speed = (targetTop - now) / 10;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          if (Math.abs(now - targetTop) < 1) {
+            clearInterval(timer);
+          }
+          cardToc.scrollTop = now + speed;
+        }, 30);
+      }
+      var listens = [];
+      var cardToc = document.querySelector('#card-toc');
+      var links = document.querySelectorAll("a.post-toc-link");
+      var toclist = document.querySelector("#card-toc > ul");
+      Array.prototype.forEach.call(links, function(value, index) {
+        var id = (value.getAttribute("href") || "#").slice(1);
+        var element = document.getElementById(id);
+        listens.push([value, function() {
+          var readed = false;
+          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
+            readed = true;
+          } else {
+            readed = false;
+          }
+          listens[index][2] = readed;
+        }, false])
+      })
+      doWork();
+      window.addEventListener("scroll", doWork)
+    });
+  }
+</script>
+
+  <script type="text/ls-javascript" id="post-lg-script">
+  var images = document.querySelectorAll('#post-content img')
+  for (i = 0; i < images.length; i++) {
+    images[i].addEventListener("click", openLG);
+  }
+  function openLG() {
+    var img_src = this.getAttribute('src');
+    var img_alt = this.getAttribute('alt');
+    lightGallery(this, {
+      dynamic: true,
+      counter: false,
+      dynamicEl: [{
+        "src": img_src,
+        'subHtml': "<span author>yan</span> • 公开<div descr>" + img_alt + "</div>"
+      }],
+    });
+  }
+</script>
+
+  <!-- content warning -->
+<script type="text/ls-javascript" id="content-warning-script">
+  (function() {
+    var postLastModifiedDate = 1535685741783
+    var today = (new Date()).getTime()
+    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
+    if (difference >= 100) {
+      document.querySelector('div.warning').style.display = 'block'
+      document.querySelector('#content-warning').textContent = difference
+    }
+  })();
+</script>
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1163,6 +833,8 @@
   
 
 
+
+  <script>lsloader.load("lightgallery_js","/js/lightgallery.min.js?tQptxVaCRzQ3zx70gMUYig==", true)</script>
 
 
 
