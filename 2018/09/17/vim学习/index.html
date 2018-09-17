@@ -18,7 +18,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.8 -->
   <meta charset="UTF-8">
-  <title>2017 - Angryyan</title>
+  <title> - Angryyan</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -57,7 +57,7 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="2017 - Angryyan | Angryyan">
+  <meta property="og:title" content=" - Angryyan | Angryyan">
   <meta property="og:image" content="/img/favicon.png" />
   
         <meta property="og:description" content="我要一步一步向上爬">
@@ -109,9 +109,7 @@
   
     mdui-appbar-with-toolbar
   
-  
-    side-content style-fix
-  " onresize="styleChanging()">
+  " >
 
 
   
@@ -122,34 +120,24 @@
 
   
 
-    <div class="mdui-appbar animate-appbar mdui-shadow-0 mdui-appbar-fixed" id="blog-appbar">
-      <div class="mdui-toolbar mdui-color-theme mdui-shadow-2">
-        <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
-          <i class="mdui-icon">
-            <span></span>
-          </i>
-        </button>
-        
-          <a href="/" class="mdui-typo-headline">
-            返回首页
-          </a>
-          <span class="appbar-border-line mdui-hidden-xs"></span>
-        
-        
-          <span class="mdui-typo-title mdui-hidden-xs"
-            
-              onclick="smoothScroll.animateScroll( 0 );"
-            
-          >
-            2017
-          </span>
-        
-        
-        
-          <div class="flex-spacer"></div>
-        
-        
-        
+  <div class="mdui-appbar mdui-shadow-0 mdui-appbar-fixed animate-appbar" id="blog-appbar">
+    <div class="mdui-toolbar mdui-color-theme">
+      <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
+        <i class="mdui-icon">
+          <span></span>
+        </i>
+      </button>
+      
+        <a href="/" class="mdui-typo-headline">
+          返回首页
+        </a>
+      
+      
+      
+        <div class="flex-spacer"></div>
+      
+      
+      
   <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}" id="index-more">
     <i class="mdui-icon material-icons">&#xe417;</i>
   </button>
@@ -167,9 +155,11 @@
   </ul>
 
 
-      </div>
     </div>
-  
+  </div>
+
+
+  <div id="search-cover" searchResult onclick="closeSearch()"></div>
 
 
 
@@ -178,8 +168,6 @@
 
   
   <div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close
-  
-    drawer-fix
   " id="drawer" style="z-index: 2001;">
   <div class="userview" style="background-image: url(/img/bg.jpg)">
   <div class="overlay">
@@ -343,7 +331,7 @@
             </div>
           </div>
         
-        <div class="mdui-collapse-item mdui-collapse-item-open">
+        <div class="mdui-collapse-item ">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
             <div class="mdui-list-item-content">Years</div>
@@ -397,28 +385,60 @@
 
 
 
+
+<main>
   
 
-  <style id="side_content_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("side_content_css","/css/src/now/side_content.min.css?6QUsjVbcFbaNw1GxvnmHrA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
-<div id="side-content" class="mdui-color-green animate-drawer">
-  <div class="mdui-grid-tile" style="overflow: visible;">
-    <div class="bg">
-      <img src="/img/random/picHD_1.png" />
-    </div>
-    <div class="mdui-grid-tile-actions mdui-grid-tile-actions-top mdui-grid-tile-actions-gradient">
-      <div class="flex-spacer"></div>
-      <div class="mdui-grid-tile-buttons">
-        
-  <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-page-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+  <style id="post_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("post_css","/css/src/now/post.min.css?MWI5mYfrtkkaVt0cXypQEA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
-  <ul class="mdui-menu" id="menu-page-share">
+<style id="lightgallery_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("lightgallery_css","/css/src/lightgallery.min.css?+c5+nzUi2JvkvxweHDf/nA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
+  <style id="prism_theme_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prism_theme_css","/css/src/prism-themes/dark.min.css?0qUPxIYO7HRq6/jdmib3dQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+  <style id="line_number_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("line_number_css","/css/src/prism-themes/line-number.min.css?3vej9ouE8RJMGe/3SzS8aw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+<style>
+  .lg-outer .lg-item {
+    background-image: url("/img/loading.gif");
+  }
+</style>
+<div class="post-warpper animate-post">
+  <div class="post-bg-color
     
+      
+        mdui-color-theme
+      
+    
+  "></div>
+  <div class="post-header
+    
+      
+        mdui-color-theme
+      
+    
+  ">
+    <div class="post-header-container">
+      <div class="post-title mdui-text-truncate"></div>
+      <div class="post-actions mdui-valign">
+        <div>
+          <span>Posted: </span>
+          <span style="float: right">Sep 17, 2018</span>
+          
+        </div>
+        
+
+        
+  <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-post-share'}">
+    <i class="mdui-icon material-icons">&#xe80d;</i>
+  </button>
+
+  <ul class="mdui-menu" id="menu-post-share">
 
     
       <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//archives/2017/index.html" target="_blank" class="mdui-ripple">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/09/17/vim学习/index.html" target="_blank" class="mdui-ripple">
               Share to Facebook
           </a>
       </li>
@@ -434,7 +454,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=2017&url=http://yoursite.com//archives/2017/index.html&via=yan" target="_blank" class="mdui-ripple">
+          <a href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com//2018/09/17/vim学习/index.html&via=yan" target="_blank" class="mdui-ripple">
               Share to Twitter
           </a>
       </li>
@@ -442,7 +462,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share.php?appkey=&title=2017&url=http://yoursite.com//archives/2017/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+          <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://yoursite.com//2018/09/17/vim学习/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
               Share to Weibo
           </a>
       </li>
@@ -454,592 +474,393 @@
       </div>
     </div>
   </div>
-  <div class="content">
-    <img class="mdui-img-circle avatar" src="/img/cat.jpg"/>
-    <div class="author mdui-text-center">
-      yan
-    </div>
-    <div class="name">
-      2017
-    </div>
-    <div class="length">
-      
-      9Posts
-    </div>
-  </div>
-</div>
-<div id="contentLocation"></div>
-
-
-
-<main>
+  <div class="post-container flex-spacer
   
-  <div class="posts-container column-3">
-
-  </div>
-  <div id="content-list" class="animate-post">
-    
-      <div class="content-item">
+  ">
+    <div class="post-adjust">
+      <div class="mdui-card card-bottom-fix menu-fix mdui-hoverable" id="blog-post">
+        <div class="warning">
+          This article was last modified
+          <span id="content-warning"></span>
+          days ago.
+          The content of this post may be outdated!
+        </div>
         
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Dec 20, 2017</span>
+        
+        <div class="post-content mdui-typo no-margin" id="post-content">
+          <h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><p><em>很少使用vim,但是为了不让自己每次用的时候很吃力，还是记录一些常用的快捷键吧!</em></p>
+<h3 id="关于vim"><a href="#关于vim" class="headerlink" title="关于vim"></a>关于vim</h3><p>vim是linux下的编辑器，<font color="red"><strong>vim是区分大小写的</strong></font> </p>
+<p>vim有 <strong>以下3中模式：</strong><br>正常模式：该模式下可以使用快捷键命令，或者使用 <font color="red"><strong>:</strong></font> 输入命令行<br>插入模式：可以输入文本，在正常模式下使用 <font color="red"><strong>i  a  o</strong></font> 都可以进入插入模式<br>可视模式: 正常模式下使用 <font color="red"><strong>v</strong></font> 可以进入可视模式，在该模式下移动光标可以选择文本（正常模式下仅能移动光标，不能选择文本）<font color="red"><strong>ctrl+v</strong></font> 进入可视块模式</p>
+<h3 id="vim打开文件"><a href="#vim打开文件" class="headerlink" title="vim打开文件"></a>vim打开文件</h3><font color="#4EA1DB"><strong><em>file均表示的是文件名</em></strong></font>    
+
+<p>最常用的是：vim file     </p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim -r file</td>
+<td>恢复上次异常退出的文件</td>
+</tr>
+<tr>
+<td>vim -R file</td>
+<td>以只读的方式打开文件, i 可以进行修改并进行强制保存</td>
+</tr>
+<tr>
+<td>vim -M file</td>
+<td>以只读方式打开文件，i 不可以编译文件</td>
+</tr>
+<tr>
+<td>vim + file</td>
+<td>光标在文件的末尾，打开文件</td>
+</tr>
+<tr>
+<td>vim +num file</td>
+<td>光标停在num行位置，打开文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vim快捷键"><a href="#vim快捷键" class="headerlink" title="vim快捷键"></a>vim快捷键</h3><p><em>先上一张图</em><br><img src="http://p2dhba8jd.bkt.clouddn.com/vi-vim-cheat-sheet-sch.gif" alt="vim快捷键"><br>从上图我们就能看到vim的强大了 🤣</p>
+<h4 id="操作文档"><a href="#操作文档" class="headerlink" title="操作文档"></a>操作文档</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>:</strong>e file</td>
+<td>关闭当前正在编辑的文件并打开file,如果有更改未保存，vim会警告⚠️</td>
+</tr>
+<tr>
+<td><strong>:</strong>e！file</td>
+<td>强制关闭当前正在编辑的文件并打开file</td>
+</tr>
+<tr>
+<td><strong>:</strong>e newfile</td>
+<td>编辑新文件，同时命名该文件为newfile</td>
+</tr>
+<tr>
+<td><strong>:</strong>e</td>
+<td>重新加载当前文件</td>
+</tr>
+<tr>
+<td><strong>:</strong>e!</td>
+<td>强制重新加载当前文件，并放弃更改</td>
+</tr>
+<tr>
+<td><strong>:</strong>f或ctrl+g</td>
+<td>显示文件名，是否修改以及光标位置</td>
+</tr>
+<tr>
+<td>gf</td>
+<td>打开以光标所在字符串为文件名的文件</td>
+</tr>
+<tr>
+<td><strong>:</strong>f filename</td>
+<td>改变当前文件的文件名，相当于另存为(做出修改后新文件才会有)</td>
+</tr>
+<tr>
+<td><strong>:</strong>n1,n2w filename</td>
+<td>保存n1行到n2行的内容，并生成一个新文件命名为filename</td>
+</tr>
+<tr>
+<td><strong>:</strong>saveas newfilename</td>
+<td>另存为</td>
+</tr>
+<tr>
+<td><strong>:</strong>Sex</td>
+<td>水平分割一个窗口，浏览文件系统</td>
+</tr>
+<tr>
+<td><strong>:</strong>Vex</td>
+<td>垂直分割一个窗口，浏览文件系统</td>
+</tr>
+</tbody>
+</table>
+<h4 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h或退格，j，k，l或空格</td>
+<td>⬅️，⬇️，⬆️，➡️</td>
+</tr>
+<tr>
+<td>gj</td>
+<td>移动到一段内的下一行</td>
+</tr>
+<tr>
+<td>gk</td>
+<td>移动到一段内的上一行</td>
+</tr>
+<tr>
+<td>w</td>
+<td>前移一个单词，光标停在下一个单词开头</td>
+</tr>
+<tr>
+<td>W</td>
+<td>移动下一个单词开头，但忽略一些标点</td>
+</tr>
+<tr>
+<td>e</td>
+<td>前移一个单词，光标停在下一个单词末尾</td>
+</tr>
+<tr>
+<td>E</td>
+<td>移动到下一个单词末尾，如果词尾有标点，则移动到标点</td>
+</tr>
+<tr>
+<td>b</td>
+<td>后移一个单词，光标停在上一个单词开头</td>
+</tr>
+<tr>
+<td>B</td>
+<td>移动到上一个单词开头，忽略一些标点</td>
+</tr>
+<tr>
+<td>ge</td>
+<td>后移一个单词，光标停在上一个单词末尾</td>
+</tr>
+<tr>
+<td>gE</td>
+<td>同 ge ，不过‘单词’包含单词相邻的标点</td>
+</tr>
+<tr>
+<td>(</td>
+<td>前移1句</td>
+</tr>
+<tr>
+<td>)</td>
+<td>后移1句</td>
+</tr>
+<tr>
+<td>{</td>
+<td>前移1段</td>
+</tr>
+<tr>
+<td>}</td>
+<td>后移1段</td>
+</tr>
+<tr>
+<td>fc</td>
+<td>把光标移到同一行的下一个c字符处</td>
+</tr>
+<tr>
+<td>Fc</td>
+<td>把光标移到同一行的上一个c字符处</td>
+</tr>
+<tr>
+<td>tc</td>
+<td>把光标移到同一行的下一个c字符前</td>
+</tr>
+<tr>
+<td>Tc</td>
+<td>把光标移到同一行的上一个c字符后</td>
+</tr>
+<tr>
+<td>操作都可以配合n使用，比如在正常模式下输入3h，则光标向左移动3个字符</td>
+</tr>
+<tr>
+<td>0</td>
+<td>移动到行首</td>
+</tr>
+<tr>
+<td>g0</td>
+<td>移到光标所在屏幕行行首</td>
+</tr>
+<tr>
+<td>^</td>
+<td>移动到本行第一个非空白字符</td>
+</tr>
+<tr>
+<td>g^</td>
+<td>同 ^ ，但是移动到当前屏幕行第一个非空字符处</td>
+</tr>
+<tr>
+<td>$</td>
+<td>移动到行尾</td>
+</tr>
+<tr>
+<td>g$</td>
+<td>移动光标所在屏幕行行尾</td>
+</tr>
+<tr>
+<td>n</td>
+<td>把光标移到递n列上</td>
+</tr>
+<tr>
+<td>nG</td>
+<td>到文件第n行</td>
+</tr>
+<tr>
+<td><strong>:</strong>n<cr></cr></td>
+<td>移动到第n行</td>
+</tr>
+<tr>
+<td><strong>:</strong>$<cr></cr></td>
+<td>移动到最后一行</td>
+</tr>
+<tr>
+<td>H</td>
+<td>把光标移到屏幕最顶端一行</td>
+</tr>
+<tr>
+<td>M</td>
+<td>把光标移到屏幕中间一行</td>
+</tr>
+<tr>
+<td>L</td>
+<td>把光标移到屏幕最底端一行</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>到文件头部</td>
+</tr>
+<tr>
+<td>G</td>
+<td>到文件尾部</td>
+</tr>
+</tbody>
+</table>
+<h4 id="操作文本内容"><a href="#操作文本内容" class="headerlink" title="操作文本内容"></a>操作文本内容</h4><p><strong><em>i a o均可以从正常模式切换至编辑状态，👇列出了3者的区别</em></strong><br>正常模式下使用3者的区别</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>i</td>
+<td>在光标前插入</td>
+</tr>
+<tr>
+<td></td>
+<td>I</td>
+<td>在当前行第一个非空字符前插入</td>
+</tr>
+<tr>
+<td></td>
+<td>a</td>
+<td>在光标后插入</td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td>在当前行最后插入</td>
+</tr>
+<tr>
+<td></td>
+<td>o</td>
+<td>在下面新建一行插入</td>
+</tr>
+<tr>
+<td></td>
+<td>O</td>
+<td>在上面新建一行插入</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>：</strong>r filename</td>
+<td>在当前位置插入另一个文件的内容</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>：</strong>r !date</td>
+<td>在光标处插入当前日期与时间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-operations"><a href="#other-operations" class="headerlink" title="other operations"></a>other operations</h3><p>:set nu  / nonu  显示 / 隐藏 行号<br>:vsp 垂直分割屏幕<br>:vsp . 打开当前文件夹<br>:set list / nolist  显示 / 隐藏 隐藏字符(缩进/回车等)<br>/aimword  全局查找<br>aimword  n / N 下查找/上查找<br>zz(光标行放在屏幕中间)   zb(光标行置低)     zt(光标行置顶)<br>:%s /aimwords/replywords/g   将全局 “aimwords” 替换成 “replywords”<br>:10,20s /aimwords/replywords/g   将 10~20 行内 “aimwords” 替换成 “replywords”<br>x c s 当前光标剪切<br>ctrl+v 状态下:<br>  shirft+I 编辑完了以后 Esc 整块插入<br>  S 编辑完了以后 Esc 整块删除并插入<br>ctrl + f  下翻页<br>ctrl + b  上翻页<br>ctrl + d  下翻半屏<br>ctrl + u  上翻半屏<br>ctrl + e  向下滚动一行<br>ctrl + u  向上滚动一行    </p>
+
+        </div>
+
+        
+          <div class="license mdui-typo">
+            <span>
+              Article License: 
+              
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
+              
+            </span>
+            <br />
+            <span>Article Permalink: <a href="http://yoursite.com/2018/09/17/vim学习/">http://yoursite.com/2018/09/17/vim学习/</a></span>
+            
+              <br />
+              <span>Article Markdown: <a href="http://yoursite.com/2018/09/17/vim学习/vim学习.md">http://yoursite.com/2018/09/17/vim学习/vim学习.md</a></span>
+            
+          </div>
+        
+
+        
+          <div class="posts-info">
+            
+              <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: 'Buy me a beer?', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
+            
+            <div class="flex-spacer"></div>
+            
+            
+          </div>
+        
+        
+          
+        
       </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/12/20/webpackStudy/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/12/20/webpackStudy/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
+      
+        <div id="card-toc" class="
         
-        webpack学习笔记
+          mdui-color-theme
+        
+        ">
+          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#Vim"><span class="post-toc-number">1.<span class="post-toc-text">Vim</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#关于vim"><span class="post-toc-number">1.1.<span class="post-toc-text">关于vim</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#vim打开文件"><span class="post-toc-number">1.2.<span class="post-toc-text">vim打开文件</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#vim快捷键"><span class="post-toc-number">1.3.<span class="post-toc-text">vim快捷键</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#操作文档"><span class="post-toc-number">1.3.1.<span class="post-toc-text">操作文档</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#光标移动"><span class="post-toc-number">1.3.2.<span class="post-toc-text">光标移动</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#操作文本内容"><span class="post-toc-number">1.3.3.<span class="post-toc-text">操作文本内容</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#other-operations"><span class="post-toc-number">1.4.<span class="post-toc-text">other operations</span></span></a></a></ul></a></ul>
+        </div>
+      
+    </div>
+  </div>
+  <div class="post-pagination mdui-color-theme">
+  
+    <div class="flex-spacer mdui-hidden-xs"></div>
+  
+
+  
+    <div class="next mdui-ripple mdui-color-theme mdui-valign">
+      <a href="/2018/08/31/React--状态提升/" class="content no-text-decoration mdui-text-right">
+        <div>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">Older Post</span>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          React状态提升 数据流
+        </div>
       </a>
-      <div class="posts-strip mdui-typo-body-1">
-        本次使用开发工具为 VSCode，相对...
-      </div>
     </div>
-    <div class="flex-spacer"></div>
     
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/学习笔记/">
-              <span>学习笔记</span>
-            </a>
-          
-            <a href="/tags/webpack/">
-              <span>webpack</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
 </div>
 
-
-
-      </div>
-    
-      <div class="content-item">
-        
   
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Dec 05, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/12/05/cssStudy/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/12/05/cssStudy/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        CSS学习笔记
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/CSS/">
-              <span>CSS</span>
-            </a>
-          
-            <a href="/tags/学习笔记/">
-              <span>学习笔记</span>
-            </a>
-          
-            <a href="/tags/某人口中的抄书/">
-              <span>某人口中的抄书</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-      </div>
-    
-      <div class="content-item">
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Dec 05, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/12/05/面经20170905/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/12/05/面经20170905/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        面经第一波
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        以下面经为8月底到九月初的几次面经。本...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/面经/">
-              <span>面经</span>
-            </a>
-          
-            <a href="/tags/秋招/">
-              <span>秋招</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-      </div>
-    
-      <div class="content-item">
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Sep 26, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/09/26/面经20170925/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/09/26/面经20170925/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        面经第四波
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/面经/">
-              <span>面经</span>
-            </a>
-          
-            <a href="/tags/秋招/">
-              <span>秋招</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-      </div>
-    
-      <div class="content-item">
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Sep 26, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/09/26/狗东面经20170925/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/09/26/狗东面经20170925/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        狗东面经
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        逗逼的傲娇(本来想起这个名字呢...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/面经/">
-              <span>面经</span>
-            </a>
-          
-            <a href="/tags/秋招/">
-              <span>秋招</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-      </div>
-    
-      <div class="content-item">
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Sep 17, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/09/17/面经20170917/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/09/17/面经20170917/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        面经第三波
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        迟到的面经第三波，这周三9.13号是终...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/面经/">
-              <span>面经</span>
-            </a>
-          
-            <a href="/tags/秋招/">
-              <span>秋招</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-      </div>
-    
-      <div class="content-item">
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Sep 09, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/09/09/hexo+github/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/09/09/hexo+github/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        个人博客搭建
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        之前在网上看到许多人的个人博客，以为大...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/hexo/">
-              <span>hexo</span>
-            </a>
-          
-            <a href="/tags/githubpages/">
-              <span>githubpages</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-      </div>
-    
-      <div class="content-item">
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Sep 08, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/09/08/面经20170907/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/09/08/面经20170907/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        面经第二波
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        昨天面了美团二面，和面试官小哥哥聊的比...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/面经/">
-              <span>面经</span>
-            </a>
-          
-            <a href="/tags/秋招/">
-              <span>秋招</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-      </div>
-    
-      <div class="content-item">
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/cat.jpg"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>yan</span>
-        <span> · </span>
-        <span>Sep 08, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/09/08/hello-world/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/09/08/hello-world/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        Hello World
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        Welcome to 
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/hexo/">
-              <span>hexo</span>
-            </a>
-          
-            <a href="/tags/default/">
-              <span>default</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-      </div>
-    
-  </div>
-  
-
-
-<button id="toTop" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-fab-hide" style="z-index: 9;" onclick="smoothScroll.animateScroll( 0 );">
-  <i class="mdui-icon material-icons">&#xe5d8;</i>
+    <button id="button-toc" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-hidden-md-up" style="z-index: 9;" mdui-menu="{target: '#menu-toc', fixed: true}">
+  <i class="mdui-icon material-icons">&#xe242;</i>
 </button>
+<ul class="mdui-menu mdui-typo no-margin-bottom auto-width" id="menu-toc" style="padding: 8px;max-height: 80%">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vim"><span class="toc-text">Vim</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于vim"><span class="toc-text">关于vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim打开文件"><span class="toc-text">vim打开文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim快捷键"><span class="toc-text">vim快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作文档"><span class="toc-text">操作文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#光标移动"><span class="toc-text">光标移动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#操作文本内容"><span class="toc-text">操作文本内容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#other-operations"><span class="toc-text">other operations</span></a></li></ol></li></ol>
+</ul>
 
+
+  
+
+</div>
 
 </main>
 
@@ -1125,80 +946,140 @@
 </script>
 
 
-
-
-  <script>
-    window.addEventListener("scroll", function(){
-       document.querySelector('#archives .bg .mdui-img-fluid.mdui-img-rounded')
-        .style.transform = 'translateY(' + document.body.scrollTop * 0.4 + 'px)';
-    })
-  </script>
-
-
-
-
-
-
-
-  <script type="text/ls-javascript" id="style-changing-script">
-  var content_flag = false;
-  var appbar = document.querySelector('div#blog-appbar')
-  var body = document.querySelector('body')
-
-  window.addEventListener('scroll', function() {
-    var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    var divTop = document.querySelector('div#contentLocation').offsetTop
-    var contentLocation = divTop - scrollTop - 56;
-
-    if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
-      appbar.classList.add('style-fix');
-      body.classList.remove('style-fix');
-      content_flag = true;
-    } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
-      appbar.classList.remove('style-fix');
-      body.classList.add('style-fix');
-      content_flag = false;
-    };
-  })
-
-  function styleChanging() {
-    var hide = new mdui.Headroom('div#blog-appbar');
-    var windowWidth = window.innerWidth,
-      toLeftWidth = 860;
-    if (windowWidth < toLeftWidth) {
-      hide.enable();
-    } else {
-      hide.disable();
-    }
-  };
-  styleChanging();
-</script>
-
-
-
-
-
-
-  <script type="text/ls-javascript" id="to-top-script">
-  /* fab */
+  <script type="text/ls-javascript" id="appbar-script">
+  /* post appbar */
   (function() {
     var pageFlag = false;
-    var fab = new mdui.Fab('#toTop');
-    fab.hide();
+    var appbar = new mdui.Headroom('#blog-appbar');
+    appbar.disable();
+    var toolbar = document.querySelector('#blog-appbar .mdui-toolbar')
+
     window.addEventListener('scroll', function() {
       var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
       var divTop = document.querySelector('div#top').offsetTop
+
       var pageLocation = divTop - bodyTop;
       if (!pageFlag && pageLocation < 0) {
-        fab.show();
+        toolbar.classList.add('mdui-shadow-2')
+        appbar.enable();
         pageFlag = true;
       } else if (pageFlag && pageLocation >= 0) {
-        fab.hide();
+        toolbar.classList.remove('mdui-shadow-2')
+        appbar.disable();
         pageFlag = false;
       }
-    });
+    })
   })();
 </script>
+
+  <script type="text/ls-javascript" id="toc-active-script">
+  if (document.querySelector('ul#menu-toc > ol') !== null && document.querySelector('div#card-toc > ul') !== null) {
+    window.addEventListener("load", function() {
+      var timer;
+      function doWork() {
+        listens.forEach(function(value, index) {
+          value[1]();
+          value[0].classList.remove("mdui-list-item-active");
+        })
+        let actionToc = (listens[listens.reduce(function(r, v, index) {
+          if (v[2] == true) {
+            return index;
+          } else return r;
+        }, undefined)] || [])[0] || listens[0][0];
+        actionToc.classList.add("mdui-list-item-active");
+        if(actionToc.getClientRects().length == 0)return;
+        showToc(actionToc);
+      }
+
+      function showToc(toc) {
+        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
+        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
+        let offset = 0;
+        if (offsetTop < 0) offset = offsetTop;
+        if (offsetBottom > 0) offset = offsetBottom;
+        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
+        clearInterval(timer);
+        timer = setInterval(function() {
+          var now = cardToc.scrollTop;
+          var speed = (targetTop - now) / 10;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          if (Math.abs(now - targetTop) < 1) {
+            clearInterval(timer);
+          }
+          cardToc.scrollTop = now + speed;
+        }, 30);
+      }
+      var listens = [];
+      var cardToc = document.querySelector('#card-toc');
+      var links = document.querySelectorAll("a.post-toc-link");
+      var toclist = document.querySelector("#card-toc > ul");
+      Array.prototype.forEach.call(links, function(value, index) {
+        var id = (value.getAttribute("href") || "#").slice(1);
+        var element = document.getElementById(id);
+        listens.push([value, function() {
+          var readed = false;
+          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
+            readed = true;
+          } else {
+            readed = false;
+          }
+          listens[index][2] = readed;
+        }, false])
+      })
+      doWork();
+      window.addEventListener("scroll", doWork)
+    });
+  }
+</script>
+
+  <script type="text/ls-javascript" id="post-lg-script">
+  var images = document.querySelectorAll('#post-content img')
+  for (i = 0; i < images.length; i++) {
+    images[i].addEventListener("click", openLG);
+  }
+  function openLG() {
+    var img_src = this.getAttribute('src');
+    var img_alt = this.getAttribute('alt');
+    lightGallery(this, {
+      dynamic: true,
+      counter: false,
+      dynamicEl: [{
+        "src": img_src,
+        'subHtml': "<span author>yan</span> • Public<div descr>" + img_alt + "</div>"
+      }],
+    });
+  }
+</script>
+
+  <!-- content warning -->
+<script type="text/ls-javascript" id="content-warning-script">
+  (function() {
+    var postLastModifiedDate = 1537169745839
+    var today = (new Date()).getTime()
+    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
+    if (difference >= 100) {
+      document.querySelector('div.warning').style.display = 'block'
+      document.querySelector('#content-warning').textContent = difference
+    }
+  })();
+</script>
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1207,6 +1088,8 @@
   
 
 
+
+  <script>lsloader.load("lightgallery_js","/js/lightgallery.min.js?tQptxVaCRzQ3zx70gMUYig==", true)</script>
 
 
 

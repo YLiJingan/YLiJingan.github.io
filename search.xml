@@ -3,6 +3,310 @@
   
     
     <entry>
+      <title></title>
+      <url>/2018/09/17/vim%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><p><em>很少使用vim,但是为了不让自己每次用的时候很吃力，还是记录一些常用的快捷键吧!</em></p>
+<h3 id="关于vim"><a href="#关于vim" class="headerlink" title="关于vim"></a>关于vim</h3><p>vim是linux下的编辑器，<font color="red"><strong>vim是区分大小写的</strong></font> </p>
+<p>vim有 <strong>以下3中模式：</strong><br>正常模式：该模式下可以使用快捷键命令，或者使用 <font color="red"><strong>:</strong></font> 输入命令行<br>插入模式：可以输入文本，在正常模式下使用 <font color="red"><strong>i  a  o</strong></font> 都可以进入插入模式<br>可视模式: 正常模式下使用 <font color="red"><strong>v</strong></font> 可以进入可视模式，在该模式下移动光标可以选择文本（正常模式下仅能移动光标，不能选择文本）<font color="red"><strong>ctrl+v</strong></font> 进入可视块模式</p>
+<h3 id="vim打开文件"><a href="#vim打开文件" class="headerlink" title="vim打开文件"></a>vim打开文件</h3><font color="#4EA1DB"><strong><em>file均表示的是文件名</em></strong></font>    
+
+<p>最常用的是：vim file     </p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim -r file</td>
+<td>恢复上次异常退出的文件</td>
+</tr>
+<tr>
+<td>vim -R file</td>
+<td>以只读的方式打开文件, i 可以进行修改并进行强制保存</td>
+</tr>
+<tr>
+<td>vim -M file</td>
+<td>以只读方式打开文件，i 不可以编译文件</td>
+</tr>
+<tr>
+<td>vim + file</td>
+<td>光标在文件的末尾，打开文件</td>
+</tr>
+<tr>
+<td>vim +num file</td>
+<td>光标停在num行位置，打开文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vim快捷键"><a href="#vim快捷键" class="headerlink" title="vim快捷键"></a>vim快捷键</h3><p><em>先上一张图</em><br><img src="http://p2dhba8jd.bkt.clouddn.com/vi-vim-cheat-sheet-sch.gif" alt="vim快捷键"><br>从上图我们就能看到vim的强大了 🤣</p>
+<h4 id="操作文档"><a href="#操作文档" class="headerlink" title="操作文档"></a>操作文档</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>:</strong>e file</td>
+<td>关闭当前正在编辑的文件并打开file,如果有更改未保存，vim会警告⚠️</td>
+</tr>
+<tr>
+<td><strong>:</strong>e！file</td>
+<td>强制关闭当前正在编辑的文件并打开file</td>
+</tr>
+<tr>
+<td><strong>:</strong>e newfile</td>
+<td>编辑新文件，同时命名该文件为newfile</td>
+</tr>
+<tr>
+<td><strong>:</strong>e</td>
+<td>重新加载当前文件</td>
+</tr>
+<tr>
+<td><strong>:</strong>e!</td>
+<td>强制重新加载当前文件，并放弃更改</td>
+</tr>
+<tr>
+<td><strong>:</strong>f或ctrl+g</td>
+<td>显示文件名，是否修改以及光标位置</td>
+</tr>
+<tr>
+<td>gf</td>
+<td>打开以光标所在字符串为文件名的文件</td>
+</tr>
+<tr>
+<td><strong>:</strong>f filename</td>
+<td>改变当前文件的文件名，相当于另存为(做出修改后新文件才会有)</td>
+</tr>
+<tr>
+<td><strong>:</strong>n1,n2w filename</td>
+<td>保存n1行到n2行的内容，并生成一个新文件命名为filename</td>
+</tr>
+<tr>
+<td><strong>:</strong>saveas newfilename</td>
+<td>另存为</td>
+</tr>
+<tr>
+<td><strong>:</strong>Sex</td>
+<td>水平分割一个窗口，浏览文件系统</td>
+</tr>
+<tr>
+<td><strong>:</strong>Vex</td>
+<td>垂直分割一个窗口，浏览文件系统</td>
+</tr>
+</tbody>
+</table>
+<h4 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h或退格，j，k，l或空格</td>
+<td>⬅️，⬇️，⬆️，➡️</td>
+</tr>
+<tr>
+<td>gj</td>
+<td>移动到一段内的下一行</td>
+</tr>
+<tr>
+<td>gk</td>
+<td>移动到一段内的上一行</td>
+</tr>
+<tr>
+<td>w</td>
+<td>前移一个单词，光标停在下一个单词开头</td>
+</tr>
+<tr>
+<td>W</td>
+<td>移动下一个单词开头，但忽略一些标点</td>
+</tr>
+<tr>
+<td>e</td>
+<td>前移一个单词，光标停在下一个单词末尾</td>
+</tr>
+<tr>
+<td>E</td>
+<td>移动到下一个单词末尾，如果词尾有标点，则移动到标点</td>
+</tr>
+<tr>
+<td>b</td>
+<td>后移一个单词，光标停在上一个单词开头</td>
+</tr>
+<tr>
+<td>B</td>
+<td>移动到上一个单词开头，忽略一些标点</td>
+</tr>
+<tr>
+<td>ge</td>
+<td>后移一个单词，光标停在上一个单词末尾</td>
+</tr>
+<tr>
+<td>gE</td>
+<td>同 ge ，不过‘单词’包含单词相邻的标点</td>
+</tr>
+<tr>
+<td>(</td>
+<td>前移1句</td>
+</tr>
+<tr>
+<td>)</td>
+<td>后移1句</td>
+</tr>
+<tr>
+<td>{</td>
+<td>前移1段</td>
+</tr>
+<tr>
+<td>}</td>
+<td>后移1段</td>
+</tr>
+<tr>
+<td>fc</td>
+<td>把光标移到同一行的下一个c字符处</td>
+</tr>
+<tr>
+<td>Fc</td>
+<td>把光标移到同一行的上一个c字符处</td>
+</tr>
+<tr>
+<td>tc</td>
+<td>把光标移到同一行的下一个c字符前</td>
+</tr>
+<tr>
+<td>Tc</td>
+<td>把光标移到同一行的上一个c字符后</td>
+</tr>
+<tr>
+<td>操作都可以配合n使用，比如在正常模式下输入3h，则光标向左移动3个字符</td>
+</tr>
+<tr>
+<td>0</td>
+<td>移动到行首</td>
+</tr>
+<tr>
+<td>g0</td>
+<td>移到光标所在屏幕行行首</td>
+</tr>
+<tr>
+<td>^</td>
+<td>移动到本行第一个非空白字符</td>
+</tr>
+<tr>
+<td>g^</td>
+<td>同 ^ ，但是移动到当前屏幕行第一个非空字符处</td>
+</tr>
+<tr>
+<td>$</td>
+<td>移动到行尾</td>
+</tr>
+<tr>
+<td>g$</td>
+<td>移动光标所在屏幕行行尾</td>
+</tr>
+<tr>
+<td>n</td>
+<td>把光标移到递n列上</td>
+</tr>
+<tr>
+<td>nG</td>
+<td>到文件第n行</td>
+</tr>
+<tr>
+<td><strong>:</strong>n<cr></cr></td>
+<td>移动到第n行</td>
+</tr>
+<tr>
+<td><strong>:</strong>$<cr></cr></td>
+<td>移动到最后一行</td>
+</tr>
+<tr>
+<td>H</td>
+<td>把光标移到屏幕最顶端一行</td>
+</tr>
+<tr>
+<td>M</td>
+<td>把光标移到屏幕中间一行</td>
+</tr>
+<tr>
+<td>L</td>
+<td>把光标移到屏幕最底端一行</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>到文件头部</td>
+</tr>
+<tr>
+<td>G</td>
+<td>到文件尾部</td>
+</tr>
+</tbody>
+</table>
+<h4 id="操作文本内容"><a href="#操作文本内容" class="headerlink" title="操作文本内容"></a>操作文本内容</h4><p><strong><em>i a o均可以从正常模式切换至编辑状态，👇列出了3者的区别</em></strong><br>正常模式下使用3者的区别</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>i</td>
+<td>在光标前插入</td>
+</tr>
+<tr>
+<td></td>
+<td>I</td>
+<td>在当前行第一个非空字符前插入</td>
+</tr>
+<tr>
+<td></td>
+<td>a</td>
+<td>在光标后插入</td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td>在当前行最后插入</td>
+</tr>
+<tr>
+<td></td>
+<td>o</td>
+<td>在下面新建一行插入</td>
+</tr>
+<tr>
+<td></td>
+<td>O</td>
+<td>在上面新建一行插入</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>：</strong>r filename</td>
+<td>在当前位置插入另一个文件的内容</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>：</strong>r !date</td>
+<td>在光标处插入当前日期与时间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-operations"><a href="#other-operations" class="headerlink" title="other operations"></a>other operations</h3><p>:set nu  / nonu  显示 / 隐藏 行号<br>:vsp 垂直分割屏幕<br>:vsp . 打开当前文件夹<br>:set list / nolist  显示 / 隐藏 隐藏字符(缩进/回车等)<br>/aimword  全局查找<br>aimword  n / N 下查找/上查找<br>zz(光标行放在屏幕中间)   zb(光标行置低)     zt(光标行置顶)<br>:%s /aimwords/replywords/g   将全局 “aimwords” 替换成 “replywords”<br>:10,20s /aimwords/replywords/g   将 10~20 行内 “aimwords” 替换成 “replywords”<br>x c s 当前光标剪切<br>ctrl+v 状态下:<br>  shirft+I 编辑完了以后 Esc 整块插入<br>  S 编辑完了以后 Esc 整块删除并插入<br>ctrl + f  下翻页<br>ctrl + b  上翻页<br>ctrl + d  下翻半屏<br>ctrl + u  上翻半屏<br>ctrl + e  向下滚动一行<br>ctrl + u  向上滚动一行    </p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[React状态提升 数据流]]></title>
       <url>/2018/08/31/React--%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/</url>
       <content type="html"><![CDATA[<h3 id="React-状态提升-数据流"><a href="#React-状态提升-数据流" class="headerlink" title="React 状态提升 数据流"></a>React 状态提升 数据流</h3><p><strong>在看项目代码的时候，发现自己有好多东西都忘记(只能说之前掌握的也不是很好😅)。本次的查漏补缺主要是针对React的相关知识进行的，主要学习途径是<a href="https://doc.react-china.org/docs/lifting-state-up.html" target="_blank" rel="noopener">React官网</a>,学习方法不再是以往的只看不动手。</strong></p>
@@ -32,9 +336,9 @@
         
         <tags>
             
-            <tag> react </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> react </tag>
             
             <tag> Demo </tag>
             
@@ -108,9 +412,9 @@
         
         <tags>
             
-            <tag> react </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> react </tag>
             
             <tag> 挖坑之后 </tag>
             
@@ -990,9 +1294,9 @@
         
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 某人口中的抄书 </tag>
             
