@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[vim学习]]></title>
       <url>/2018/09/17/vim%E5%AD%A6%E4%B9%A0/</url>
       <content type="html"><![CDATA[<h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><p><em>很少使用vim,但是为了不让自己每次用的时候很吃力，还是记录一些常用的快捷键吧!</em></p>
 <h3 id="关于vim"><a href="#关于vim" class="headerlink" title="关于vim"></a>关于vim</h3><p>vim是linux下的编辑器，<font color="red"><strong>vim是区分大小写的</strong></font> </p>
@@ -303,6 +303,14 @@
 <h3 id="other-operations"><a href="#other-operations" class="headerlink" title="other operations"></a>other operations</h3><p>:set nu  / nonu  显示 / 隐藏 行号<br>:vsp 垂直分割屏幕<br>:vsp . 打开当前文件夹<br>:set list / nolist  显示 / 隐藏 隐藏字符(缩进/回车等)<br>/aimword  全局查找<br>aimword  n / N 下查找/上查找<br>zz(光标行放在屏幕中间)   zb(光标行置低)     zt(光标行置顶)<br>:%s /aimwords/replywords/g   将全局 “aimwords” 替换成 “replywords”<br>:10,20s /aimwords/replywords/g   将 10~20 行内 “aimwords” 替换成 “replywords”<br>x c s 当前光标剪切<br>ctrl+v 状态下:<br>  shirft+I 编辑完了以后 Esc 整块插入<br>  S 编辑完了以后 Esc 整块删除并插入<br>ctrl + f  下翻页<br>ctrl + b  上翻页<br>ctrl + d  下翻半屏<br>ctrl + u  上翻半屏<br>ctrl + e  向下滚动一行<br>ctrl + u  向上滚动一行    </p>
 ]]></content>
       
+        
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> vim </tag>
+            
+        </tags>
         
     </entry>
     
