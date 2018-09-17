@@ -300,7 +300,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="other-operations"><a href="#other-operations" class="headerlink" title="other operations"></a>other operations</h3><p>:set nu  / nonu  显示 / 隐藏 行号<br>:vsp 垂直分割屏幕<br>:vsp . 打开当前文件夹<br>:set list / nolist  显示 / 隐藏 隐藏字符(缩进/回车等)<br>/aimword  全局查找<br>aimword  n / N 下查找/上查找<br>zz(光标行放在屏幕中间)   zb(光标行置低)     zt(光标行置顶)<br>:%s /aimwords/replywords/g   将全局 “aimwords” 替换成 “replywords”<br>:10,20s /aimwords/replywords/g   将 10~20 行内 “aimwords” 替换成 “replywords”<br>x c s 当前光标剪切<br>ctrl+v 状态下:<br>  shirft+I 编辑完了以后 Esc 整块插入<br>  S 编辑完了以后 Esc 整块删除并插入<br>ctrl + f  下翻页<br>ctrl + b  上翻页<br>ctrl + d  下翻半屏<br>ctrl + u  上翻半屏<br>ctrl + e  向下滚动一行<br>ctrl + u  向上滚动一行    </p>
+<h4 id="other-operations"><a href="#other-operations" class="headerlink" title="other operations"></a>other operations</h4><p>:set nu  / nonu  显示 / 隐藏 行号<br>:vsp 垂直分割屏幕  :vsp . 打开当前文件夹<br>:set list / nolist  显示 / 隐藏 隐藏字符(缩进/回车等)<br>/aimword  全局查找<br>aimword  n / N 下查找/上查找<br>zz(光标行放在屏幕中间)   zb(光标行置低)     zt(光标行置顶)<br>:%s /aimwords/replywords/g   将全局 “aimwords” 替换成 “replywords”<br>:10,20s /aimwords/replywords/g   将 10~20 行内 “aimwords” 替换成 “replywords”<br>x c s 当前光标剪切<br>ctrl+v 状态下:<br>  shirft+I 编辑完了以后 Esc 整块插入<br>  S 编辑完了以后 Esc 整块删除并插入<br>ctrl + f  下翻页<br>ctrl + b  上翻页<br>ctrl + d  下翻半屏<br>ctrl + u  上翻半屏<br>ctrl + e  向下滚动一行<br>ctrl + u  向上滚动一行    </p>
 ]]></content>
       
         
@@ -344,9 +344,9 @@
         
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> react </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> Demo </tag>
             
@@ -420,9 +420,9 @@
         
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> react </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 挖坑之后 </tag>
             
@@ -1302,9 +1302,9 @@
         
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> CSS </tag>
             
             <tag> 某人口中的抄书 </tag>
             

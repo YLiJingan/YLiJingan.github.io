@@ -1,5 +1,6 @@
 ---
 title: vim学习
+comment: true
 tags: ['vim','学习笔记']
 ---
 
@@ -106,12 +107,9 @@ vim有 **以下3中模式：**
 |O								| 在上面新建一行插入
 |**：**r filename          | 在当前位置插入另一个文件的内容
 |**：**r !date				| 在光标处插入当前日期与时间
-
-
-### other operations
-:set nu  / nonu  显示 / 隐藏 行号  
-:vsp 垂直分割屏幕  
-:vsp . 打开当前文件夹  
+#### other operations   
+:set nu  / nonu  显示 / 隐藏 行号 
+:vsp 垂直分割屏幕  :vsp . 打开当前文件夹  
 :set list / nolist  显示 / 隐藏 隐藏字符(缩进/回车等)  
 /aimword  全局查找   
 aimword  n / N 下查找/上查找   
