@@ -18,7 +18,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.8 -->
   <meta charset="UTF-8">
-  <title>面经第四波 - Angryyan</title>
+  <title>React生命周期 - Angryyan</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -42,7 +42,7 @@
   
       <meta name="description" content="我要一步一步向上爬">
   
-  <meta name="keywords" content="blog, hexo, mdui,面经,秋招">
+  <meta name="keywords" content="blog, hexo, mdui,react,学习笔记,挖坑之后">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="Angryyan">
@@ -57,13 +57,13 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="面经第四波 - Angryyan | Angryyan">
+  <meta property="og:title" content="React生命周期 - Angryyan | Angryyan">
   <meta property="og:image" content="/img/favicon.png" />
   
         <meta property="og:description" content="我要一步一步向上爬">
     
 
-    <meta property="og:article:tag" content="面经"> <meta property="og:article:tag" content="秋招"> 
+    <meta property="og:article:tag" content="react"> <meta property="og:article:tag" content="学习笔记"> <meta property="og:article:tag" content="挖坑之后"> 
 
   <!-- Cache -->
   <meta http-equiv="Cache-Control" content="max-age=7200" />
@@ -426,11 +426,11 @@
     
   ">
     <div class="post-header-container">
-      <div class="post-title mdui-text-truncate">面经第四波</div>
+      <div class="post-title mdui-text-truncate">React生命周期</div>
       <div class="post-actions mdui-valign">
         <div>
           <span>Posted: </span>
-          <span style="float: right">Sep 26, 2017</span>
+          <span style="float: right">Sep 19, 2018</span>
           
         </div>
         
@@ -444,7 +444,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/09/26/面经20170925/index.html" target="_blank" class="mdui-ripple">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/09/19/react生命周期/index.html" target="_blank" class="mdui-ripple">
               Share to Facebook
           </a>
       </li>
@@ -460,7 +460,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=面经第四波&url=http://yoursite.com//2017/09/26/面经20170925/index.html&via=yan" target="_blank" class="mdui-ripple">
+          <a href="https://twitter.com/intent/tweet?text=React生命周期&url=http://yoursite.com//2018/09/19/react生命周期/index.html&via=yan" target="_blank" class="mdui-ripple">
               Share to Twitter
           </a>
       </li>
@@ -468,7 +468,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share.php?appkey=&title=面经第四波&url=http://yoursite.com//2017/09/26/面经20170925/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+          <a href="http://service.weibo.com/share.php?appkey=&title=React生命周期&url=http://yoursite.com//2018/09/19/react生命周期/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
               Share to Weibo
           </a>
       </li>
@@ -494,32 +494,65 @@
         
         
         <div class="post-content mdui-typo no-margin" id="post-content">
-          <h2 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h2><h3 id="广联达面试"><a href="#广联达面试" class="headerlink" title="广联达面试"></a>广联达面试</h3><h4 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h4><p>广联达今年给的薪资比较高，所以自己也去面试试试。目前美团那边还是在等，希望美团hr小姐姐早点联系我。<br>广联达之前有线下笔试，感谢师妹帮我做的笔试题。去面试的时候，还需要做两道编程题。<br><code>1)一个已经排好序的数组，给定一个数，找出数组中两个数之和等于这个数。</code></p>
-<p> 借助散列表：先构建一个散列表，存储数组每个值。然后遍历数组，查看 target 与每项的差是否在散列表中，如果在就返回两个值。这个方法的时间复杂度和空间复杂度均为O(n)。代码示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var twoSum = function (nums, target) &#123;	</span><br><span class="line">	var map = &#123;&#125;;	</span><br><span class="line">	for (var i = 0; i &lt; nums.length; i++) &#123;	</span><br><span class="line">		if (nums[i] in map) &#123;	</span><br><span class="line">			return [map[nums[i]], i];	</span><br><span class="line">		&#125; else &#123;	</span><br><span class="line">			map[target - nums[i]] = i;	</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>双指针两端扫描：若数组无序，就先排序后扫描。扫描方法是用两个指针 i 和 j，先放在数组首尾，如果指向的两个数之和大于 target，就 j–，否则 i++，直到两个数之和为 target，然后返回这两个数。该方法的时间复杂度最后为：有序O(n)，无序O(nlogn + n)=O(nlogn)，空间复杂度都为O(1)。代码示例如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var twoSum2 = function (nums, target) &#123;		</span><br><span class="line">    var l = 0,	</span><br><span class="line">    r = nums.length - 1,	</span><br><span class="line">    results = [];	</span><br><span class="line">    while (l &lt; r) &#123;	</span><br><span class="line">        var s = nums[l] + nums[r];	</span><br><span class="line">        if (s === target) &#123;	</span><br><span class="line">            results.push([l, r]);	</span><br><span class="line">            while (l &lt; r &amp;&amp; nums[l] === nums[l + 1]) &#123;l++;&#125; 	</span><br><span class="line">            while (r &gt; l &amp;&amp; nums[r] === nums[r - 1]) &#123;r++;&#125; 	</span><br><span class="line">				l++;	</span><br><span class="line">				r--;	</span><br><span class="line">			&#125; else if (s &lt; target) &#123;	</span><br><span class="line">				l++;	</span><br><span class="line">			&#125; else &#123;	</span><br><span class="line">				r--;	</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;	</span><br><span class="line">	return result;	</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p><code>2) 一个已经排好序的整数数组，找出这个数组中数组元素等于下标的数</code>    </p>
-<p>由于官网没有前端岗，直接和面试官说明情况。问了刚才做的一道编程题，说了一下思路。<br>之后问了3道智力题:<br>1   分金子问题  7天工钱，一根金条，切两次  1+2+4<br>2 12个球，有一个重量不同。利用天平找出<br>3 利用任何方法求一根香蕉的表面积<br>问了实习的情况，自己实习中的难点。</p>
-<h4 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h4><blockquote>
-<p>2017.9.22<br>    真的问了超级多<br>    1 自我介绍<br>    2 最近最有成就感的事情<br>    3 实习的收获<br>    4 最讨厌什么样的人<br>    5 比较欣赏什么样的人<br>    6 为什么选择前端<br>    7 为什么选择考研<br>    8 上研究生的收获<br>    9 考研开始时间？？考研学习计划<br>    10 为什么喜欢跑步<br>    11 你觉得编程的乐趣在哪儿<br>    12 遇到问题怎么解决<br>    13 学习前端的新东西有哪些<br>    14 前端圈里最近的事    </p>
-</blockquote>
-<p><strong>和我一起二面的同学已经收到了通知，然而我还是木有</strong></p>
-<h3 id="好未来"><a href="#好未来" class="headerlink" title="好未来"></a>好未来</h3><h4 id="一面-已挂"><a href="#一面-已挂" class="headerlink" title="一面(已挂)"></a>一面(已挂)</h4><p>开始面试的时候已经是11点50了，感觉面试官是不是饿了呀。12点半的时候说了一次时间，然而我并没有理他，接着说我该说的。(估计面试官的内心是奔溃的) 面到了1点，哈哈哈，最后面试官都没有让我问他问题，直接就站起来的，我也是一脸懵逼呀。整个面试过程体验一点也不好，面试官肯定不是专业的前端。</p>
+          <h2 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h2><p><strong><em>第一步上图</em></strong><br><img src="http://p2dhba8jd.bkt.clouddn.com/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F" alt="生命周期"></p>
+<p><strong>装配</strong> 这些方法会在组件实例被创建和插入DOM中时被调用：</p>
 <blockquote>
-<p>2017.09.24<br>    好未来一面<br>    照着简历问,看我本科是网络工程的，一上来就问我为什么TCP要进行拥塞控制？？(黑人问号脸)<br>    1 自我介绍<br>    2 介绍实习项目<br>    3 套jsp的缺点<br>    4 tcp为什么需要进行拥塞控制<br>    5 http响应码<br>    6 c语言掌握程度，说自己比较懂的部分（这个面试官比较坑）<br>    7 查找数组中两个数和为定值<br>    8 查找数组中最大的数<br>    9 查找数组中第二大的数<br>    10 手写快速排序<br>    11 手写二分查找<br>    12 tcp报头内容<br>    13 git操作    </p>
+<ol>
+<li>constructor()   </li>
+<li>componentWillMount() </li>
+<li>render()</li>
+<li>componentDidMount()</li>
+</ol>
 </blockquote>
-<p><strong>虽然面试体验不是很好，但是还是自己基础不够好。每次面试的时候，碰到手撕代码，就会很紧张。我觉得主要还是自己不够自自信，自己知道自己的弱点，在平时的时候更不能躲避，要努力去攻克。对，就是这样。</strong></p>
-<p><strong>加油，争取做到,手撕代码，我不怕不怕了:)</strong></p>
-<h3 id="京颐集团"><a href="#京颐集团" class="headerlink" title="京颐集团"></a>京颐集团</h3><p>差点忘记写今天下午面的这个，京颐集团就是之前的趣医网。美团小姐姐一直没有联系我，想先给自己找个保底的。<br>今天下午1点半开始买面试，不到3点就结束了3面。整个流程很快，效率比较高。只要一面是技术面，也问的比较基础，我感觉这家工作更看重的是应聘者的整体能力。据说明天会有结果    </p>
-<h4 id="一面-1"><a href="#一面-1" class="headerlink" title="一面"></a>一面</h4><blockquote>
-<p>2017.09.25<br>    京颐一面<br>    1 自我介绍<br>    2 css盒模型<br>    3 块级元素 内联元素<br>    4 浏览器引擎<br>    5 实习项目<br>    6 兼容性<br>    7 vue的优点<br>    8 vue和angular的区别<br>    9 能不能接受加班<br>    10 cookie localstorage sessionstorage的区别<br>    11 为什么学习前端</p>
+<p><strong>更新</strong> 属性或状态的改变会触发一次更新。当一个组件在被重渲时，这些方法将会被调用：</p>
+<blockquote>
+<ol>
+<li>componentWillReceiveProps()</li>
+<li>shouldComponentUpdate()</li>
+<li>componentWillUpdate()</li>
+<li>render()</li>
+<li>componentDidUpdate()</li>
+</ol>
 </blockquote>
-<h4 id="二面-1"><a href="#二面-1" class="headerlink" title="二面"></a>二面</h4><blockquote>
-<p>2017.09.25<br>    二面<br>    1 自我介绍<br>    2 期望薪资<br>    3 3-5年职业规划<br>    都是常规为题，和Hr小姐姐比较能聊到一块</p>
+<p><strong>卸载</strong> 当一个组件被从DOM中移除时，该方法被调用：</p>
+<blockquote>
+<p>componentWillUnmount()</p>
 </blockquote>
-<h4 id="三面"><a href="#三面" class="headerlink" title="三面"></a>三面</h4><blockquote>
-<p>2017.09.25<br>    三面<br>    总监面，一上来就说我本科怎么了，感觉有点奇怪。后来才知道，人家是要卡本科的。看来我是运气好<br>    就大概了解了一下个人情况，10分钟左右。    </p>
+<p><strong>每一个组件还提供了其他的API：</strong></p>
+<blockquote>
+<ol>
+<li>setState()</li>
+<li>forceUpdate()</li>
+</ol>
 </blockquote>
+<p><strong>类属性</strong></p>
+<blockquote>
+<ol>
+<li>defaultProps</li>
+<li>displayName</li>
+</ol>
+</blockquote>
+<p><strong>实例属性</strong></p>
+<blockquote>
+<ol>
+<li>props</li>
+<li>state</li>
+</ol>
+</blockquote>
+<hr>
+<h4 id="render"><a href="#render" class="headerlink" title="render()"></a>render()</h4><p>是一个组件必须的，该函数是纯净的，不应该改变组件的状态。</p>
+<h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor()"></a>constructor()</h4><p>构造函数是初始化状态的合适位置，当定义了构造函数，需要首先调用super(props),否则this.props在构造函数中就是未定义。</p>
+<h4 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount()"></a>componentWillMount()</h4><p>在页面mount之前被调用，在render()方法之前调用，在该方法里可以使用setState()进行state的同步，由于当前页面还没有render,所以不会进行页面的重新渲染。<br><strong>注意后台请求不应该写在这里，因为请求是异步的，可能会因为网络等原因出现白屏等</strong></p>
+<h4 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount()"></a>componentDidMount()</h4><p>在render()之后被调用，在该方法中使用setState()进行state的同步，会产生页面的重新渲染。因为执行该方法的时候，页面dom已经渲染完成。</p>
+<h4 id="componentWillReceiveProps-nextProps"><a href="#componentWillReceiveProps-nextProps" class="headerlink" title="componentWillReceiveProps(nextProps)"></a>componentWillReceiveProps(nextProps)</h4><p>页面第一次渲染的时候不执行该方法，当子组件接收的父组件的属性 <em>(可能发生变化时)发生变化时</em> ，直接该方法。直接通过判断this.props和nextProps是否相同，直接相应的setState方法进行状态的更新。<br><strong>注意即使属相未发生任何变化，React也可能会调用该方法</strong>  </p>
+<h4 id="shouldComponentUpdate-nextProps-nextState"><a href="#shouldComponentUpdate-nextProps-nextState" class="headerlink" title="shouldComponentUpdate(nextProps, nextState)"></a>shouldComponentUpdate(nextProps, nextState)</h4><p>当接收到新属性或者新状态的时候，该方法在调用，在render()之前。若该方法返回true则该组件进行重新渲染，返回false则告诉react更新可以忽略该组件。需要在该方法里进行this.props和nextProps以及this.state和nextState的比较。<br><strong>如果该方法返回false，则componentWillUpdate和componentDidUpdate将不会执行</strong></p>
+<h4 id="componentWillUpdate"><a href="#componentWillUpdate" class="headerlink" title="componentWillUpdate()"></a>componentWillUpdate()</h4><p>在渲染前被立即调用， <em>不能在该方法中使用this.setState(),如果需要响应属相的变化，要使用componentWillReceiveProps()</em>  </p>
+<h4 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate()"></a>componentDidUpdate()</h4><p>在更新发生后立即被调用，并且该方法不会再初始化渲染时被调用。</p>
+<h4 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount()"></a>componentWillUnmount()</h4><p>在组件被卸载和销毁之前立即调用，可以在该方法里处理任何必要的清理工作，例如解绑定时器，取消网络请求等。</p>
+<h4 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate()"></a>forceUpdate()</h4><p>默认情况下,当你组件的state或者props改变时，你的组件将会重绘。然后，如果它们隐式的改变（在对象深处的数据改变了但是没有改变对象本身）或者你的render方法依赖于其他的数据，可以调用forceUpdate()来告诉react它需要重新运行render()</p>
+<hr>
+<h3 id="setState-updater-callback"><a href="#setState-updater-callback" class="headerlink" title="setState(updater, [callback])"></a>setState(updater, [callback])</h3><p><strong>异步</strong> setState操作是一次请求而不是立即执行更新的，React将一个需要改变的变化存放在组件的state对象中，采用队列处理。为了更为客观的性能，React不会保证在setState之后，能够立即拿到改变的结果。<br>在同一周期(一个方法内？？)内的多次setState()方法调用可能会被合并到一起。<br><strong>同步</strong> 可以使用componentDidUpdate或者setState的callback，可以保证在setState方法之后取到最新的this.state。</p>
+<p><strong><em>state是该组件的特定数据，若你不在render()方法中使用它，就不应该把他放在state里</em></strong></p>
 
         </div>
 
@@ -532,10 +565,10 @@
               
             </span>
             <br />
-            <span>Article Permalink: <a href="http://yoursite.com/2017/09/26/面经20170925/">http://yoursite.com/2017/09/26/面经20170925/</a></span>
+            <span>Article Permalink: <a href="http://yoursite.com/2018/09/19/react生命周期/">http://yoursite.com/2018/09/19/react生命周期/</a></span>
             
               <br />
-              <span>Article Markdown: <a href="http://yoursite.com/2017/09/26/面经20170925/面经20170925.md">http://yoursite.com/2017/09/26/面经20170925/面经20170925.md</a></span>
+              <span>Article Markdown: <a href="http://yoursite.com/2018/09/19/react生命周期/react生命周期.md">http://yoursite.com/2018/09/19/react生命周期/react生命周期.md</a></span>
             
           </div>
         
@@ -553,12 +586,16 @@
               </div>
               <div class="content mdui-typo">
                 
-                  <a href="/tags/面经/">
-                    <span>面经</span>
+                  <a href="/tags/react/">
+                    <span>react</span>
                   </a>
                 
-                  <a href="/tags/秋招/">
-                    <span>秋招</span>
+                  <a href="/tags/学习笔记/">
+                    <span>学习笔记</span>
+                  </a>
+                
+                  <a href="/tags/挖坑之后/">
+                    <span>挖坑之后</span>
                   </a>
                 
               </div>
@@ -575,35 +612,25 @@
           mdui-color-theme
         
         ">
-          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#面经"><span class="post-toc-number">1.<span class="post-toc-text">面经</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#广联达面试"><span class="post-toc-number">1.1.<span class="post-toc-text">广联达面试</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#一面"><span class="post-toc-number">1.1.1.<span class="post-toc-text">一面</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#二面"><span class="post-toc-number">1.1.2.<span class="post-toc-text">二面</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#好未来"><span class="post-toc-number">1.2.<span class="post-toc-text">好未来</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#一面-已挂"><span class="post-toc-number">1.2.1.<span class="post-toc-text">一面(已挂)</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#京颐集团"><span class="post-toc-number">1.3.<span class="post-toc-text">京颐集团</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#一面-1"><span class="post-toc-number">1.3.1.<span class="post-toc-text">一面</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#二面-1"><span class="post-toc-number">1.3.2.<span class="post-toc-text">二面</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#三面"><span class="post-toc-number">1.3.3.<span class="post-toc-text">三面</span></span></a></a></ul></a></ul></a></ul>
+          <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#React生命周期"><span class="post-toc-number">1.<span class="post-toc-text">React生命周期</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#render"><span class="post-toc-number">1.0.1.<span class="post-toc-text">render()</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#constructor-NaN"><span class="post-toc-number">1.0.2.<span class="post-toc-text">constructor()</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#componentWillMount"><span class="post-toc-number">1.0.3.<span class="post-toc-text">componentWillMount()</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#componentDidMount"><span class="post-toc-number">1.0.4.<span class="post-toc-text">componentDidMount()</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#componentWillReceiveProps-nextProps"><span class="post-toc-number">1.0.5.<span class="post-toc-text">componentWillReceiveProps(nextProps)</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#shouldComponentUpdate-nextProps-nextState"><span class="post-toc-number">1.0.6.<span class="post-toc-text">shouldComponentUpdate(nextProps, nextState)</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#componentWillUpdate"><span class="post-toc-number">1.0.7.<span class="post-toc-text">componentWillUpdate()</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#componentDidUpdate"><span class="post-toc-number">1.0.8.<span class="post-toc-text">componentDidUpdate()</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#componentWillUnmount"><span class="post-toc-number">1.0.9.<span class="post-toc-text">componentWillUnmount()</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#forceUpdate"><span class="post-toc-number">1.0.10.<span class="post-toc-text">forceUpdate()</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#setState-updater-callback"><span class="post-toc-number">1.1.<span class="post-toc-text">setState(updater, [callback])</span></span></a></a></ul></a></ul>
         </div>
       
     </div>
   </div>
   <div class="post-pagination mdui-color-theme">
   
-    <div class="prev mdui-ripple mdui-color-theme mdui-valign">
-      <a href="/2017/12/05/面经20170905/" class="content no-text-decoration mdui-text-left">
-        <div>
-          <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
-          <span class="mdui-typo-body-2-opacity mdui-text-center">Newer Post</span>
-        </div>
-        <div class="mdui-typo-title mdui-text-truncate">
-          面经第一波
-        </div>
-      </a>
-    </div>
+    <div class="flex-spacer mdui-hidden-xs"></div>
   
 
   
     <div class="next mdui-ripple mdui-color-theme mdui-valign">
-      <a href="/2017/09/26/狗东面经20170925/" class="content no-text-decoration mdui-text-right">
+      <a href="/2018/09/17/vim学习/" class="content no-text-decoration mdui-text-right">
         <div>
           <span class="mdui-typo-body-2-opacity mdui-text-center">Older Post</span>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
         </div>
         <div class="mdui-typo-title mdui-text-truncate">
-          狗东面经
+          vim学习
         </div>
       </a>
     </div>
@@ -615,7 +642,7 @@
   <i class="mdui-icon material-icons">&#xe242;</i>
 </button>
 <ul class="mdui-menu mdui-typo no-margin-bottom auto-width" id="menu-toc" style="padding: 8px;max-height: 80%">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#面经"><span class="toc-text">面经</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#广联达面试"><span class="toc-text">广联达面试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一面"><span class="toc-text">一面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二面"><span class="toc-text">二面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#好未来"><span class="toc-text">好未来</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一面-已挂"><span class="toc-text">一面(已挂)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#京颐集团"><span class="toc-text">京颐集团</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一面-1"><span class="toc-text">一面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二面-1"><span class="toc-text">二面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三面"><span class="toc-text">三面</span></a></li></ol></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React生命周期"><span class="toc-text">React生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#render"><span class="toc-text">render()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#constructor-NaN"><span class="toc-text">constructor()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentWillMount"><span class="toc-text">componentWillMount()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentDidMount"><span class="toc-text">componentDidMount()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentWillReceiveProps-nextProps"><span class="toc-text">componentWillReceiveProps(nextProps)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shouldComponentUpdate-nextProps-nextState"><span class="toc-text">shouldComponentUpdate(nextProps, nextState)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentWillUpdate"><span class="toc-text">componentWillUpdate()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentDidUpdate"><span class="toc-text">componentDidUpdate()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentWillUnmount"><span class="toc-text">componentWillUnmount()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#forceUpdate"><span class="toc-text">forceUpdate()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setState-updater-callback"><span class="toc-text">setState(updater, [callback])</span></a></li></ol></li></ol>
 </ul>
 
 
@@ -816,7 +843,7 @@
   <!-- content warning -->
 <script type="text/ls-javascript" id="content-warning-script">
   (function() {
-    var postLastModifiedDate = 1506427283000
+    var postLastModifiedDate = 1537327814311
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
