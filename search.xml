@@ -3,6 +3,37 @@
   
     
     <entry>
+      <title><![CDATA[React项目构建相关问题]]></title>
+      <url>/2019/02/18/react%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h2 id="Webpack相关"><a href="#Webpack相关" class="headerlink" title="Webpack相关"></a>Webpack相关</h2><p> <em>webpack会假定项目的入口为src/index</em></p>
+<h3 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h3><h4 id="1-path模块"><a href="#1-path模块" class="headerlink" title="1. path模块"></a>1. path模块</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js </span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);   <span class="comment">//node自带的path模块</span></span><br></pre></td></tr></table></figure>
+<p><em>Node.js path模块提供了一些用于处理文件路径的小工具。</em></p>
+<h4 id="2-path-join-amp-amp-path-resolve"><a href="#2-path-join-amp-amp-path-resolve" class="headerlink" title="2. path.join() &amp;&amp; path.resolve()"></a>2. path.join() &amp;&amp; path.resolve()</h4><blockquote>
+<p><span style="color:red"><strong>path.join()</strong> </span><br>用于连接路径。该方法的主要作用在于可以正确的使用当前系统的路径分隔符进行连接。【Unix系统:”/“  windows系统:”\”】   </p>
+<p><span style="color:red"><strong>path.resolve()</strong> </span><br>将路径或者路径片段的序列解析为绝对路径。  给定的路径序列从右至左进行处理，直至构造出一个绝对路径。</p>
+</blockquote>
+<h4 id="3-插件相关"><a href="#3-插件相关" class="headerlink" title="3. 插件相关"></a>3. 插件相关</h4><ul>
+<li><p>HtmlWebpackPlugin</p>
+<p> HtmlWebpackPlugin插件 简化了html文件的创建【不用这个插件我们手动在dist文件夹下放一个html文件，当每次打包完成后，更改html中script引入的js文件名】。该插件对于在文件名中包含每次会随着编译而发生变化的 Hash的webpack bundle是非常有用的。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpck-plugin'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  ...</span><br><span class="line">  plugin: [<span class="keyword">new</span> HtmlWebpackPlugin()]</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="React相关"><a href="#React相关" class="headerlink" title="React相关"></a>React相关</h3><h4 id="1-react-amp-amp-reactDOM"><a href="#1-react-amp-amp-reactDOM" class="headerlink" title="1. react &amp;&amp; reactDOM"></a>1. react &amp;&amp; reactDOM</h4><p>在自定义组件中我们我们使用 <code>class extends React.Component{}</code>,在项目的入口文件里使用<code>ReactDOM({&lt;MyApp /&gt;, document.getElementById(&#39;root&#39;)})</code>将项目挂载到id = root 的DOM元素上。    </p>
+<p>react包含<code>React.createElement``.createClass``.Component``.PropTypes``.Children</code> 这些 API，而 react-dom package 中包含 <code>ReactDOM.render``.unmountComponentAtNode</code> <code>.findDOMNode</code>d等这些API.</p>
+<h3 id="Recat-router相关"><a href="#Recat-router相关" class="headerlink" title="Recat-router相关"></a>Recat-router相关</h3>]]></content>
+      
+        
+        <tags>
+            
+            <tag> react </tag>
+            
+            <tag> 项目搭建 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[js实现进制转换]]></title>
       <url>/2019/02/02/%E6%A0%88%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</url>
       <content type="html"><![CDATA[<h3 id="js原生方法"><a href="#js原生方法" class="headerlink" title="js原生方法"></a>js原生方法</h3><h3 id="栈实现"><a href="#栈实现" class="headerlink" title="栈实现"></a>栈实现</h3><ram><br>    <swig><br>        <iframe height="565" style="width: 100%;" scrolling="no" title="利用栈实现进制转换" src="//codepen.io/ylijingan/embed/aXWBWe/?height=265&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true"><br>    </iframe></swig><br></ram>

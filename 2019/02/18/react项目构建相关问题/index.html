@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo,ssh key," />
+  <meta name="keywords" content="react,项目搭建," />
 
 
 
@@ -79,24 +79,17 @@
 
 
 
-<meta name="description" content="多个SSH KEY的管理多ssh-key模式 是开发时可能遇到的问题，自己之前在使用多 ssh key 模式时不知所措,今天配置好了，记录下来。 github提交验证机制使用一下命令生成ssh$ ssh-keygen -t rsa -C &amp;quot;youremail@email.com&amp;quot;这里需要我们输入生成的公钥和私钥路径，默认是~/.ssh/id_rsa,由于我之前已经有一个Key了">
-<meta name="keywords" content="hexo,ssh key">
+<meta name="description" content="Webpack相关 webpack会假定项目的入口为src/index webpack.config.js1. path模块12//webpack.config.js const path = require(&apos;path&apos;);   //node自带的path模块 Node.js path模块提供了一些用于处理文件路径的小工具。 2. path.join() &amp;amp;&amp;amp; path.reso">
+<meta name="keywords" content="react,项目搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多个SSH KEY 以及 HEXO">
-<meta property="og:url" content="http://yoursite.com/2018/01/15/多个ssh key管理/index.html">
+<meta property="og:title" content="React项目构建相关问题">
+<meta property="og:url" content="http://yoursite.com/2019/02/18/react项目构建相关问题/index.html">
 <meta property="og:site_name" content="Angryyan">
-<meta property="og:description" content="多个SSH KEY的管理多ssh-key模式 是开发时可能遇到的问题，自己之前在使用多 ssh key 模式时不知所措,今天配置好了，记录下来。 github提交验证机制使用一下命令生成ssh$ ssh-keygen -t rsa -C &amp;quot;youremail@email.com&amp;quot;这里需要我们输入生成的公钥和私钥路径，默认是~/.ssh/id_rsa,由于我之前已经有一个Key了">
-<meta property="og:image" content="http://ow4f5k7el.bkt.clouddn.com/ssh.png">
-<meta property="og:image" content="http://ow4f5k7el.bkt.clouddn.com/~:.ssh%E6%96%87%E4%BB%B6%E5%A4%B9.png">
-<meta property="og:image" content="http://ow4f5k7el.bkt.clouddn.com/config.png">
-<meta property="og:image" content="http://ow4f5k7el.bkt.clouddn.com/ssh_config.png">
-<meta property="og:image" content="http://ow4f5k7el.bkt.clouddn.com/git%20ssh%E6%B5%8B%E8%AF%95.png">
-<meta property="og:image" content="http://ow4f5k7el.bkt.clouddn.com/chmod.png">
-<meta property="og:updated_time" content="2018-02-02T04:09:06.921Z">
+<meta property="og:description" content="Webpack相关 webpack会假定项目的入口为src/index webpack.config.js1. path模块12//webpack.config.js const path = require(&apos;path&apos;);   //node自带的path模块 Node.js path模块提供了一些用于处理文件路径的小工具。 2. path.join() &amp;amp;&amp;amp; path.reso">
+<meta property="og:updated_time" content="2019-02-17T16:33:27.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多个SSH KEY 以及 HEXO">
-<meta name="twitter:description" content="多个SSH KEY的管理多ssh-key模式 是开发时可能遇到的问题，自己之前在使用多 ssh key 模式时不知所措,今天配置好了，记录下来。 github提交验证机制使用一下命令生成ssh$ ssh-keygen -t rsa -C &amp;quot;youremail@email.com&amp;quot;这里需要我们输入生成的公钥和私钥路径，默认是~/.ssh/id_rsa,由于我之前已经有一个Key了">
-<meta name="twitter:image" content="http://ow4f5k7el.bkt.clouddn.com/ssh.png">
+<meta name="twitter:title" content="React项目构建相关问题">
+<meta name="twitter:description" content="Webpack相关 webpack会假定项目的入口为src/index webpack.config.js1. path模块12//webpack.config.js const path = require(&apos;path&apos;);   //node自带的path模块 Node.js path模块提供了一些用于处理文件路径的小工具。 2. path.join() &amp;amp;&amp;amp; path.reso">
 
 
 
@@ -126,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/15/多个ssh key管理/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/18/react项目构建相关问题/"/>
 
 
 
 
 
-  <title>多个SSH KEY 以及 HEXO | Angryyan</title>
+  <title>React项目构建相关问题 | Angryyan</title>
   
 
 
@@ -239,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/15/多个ssh key管理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/react项目构建相关问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yan">
@@ -256,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">多个SSH KEY 以及 HEXO</h1>
+          <h1 class="post-title" itemprop="name headline">React项目构建相关问题</h1>
         
 
         <div class="post-meta">
@@ -268,8 +261,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-15T15:29:51+08:00">
-                2018-01-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T00:33:27+08:00">
+                2019-02-18
               </time>
             
 
@@ -306,57 +299,22 @@
       
 
       
-        <h3 id="多个SSH-KEY的管理"><a href="#多个SSH-KEY的管理" class="headerlink" title="多个SSH KEY的管理"></a>多个SSH KEY的管理</h3><p>多ssh-key模式 是开发时可能遇到的问题，自己之前在使用多 ssh key 模式时不知所措,今天配置好了，记录下来。</p>
-<h4 id="github提交验证机制"><a href="#github提交验证机制" class="headerlink" title="github提交验证机制"></a>github提交验证机制</h4><p>使用一下命令生成ssh<br><code>$ ssh-keygen -t rsa -C &quot;youremail@email.com&quot;</code><br>这里需要我们输入生成的公钥和私钥路径，默认是~/.ssh/id_rsa,由于我之前已经有一个Key了，这里我进行了路径自定义，以防止覆盖之前生成的key。<br><img src="http://ow4f5k7el.bkt.clouddn.com/ssh.png" alt=""><br>这时会在用户根目录下生成一个.ssh文件夹，一个私钥：id_rsa，一个公钥：id_rsa_pub，该公钥和私钥包含了你邮箱的信息，具有随机不可复现性！</p>
-<p><strong>在输入路径之后，Enter passphrase默认是空值，这里直接回车就好了。如果在这里输入了，那么每次push提交代码的时候，都需要输入你在这里输入的字符串</strong></p>
-<hr>
-<p>ssh公钥私钥同时生成且唯一配对。公钥用于远程主机，私钥存储在本地工作机，私钥用于在push（即write操作）时验证身份。因为公钥与私钥的唯一对应性，只有能和公钥配对的私钥才能对远程主机进行写操作！</p>
-<p>我们在使用github时会发现有两个地方牵涉到公钥添加，一个是账号设置下的ssh setting，另一个是单个仓库设置的Deploy key。添加至前者则代表 私钥主机可对当前远程主机的所有仓库进行写操作，添加至后者则代表 私钥主机只能对当前仓库进行写操作。</p>
-<p>每次连接时SSH客户端发送本地私钥（默认~/.ssh/id_rsa）到远程主机进行公私钥配对验证！</p>
-<h4 id="多个-SSH-key-管理"><a href="#多个-SSH-key-管理" class="headerlink" title="多个 SSH key 管理"></a>多个 SSH key 管理</h4><ol>
-<li>生成多个key<br> ~/.ssh文件夹<br> <img src="http://ow4f5k7el.bkt.clouddn.com/~:.ssh%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt=""></li>
-<li>在github远程添加公钥</li>
-<li>新建config文件，用于配置各个公私钥对应的主机。未设置的将使用默认的私钥。<br><code>cat config</code><br> <img src="http://ow4f5k7el.bkt.clouddn.com/config.png" alt=""><br> <img src="http://ow4f5k7el.bkt.clouddn.com/ssh_config.png" alt=""></li>
-<li><p>测试连接情况<br><code>ssh -T git@second.github.com</code><br><img src="http://ow4f5k7el.bkt.clouddn.com/git%20ssh%E6%B5%8B%E8%AF%95.png" alt=""><br>如上情况，则测试成果。之后我们可以向之前一样使用就好了</p>
-<hr>
-</li>
-</ol>
-<p>  以上操作都完美执行之后，在进行push的时候，出现了如下所示的错误。<br>  <img src="http://ow4f5k7el.bkt.clouddn.com/chmod.png" alt=""><br>  需要执行<code>chmod 0600 /User/.ssh/id_rsa_ylijingan</code>修改私钥的权限    </p>
-<h3 id="迁移HEXO"><a href="#迁移HEXO" class="headerlink" title="迁移HEXO"></a>迁移HEXO</h3><h4 id="MAC命令行-解压rar"><a href="#MAC命令行-解压rar" class="headerlink" title="MAC命令行 解压rar"></a>MAC命令行 解压rar</h4><ol>
-<li>使用Homebrew安装unrar<br> <code>brew install unrar</code>    </li>
-<li>解压文件<br> <code>unrar x 需解压的文件目录</code>   </li>
-</ol>
-<h4 id="hexo-迁移过程-传送门"><a href="#hexo-迁移过程-传送门" class="headerlink" title="hexo    迁移过程 传送门"></a>hexo    迁移过程 <a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">传送门</a></h4><ol>
-<li>安装 git   </li>
-<li>按照上述内容添加ssh key   </li>
-<li>安装 node  </li>
-<li>安装hexo <code>npm install hexo-cli -g</code>   </li>
-<li><p>拷贝原来文件夹的内容</p>
-<ul>
-<li><strong>必须保留</strong> <ul>
-<li>_config.yml(自己修改的站点配置文件)</li>
-<li>theme/(主题文件夹)</li>
-<li>source/(自己写的博客文件)</li>
-<li>scaffolds/(文章模板)</li>
-<li>package.json</li>
-</ul>
-</li>
-<li><strong>可以删除(.gitignore 中的内容)</strong><ul>
-<li>node_modules/</li>
-<li>.git/</li>
-<li>public/(hexo g会重新生成)</li>
-<li>.deploy_git/(hexo d会重新生成)</li>
-<li>…</li>
-</ul>
+        <h2 id="Webpack相关"><a href="#Webpack相关" class="headerlink" title="Webpack相关"></a>Webpack相关</h2><p> <em>webpack会假定项目的入口为src/index</em></p>
+<h3 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h3><h4 id="1-path模块"><a href="#1-path模块" class="headerlink" title="1. path模块"></a>1. path模块</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js </span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);   <span class="comment">//node自带的path模块</span></span><br></pre></td></tr></table></figure>
+<p><em>Node.js path模块提供了一些用于处理文件路径的小工具。</em></p>
+<h4 id="2-path-join-amp-amp-path-resolve"><a href="#2-path-join-amp-amp-path-resolve" class="headerlink" title="2. path.join() &amp;&amp; path.resolve()"></a>2. path.join() &amp;&amp; path.resolve()</h4><blockquote>
+<p><span style="color:red"><strong>path.join()</strong> </span><br>用于连接路径。该方法的主要作用在于可以正确的使用当前系统的路径分隔符进行连接。【Unix系统:”/“  windows系统:”\”】   </p>
+<p><span style="color:red"><strong>path.resolve()</strong> </span><br>将路径或者路径片段的序列解析为绝对路径。  给定的路径序列从右至左进行处理，直至构造出一个绝对路径。</p>
+</blockquote>
+<h4 id="3-插件相关"><a href="#3-插件相关" class="headerlink" title="3. 插件相关"></a>3. 插件相关</h4><ul>
+<li><p>HtmlWebpackPlugin</p>
+<p> HtmlWebpackPlugin插件 简化了html文件的创建【不用这个插件我们手动在dist文件夹下放一个html文件，当每次打包完成后，更改html中script引入的js文件名】。该插件对于在文件名中包含每次会随着编译而发生变化的 Hash的webpack bundle是非常有用的。</p>
 </li>
 </ul>
-</li>
-<li><p>文件夹下，npm install</p>
-</li>
-<li>hexo g</li>
-<li>hexo d –没有报错，即转移成功!👌👌👌</li>
-</ol>
-
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpck-plugin'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  ...</span><br><span class="line">  plugin: [<span class="keyword">new</span> HtmlWebpackPlugin()]</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="React相关"><a href="#React相关" class="headerlink" title="React相关"></a>React相关</h3><h4 id="1-react-amp-amp-reactDOM"><a href="#1-react-amp-amp-reactDOM" class="headerlink" title="1. react &amp;&amp; reactDOM"></a>1. react &amp;&amp; reactDOM</h4><p>在自定义组件中我们我们使用 <code>class extends React.Component{}</code>,在项目的入口文件里使用<code>ReactDOM({&lt;MyApp /&gt;, document.getElementById(&#39;root&#39;)})</code>将项目挂载到id = root 的DOM元素上。    </p>
+<p>react包含<code>React.createElement``.createClass``.Component``.PropTypes``.Children</code> 这些 API，而 react-dom package 中包含 <code>ReactDOM.render``.unmountComponentAtNode</code> <code>.findDOMNode</code>d等这些API.</p>
+<h3 id="Recat-router相关"><a href="#Recat-router相关" class="headerlink" title="Recat-router相关"></a>Recat-router相关</h3>
       
     </div>
     
@@ -373,9 +331,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/react/" rel="tag"># react</a>
           
-            <a href="/tags/ssh-key/" rel="tag"># ssh key</a>
+            <a href="/tags/项目搭建/" rel="tag"># 项目搭建</a>
           
         </div>
       
@@ -388,8 +346,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/12/ES6,ES7查漏补缺/" rel="next" title="ES6,ES7">
-                <i class="fa fa-chevron-left"></i> ES6,ES7
+              <a href="/2019/02/02/栈实现进制转换/" rel="next" title="js实现进制转换">
+                <i class="fa fa-chevron-left"></i> js实现进制转换
               </a>
             
           </div>
@@ -397,10 +355,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/31/React--状态提升/" rel="prev" title="React状态提升 数据流">
-                React状态提升 数据流 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,7 +477,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#多个SSH-KEY的管理"><span class="nav-number">1.</span> <span class="nav-text">多个SSH KEY的管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#github提交验证机制"><span class="nav-number">1.1.</span> <span class="nav-text">github提交验证机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个-SSH-key-管理"><span class="nav-number">1.2.</span> <span class="nav-text">多个 SSH key 管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迁移HEXO"><span class="nav-number">2.</span> <span class="nav-text">迁移HEXO</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MAC命令行-解压rar"><span class="nav-number">2.1.</span> <span class="nav-text">MAC命令行 解压rar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-迁移过程-传送门"><span class="nav-number">2.2.</span> <span class="nav-text">hexo    迁移过程 传送门</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack相关"><span class="nav-number">1.</span> <span class="nav-text">Webpack相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-config-js"><span class="nav-number">1.1.</span> <span class="nav-text">webpack.config.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-path模块"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. path模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-path-join-amp-amp-path-resolve"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. path.join() &amp;&amp; path.resolve()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-插件相关"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 插件相关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React相关"><span class="nav-number">1.2.</span> <span class="nav-text">React相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-react-amp-amp-reactDOM"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. react &amp;&amp; reactDOM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recat-router相关"><span class="nav-number">1.3.</span> <span class="nav-text">Recat-router相关</span></a></li></ol></li></ol></div>
             
 
           </div>
