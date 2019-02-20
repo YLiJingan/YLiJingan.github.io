@@ -4,10 +4,9 @@
     
     <entry>
       <title></title>
-      <url>/2019/02/20/%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%B9%8B%E5%85%A8%E9%83%A8%E5%8C%B9%E9%85%8D%E5%89%96%E6%9E%90/</url>
+      <url>/2019/02/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B9%8B%E5%85%A8%E5%B1%80%E5%8C%B9%E9%85%8D%E5%89%96%E6%9E%90/</url>
       <content type="html"><![CDATA[<hr>
-<p>title: 正则表达式之全局匹配剖析<br>comments: true      </p>
-<h2 id="tags-‘js’-’正则匹配’"><a href="#tags-‘js’-’正则匹配’" class="headerlink" title="tags: [‘js’,’正则匹配’]     "></a>tags: [‘js’,’正则匹配’]     </h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在做前端数据校验时，需要判断多个输入框不为空的情况。使用正则表达式进行匹配<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> spaceKey = <span class="regexp">/^\s+$/g</span>;</span><br><span class="line"><span class="keyword">const</span> string1 = <span class="string">"  "</span>;</span><br><span class="line"><span class="keyword">const</span> string2 = <span class="string">"  "</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.test(string1));   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.test(string2));   <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="title-正则匹配之全局匹配剖析"><a href="#title-正则匹配之全局匹配剖析" class="headerlink" title="title: 正则匹配之全局匹配剖析       "></a>title: 正则匹配之全局匹配剖析       </h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在做前端数据校验时，需要判断多个输入框不为空的情况。使用正则表达式进行匹配<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> spaceKey = <span class="regexp">/^\s+$/g</span>;</span><br><span class="line"><span class="keyword">const</span> string1 = <span class="string">"  "</span>;</span><br><span class="line"><span class="keyword">const</span> string2 = <span class="string">"  "</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.test(string1));   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.test(string2));   <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
 <p>上述代码使用spaceKey匹配了相同的两个字符串，但是第一次输出true,第二次输出false。什么鬼这是❓👻</p>
 <h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><blockquote>
 <p>正则表达式是用于匹配字符串中字符组合的模式。<br>在 JavaScript中，正则表达式也是对象。这些模式被用于 <code>RegExp</code> 的 <code>exec</code> 和 <code>test</code> 方法, 以及 <code>String</code> 的 <code>match</code>、<code>replace</code>、<code>search</code> 和 <code>split</code> 方法。</p>
@@ -22,9 +21,45 @@
 <li>match(regexp) : 找到一个或多个正则表达式的匹配</li>
 <li>replace(regexp) : 替换与正则表达式匹配的子串</li>
 <li>search(regexp) : 检索与正则表达式相匹配的值</li>
-<li>split(search) : 把字符串分割为字符串数组</li>
+<li>split(search) : 把字符串分割为字符串数组   </li>
 </ul>
-]]></content>
+<p>使用正则对象的<code>test</code>和<code>exact</code>方法，正则表达式执行后返回的信息如下：      </p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>属性或索引</th>
+<th>描述</th>
+<th>在例子中对应的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spaceKey</td>
+<td>lastIndex</td>
+<td>下一个匹配的索引值。</td>
+<td>2</td>
+</tr>
+<tr>
+<td>spaceKey</td>
+<td>source</td>
+<td>模式文本。在正则表达式创建时更新，不执行。</td>
+<td>“^\s+$”  </td>
+</tr>
+</tbody>
+</table>
+<h5 id="lastIndex"><a href="#lastIndex" class="headerlink" title="lastIndex"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex" target="_blank" rel="noopener">lastIndex</a></h5><blockquote>
+<p><code>lastIndex</code>是正则表达式的一个可读可写的整型属性，用来指定下一次匹配的起始索引。</p>
+</blockquote>
+<p><strong>只有正则表达式使用了表示全局检索的 “g” 标志时，该属性才会起作用。此时应用下面的规则：</strong></p>
+<ul>
+<li>如果 lastIndex 大于字符串的长度，则 regexp.test 和 regexp.exec 将会匹配失败，然后 lastIndex 被设置为 0。</li>
+<li>如果 lastIndex 等于字符串的长度，且该正则表达式匹配空字符串，则该正则表达式匹配从 lastIndex 开始的字符串。（then the regular expression matches input starting at lastIndex.）</li>
+<li>如果 lastIndex 等于字符串的长度，且该正则表达式不匹配空字符串 ，则该正则表达式不匹配字符串，lastIndex 被设置为 0.。</li>
+<li>否则，lastIndex 被设置为紧随最近一次成功匹配的下一个位置。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(spaceKey.test(string1)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.lastIndex);     <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.test(string2));  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.lastIndex);  <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.source);  <span class="comment">// ^\s+$</span></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.test(string2));  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="删除全局匹配"><a href="#删除全局匹配" class="headerlink" title="删除全局匹配"></a>删除全局匹配</h4><h4 id="手动重置lastIndex-0"><a href="#手动重置lastIndex-0" class="headerlink" title="手动重置lastIndex = 0"></a>手动重置lastIndex = 0</h4>]]></content>
       
         
     </entry>
