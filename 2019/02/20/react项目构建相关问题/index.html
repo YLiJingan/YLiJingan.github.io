@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="react,学习笔记,Demo," />
+  <meta name="keywords" content="react,项目搭建," />
 
 
 
@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="React 状态提升 数据流在看项目代码的时候，发现自己有好多东西都忘记(只能说之前掌握的也不是很好😅)。本次的查漏补缺主要是针对React的相关知识进行的，主要学习途径是React官网,学习方法不再是以往的只看不动手。 自己动手实现官网上的demo,在实现的过程中能够发现很多细节上的问题。 状态提升质量比数量更重要 –真正的掌握了一个知识点，也好过走马观花的看了一本书。 Demo使用在线代码编">
-<meta name="keywords" content="react,学习笔记,Demo">
+<meta name="description" content="Webpack相关 webpack会假定项目的入口为src/index webpack.config.js1. path模块12//webpack.config.js const path = require(&apos;path&apos;);   //node自带的path模块 Node.js path模块提供了一些用于处理文件路径的小工具。 2. path.join() &amp;amp;&amp;amp; path.reso">
+<meta name="keywords" content="react,项目搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React状态提升 数据流">
-<meta property="og:url" content="http://yoursite.com/2018/08/31/React--状态提升/index.html">
+<meta property="og:title" content="React项目构建相关问题">
+<meta property="og:url" content="http://yoursite.com/2019/02/20/react项目构建相关问题/index.html">
 <meta property="og:site_name" content="Angryyan">
-<meta property="og:description" content="React 状态提升 数据流在看项目代码的时候，发现自己有好多东西都忘记(只能说之前掌握的也不是很好😅)。本次的查漏补缺主要是针对React的相关知识进行的，主要学习途径是React官网,学习方法不再是以往的只看不动手。 自己动手实现官网上的demo,在实现的过程中能够发现很多细节上的问题。 状态提升质量比数量更重要 –真正的掌握了一个知识点，也好过走马观花的看了一本书。 Demo使用在线代码编">
-<meta property="og:image" content="http://ow4f5k7el.bkt.clouddn.com/%E5%AD%90%E7%BB%84%E4%BB%B6%E5%90%91%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC.png">
-<meta property="og:updated_time" content="2018-08-31T03:22:21.783Z">
+<meta property="og:description" content="Webpack相关 webpack会假定项目的入口为src/index webpack.config.js1. path模块12//webpack.config.js const path = require(&apos;path&apos;);   //node自带的path模块 Node.js path模块提供了一些用于处理文件路径的小工具。 2. path.join() &amp;amp;&amp;amp; path.reso">
+<meta property="og:updated_time" content="2019-02-20T06:23:10.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React状态提升 数据流">
-<meta name="twitter:description" content="React 状态提升 数据流在看项目代码的时候，发现自己有好多东西都忘记(只能说之前掌握的也不是很好😅)。本次的查漏补缺主要是针对React的相关知识进行的，主要学习途径是React官网,学习方法不再是以往的只看不动手。 自己动手实现官网上的demo,在实现的过程中能够发现很多细节上的问题。 状态提升质量比数量更重要 –真正的掌握了一个知识点，也好过走马观花的看了一本书。 Demo使用在线代码编">
-<meta name="twitter:image" content="http://ow4f5k7el.bkt.clouddn.com/%E5%AD%90%E7%BB%84%E4%BB%B6%E5%90%91%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC.png">
+<meta name="twitter:title" content="React项目构建相关问题">
+<meta name="twitter:description" content="Webpack相关 webpack会假定项目的入口为src/index webpack.config.js1. path模块12//webpack.config.js const path = require(&apos;path&apos;);   //node自带的path模块 Node.js path模块提供了一些用于处理文件路径的小工具。 2. path.join() &amp;amp;&amp;amp; path.reso">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/31/React--状态提升/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/20/react项目构建相关问题/"/>
 
 
 
 
 
-  <title>React状态提升 数据流 | Angryyan</title>
+  <title>React项目构建相关问题 | Angryyan</title>
   
 
 
@@ -234,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/React--状态提升/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/react项目构建相关问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yan">
@@ -251,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">React状态提升 数据流</h1>
+          <h1 class="post-title" itemprop="name headline">React项目构建相关问题</h1>
         
 
         <div class="post-meta">
@@ -263,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-31T11:22:21+08:00">
-                2018-08-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-20T14:23:10+08:00">
+                2019-02-20
               </time>
             
 
@@ -301,28 +299,23 @@
       
 
       
-        <h3 id="React-状态提升-数据流"><a href="#React-状态提升-数据流" class="headerlink" title="React 状态提升 数据流"></a>React 状态提升 数据流</h3><p><strong>在看项目代码的时候，发现自己有好多东西都忘记(只能说之前掌握的也不是很好😅)。本次的查漏补缺主要是针对React的相关知识进行的，主要学习途径是<a href="https://doc.react-china.org/docs/lifting-state-up.html" target="_blank" rel="noopener">React官网</a>,学习方法不再是以往的只看不动手。</strong></p>
-<p>自己动手实现官网上的demo,在实现的过程中能够发现很多细节上的问题。</p>
-<h4 id="状态提升"><a href="#状态提升" class="headerlink" title="状态提升"></a>状态提升</h4><p><em>质量比数量更重要</em> –真正的掌握了一个知识点，也好过走马观花的看了一本书。</p>
-<p><a href="https://codepen.io/anon/pen/rrLQVq" target="_blank" rel="noopener">Demo</a>使用在线代码编辑工具，codepen   也不知道能不能看👀👀</p>
-<ul>
-<li><strong>状态提升：</strong>通过将state数据提升至离需要这些数据组件最近的父组件来完成，这就是数据提升过程。</li>
-</ul>
-<h4 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h4><p><strong>react中的数据流是单向的，是从上向下的：即从父组件向子组件的方向</strong><br>state和props是react数据流中最重要的概念。其中state是组件本身的数据发生变化，存放的是和页面渲染相关的数据；而props是父子组件的通信。</p>
-<ul>
-<li><strong>props:</strong> 如果顶层(父)组件初始化props，那么React会向下遍历整颗组件树，重新渲染相关的子组件。props在子组件中是只读的。<ul>
-<li>父组件更新子组件，通过传递props就可以了</li>
-<li>子组件更新父组件状态:需要父组件传递回调函数给子组件，子组件调用触发即可。<a href="https://codepen.io/anon/pen/jpMxWX?editors=1010" target="_blank" rel="noopener">Demo</a><br><img src="http://ow4f5k7el.bkt.clouddn.com/%E5%AD%90%E7%BB%84%E4%BB%B6%E5%90%91%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC.png" alt="子组件向父组件传值"></li>
-</ul>
-</li>
-<li><strong>state:</strong>表示的是每个组件中内部的的状态，这些状态只在组件内部改变。<ul>
-<li>可以通过setState异步方法改变组件内部state的值，组件重新渲染。由于setState是异步方法，故一个生命周期中的所有setState将进行合并执行。（异步操作队列）    </li>
-</ul>
+        <h2 id="Webpack相关"><a href="#Webpack相关" class="headerlink" title="Webpack相关"></a>Webpack相关</h2><p> <em>webpack会假定项目的入口为src/index</em></p>
+<h3 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h3><h4 id="1-path模块"><a href="#1-path模块" class="headerlink" title="1. path模块"></a>1. path模块</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js </span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);   <span class="comment">//node自带的path模块</span></span><br></pre></td></tr></table></figure>
+<p><em>Node.js path模块提供了一些用于处理文件路径的小工具。</em></p>
+<h4 id="2-path-join-amp-amp-path-resolve"><a href="#2-path-join-amp-amp-path-resolve" class="headerlink" title="2. path.join() &amp;&amp; path.resolve()"></a>2. path.join() &amp;&amp; path.resolve()</h4><blockquote>
+<p><span style="color:red"><strong>path.join()</strong> </span><br>用于连接路径。该方法的主要作用在于可以正确的使用当前系统的路径分隔符进行连接。【Unix系统:”/“  windows系统:”\”】   </p>
+<p><span style="color:red"><strong>path.resolve()</strong> </span><br>将路径或者路径片段的序列解析为绝对路径。  给定的路径序列从右至左进行处理，直至构造出一个绝对路径。</p>
+</blockquote>
+<h4 id="3-插件相关"><a href="#3-插件相关" class="headerlink" title="3. 插件相关"></a>3. 插件相关</h4><ul>
+<li><p>HtmlWebpackPlugin</p>
+<p> HtmlWebpackPlugin插件 简化了html文件的创建【不用这个插件我们手动在dist文件夹下放一个html文件，当每次打包完成后，更改html中script引入的js文件名】。该插件对于在文件名中包含每次会随着编译而发生变化的 Hash的webpack bundle是非常有用的。</p>
 </li>
 </ul>
-<p><strong><a href="http://taobaofed.org/blog/2016/11/17/react-components-communication/" target="_blank" rel="noopener">组件之间的通信</a></strong>    <em>淘宝前端团队总结</em></p>
-<p><em>把组件看成是一个函数，那么他接受props作为参数，内部由state作为函数的内部参数，返回一个虚拟dom的实现</em></p>
-<p>JSX注释  {/**/}</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpck-plugin'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  ...</span><br><span class="line">  plugin: [<span class="keyword">new</span> HtmlWebpackPlugin()]</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="React相关"><a href="#React相关" class="headerlink" title="React相关"></a>React相关</h3><h4 id="1-react-amp-amp-reactDOM"><a href="#1-react-amp-amp-reactDOM" class="headerlink" title="1. react &amp;&amp; reactDOM"></a>1. react &amp;&amp; reactDOM</h4><p>在自定义组件中我们我们使用 <code>class extends React.Component{}</code>,在项目的入口文件里使用<code>ReactDOM({&lt;MyApp /&gt;, document.getElementById(&#39;root&#39;)})</code>将项目挂载到id = root 的DOM元素上。    </p>
+<p>react包含<code>React.createElement``.createClass``.Component``.PropTypes``.Children</code> 这些 API，而 react-dom package 中包含 <code>ReactDOM.render``.unmountComponentAtNode</code> <code>.findDOMNode</code>d等这些API.</p>
+<h4 id="2-react实现权限控制"><a href="#2-react实现权限控制" class="headerlink" title="2. react实现权限控制"></a>2. react实现权限控制</h4><h3 id="Recat-router相关"><a href="#Recat-router相关" class="headerlink" title="Recat-router相关"></a>Recat-router相关</h3><h4 id="1-router4如何像router3那样使用-路由表存在"><a href="#1-router4如何像router3那样使用-路由表存在" class="headerlink" title="1. router4如何像router3那样使用(路由表存在)"></a>1. router4如何像router3那样使用(路由表存在)</h4><p>在router3中我们使用的是<code>&lt;Router history={history} /&gt;,router4中对</code><router><code>元素进行了包装，即我们最常使用的</code><hashrouter><code>或者</code><browserrouter><code>。在router3中直接使用</code><router><code>需要我们手动引入</code>history`.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// history.js</span></span><br><span class="line"><span class="keyword">import</span> createHistory <span class="keyword">from</span> <span class="string">'history/createHashHistory'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> createHistory();</span><br></pre></td></tr></table></figure></router></browserrouter></hashrouter></router></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> history <span class="keyword">from</span> <span class="string">'./history.js'</span>;</span><br><span class="line">&lt;Router history=&#123;history&#125;&gt;</span><br><span class="line">......</span><br><span class="line">&lt;<span class="regexp">/Router&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -342,9 +335,7 @@
           
             <a href="/tags/react/" rel="tag"># react</a>
           
-            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
-          
-            <a href="/tags/Demo/" rel="tag"># Demo</a>
+            <a href="/tags/项目搭建/" rel="tag"># 项目搭建</a>
           
         </div>
       
@@ -357,8 +348,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/15/多个ssh key管理/" rel="next" title="多个SSH KEY 以及 HEXO">
-                <i class="fa fa-chevron-left"></i> 多个SSH KEY 以及 HEXO
+              <a href="/2019/02/18/LeetCode 02-罗马数字转整数/" rel="next" title="LeetCode 02">
+                <i class="fa fa-chevron-left"></i> LeetCode 02
               </a>
             
           </div>
@@ -366,10 +357,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/17/vim学习/" rel="prev" title="vim学习">
-                vim学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -492,7 +479,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-状态提升-数据流"><span class="nav-number">1.</span> <span class="nav-text">React 状态提升 数据流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#状态提升"><span class="nav-number">1.1.</span> <span class="nav-text">状态提升</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据流"><span class="nav-number">1.2.</span> <span class="nav-text">数据流</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack相关"><span class="nav-number">1.</span> <span class="nav-text">Webpack相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-config-js"><span class="nav-number">1.1.</span> <span class="nav-text">webpack.config.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-path模块"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. path模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-path-join-amp-amp-path-resolve"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. path.join() &amp;&amp; path.resolve()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-插件相关"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 插件相关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React相关"><span class="nav-number">1.2.</span> <span class="nav-text">React相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-react-amp-amp-reactDOM"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. react &amp;&amp; reactDOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-react实现权限控制"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. react实现权限控制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recat-router相关"><span class="nav-number">1.3.</span> <span class="nav-text">Recat-router相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-router4如何像router3那样使用-路由表存在"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. router4如何像router3那样使用(路由表存在)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
