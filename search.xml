@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title></title>
+      <url>/2019/02/20/%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%B9%8B%E5%85%A8%E9%83%A8%E5%8C%B9%E9%85%8D%E5%89%96%E6%9E%90/</url>
+      <content type="html"><![CDATA[<hr>
+<p>title: 正则表达式之全局匹配剖析<br>comments: true      </p>
+<h2 id="tags-‘js’-’正则匹配’"><a href="#tags-‘js’-’正则匹配’" class="headerlink" title="tags: [‘js’,’正则匹配’]     "></a>tags: [‘js’,’正则匹配’]     </h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在做前端数据校验时，需要判断多个输入框不为空的情况。使用正则表达式进行匹配<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> spaceKey = <span class="regexp">/^\s+$/g</span>;</span><br><span class="line"><span class="keyword">const</span> string1 = <span class="string">"  "</span>;</span><br><span class="line"><span class="keyword">const</span> string2 = <span class="string">"  "</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.test(string1));   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(spaceKey.test(string2));   <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码使用spaceKey匹配了相同的两个字符串，但是第一次输出true,第二次输出false。什么鬼这是❓👻</p>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><blockquote>
+<p>正则表达式是用于匹配字符串中字符组合的模式。<br>在 JavaScript中，正则表达式也是对象。这些模式被用于 <code>RegExp</code> 的 <code>exec</code> 和 <code>test</code> 方法, 以及 <code>String</code> 的 <code>match</code>、<code>replace</code>、<code>search</code> 和 <code>split</code> 方法。</p>
+</blockquote>
+<p>正则表达式对象的方法,<code>test</code>和<code>exec</code>:</p>
+<ul>
+<li>exec(str) : 检索字符串中指定的值。返回找到的值，并确定其位置</li>
+<li>test(str) : 检索字符串中指定的值。返回 true 或 false</li>
+</ul>
+<p>字符串对象的方法,<code>match</code>、<code>replace</code>、<code>search</code>、<code>split</code>:</p>
+<ul>
+<li>match(regexp) : 找到一个或多个正则表达式的匹配</li>
+<li>replace(regexp) : 替换与正则表达式匹配的子串</li>
+<li>search(regexp) : 检索与正则表达式相匹配的值</li>
+<li>split(search) : 把字符串分割为字符串数组</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[React项目构建相关问题]]></title>
       <url>/2019/02/20/react%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<h2 id="Webpack相关"><a href="#Webpack相关" class="headerlink" title="Webpack相关"></a>Webpack相关</h2><p> <em>webpack会假定项目的入口为src/index</em></p>
